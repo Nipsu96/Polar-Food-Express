@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 2394362751324786401}
   - component: {fileID: 2394362751324786402}
   - component: {fileID: 2394362751324786400}
+  - component: {fileID: 1591539768}
+  - component: {fileID: 1591539769}
   m_Layer: 0
   m_Name: ObjectToCollect
   m_TagString: Untagged
@@ -109,3 +111,29 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1591539768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2394362751324786403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81fb19d01d213d84db172d959ec90d3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  score: 1
+  carbonFootprintImpact: -1
+--- !u!114 &1591539769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2394362751324786403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71b8168582cd45b4497793262da3a2d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
