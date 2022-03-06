@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using NaughtyAttributes;
+using TMPro;
 
 namespace Polar
 {
@@ -12,10 +13,23 @@ namespace Polar
 
         internal static ScoreManager Instance { get; private set; }
         [ShowNonSerializedField] internal float currentScore;
+        [ShowNonSerializedField] private float score;
+        [SerializeField] private TMP_Text scoreUI;
 
         private void Awake()
         {
             Instance = this;
+        }
+
+        public void SetScore(float score)
+        {
+            this.score += score;
+            GetScoreForUI();
+        }
+
+        private void GetScoreForUI()
+        {
+            scoreUI.SetText(score.ToString());
         }
     }
 }
