@@ -12,24 +12,45 @@ namespace Polar
         // We can pass this data to other places like UI or highscore panel
 
         internal static ScoreManager Instance { get; private set; }
-        [ShowNonSerializedField] internal float currentScore;
-        [ShowNonSerializedField] private float score;
-        [SerializeField] private TMP_Text scoreUI;
+        private float currentScore;
+        private TMP_Text scoreValueUI;
+        private string textScoreValue = "Text_ScoreValue";
 
         private void Awake()
         {
-            Instance = this;
+            CreateInstance();
         }
 
-        public void SetScore(float score)
+        private void Start()
         {
-            this.score += score;
-            GetScoreForUI();
+            FindScoreValue();
         }
 
-        private void GetScoreForUI()
+        private void FindScoreValue()
         {
-            scoreUI.SetText(score.ToString());
+            if (scoreValueUI == null)
+            {
+                scoreValueUI = GameObject.Find(textScoreValue).GetComponent<TMP_Text>();
+            }
+            scoreValueUI.text = currentScore.ToString();
+        }
+
+        private void CreateInstance()
+        {
+            if (Instance == null)
+            {
+                Instance = this;
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
+        }
+
+        internal void AddScore(float score)
+        {
+            this.currentScore += score;
+            scoreValueUI.text = currentScore.ToString();
         }
     }
 }

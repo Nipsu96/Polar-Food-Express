@@ -14,10 +14,10 @@ namespace Polar
                 Collectable collectable = GetComponent<Collectable>();
                 // Set score
                 //ScoreManager.Instance.currentScore += collectable.score;
-                ScoreManager.Instance.SetScore(1);
+                ScoreManager.Instance.AddScore(1);
 
                 // Set Carbon Footprint
-                CarbonManager.Instance.currentCarbonFootprint += collectable.carbonFootprintImpact;
+                CarbonManager.Instance.AddCarbon(1);
 
                 // TODO: Change Destroy() to pooling
                 Destroy(gameObject);
