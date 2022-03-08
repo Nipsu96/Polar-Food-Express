@@ -12,13 +12,14 @@ GameObject:
   - component: {fileID: 7259109118429399620}
   - component: {fileID: 7259109118429399622}
   - component: {fileID: 4688933989714301324}
+  - component: {fileID: 5207514583992039392}
   m_Layer: 0
   m_Name: TestObstacle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7259109118429399623
 Transform:
   m_ObjectHideFlags: 0
@@ -122,4 +123,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4754c403b405d92428e1891ecb924faf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  gameSpeed: {fileID: 11400000, guid: a107b388fcbe2564c9ce4cd6cedcc7f5, type: 2}
+--- !u!114 &5207514583992039392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7259109118429399621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9213c871d0297e147a739cb793137883, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
