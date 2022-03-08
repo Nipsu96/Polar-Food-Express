@@ -1,27 +1,34 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Polar
 {
     public class HitDetection : MonoBehaviour
     {
-        private void OnTriggerEnter2D(Collider2D player)
+        private void OnTriggerEnter2D(Collider2D other)
         {
-            // Check does object enter in the the player's trigger area
-            if (player.GetComponent<PlayerController>() != null)
+            if(other.TryGetComponent(out ICollidable hit))
             {
-                Collectable collectable = GetComponent<Collectable>();
-                // Set score
-                //ScoreManager.Instance.currentScore += collectable.score;
-                ScoreManager.Instance.AddScore(1);
-
-                // Set Carbon Footprint
-                CarbonManager.Instance.AddCarbon(1);
-
-                // TODO: Change Destroy() to pooling
-                Destroy(gameObject);
+                hit.OnCollision();
             }
         }
+
+        // Old, not is use
+        //private void OnTriggerEnter2D(Collider2D player)
+        //{
+        //    // Check does object enter in the the player's trigger area
+        //    if (player.GetComponent<PlayerController>() != null)
+        //    {
+        //        Collectable collectable = GetComponent<Collectable>();
+        //        // Set score
+        //        //ScoreManager.Instance.currentScore += collectable.score;
+        //        ScoreManager.Instance.AddScore(1);
+
+        //        // Set Carbon Footprint
+        //        CarbonManager.Instance.AddCarbon(1);
+
+        //        // TODO: Change Destroy() to pooling
+        //        Destroy(gameObject);
+        //    }
+        //}
     }
 }
