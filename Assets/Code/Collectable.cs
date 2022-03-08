@@ -4,9 +4,27 @@ using UnityEngine;
 
 namespace Polar
 {
-    public class Collectable : MonoBehaviour
+    public class Collectable : MonoBehaviour, ICollidable
     {
-        [SerializeField] internal int score;
-        [SerializeField, Tooltip("Set a positive value to good products and a negative value to bad products.")] internal float carbonFootprintImpact;
+        [SerializeField] private SOCollectableValues values;
+
+        public void OnCollision()
+        {
+            SetScore();
+            SetCarbon();
+
+            // TODO: Change Destroy() to pooling
+            Destroy(gameObject);
+        }
+
+        private void SetScore()
+        {
+            ScoreManager.Instance.AddScore(values.score);
+        }
+
+        private void SetCarbon()
+        {
+            CarbonManager.Instance.AddCarbon(values.carbonImpact);
+        }
     }
 }
