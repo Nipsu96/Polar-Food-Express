@@ -10,10 +10,13 @@ namespace Polar
 	public class PlayerController : MonoBehaviour
 	{
         private bool tap ;
-		private Vector2 moveInput;
+		private Vector2 direction;
         private Rigidbody2D playerRigidbody;
+		public float gravity = 1;
         [SerializeField]    
-        private float jumpforce = 3.0f;
+        private float jumpforce = 30f;
+		public float linearDrag = 20f;
+		public float fallMultiplier = 9f;
 
         private GroundCheck groundCheck;
 
@@ -25,9 +28,9 @@ namespace Polar
 		}
 
     
-		private void Update()
+		private void FixedUpdate()
 		{
-			// MoveCharacter();
+			modifyPhysics();
            
 		}
 
@@ -38,6 +41,26 @@ namespace Polar
 		// 			// in the game world.
 		// 			transform.Translate(movement);
 		// }
+		void modifyPhysics() {
+        bool changingDirections = (direction.x > 0 && playerRigidbody.velocity.x < 0) || (direction.x < 0 && playerRigidbody.velocity.x > 0);
+
+        if(groundCheck.isGrounded){
+            if (Mathf.Abs(direction.x) < 0.4f || changingDirections) {
+                playerRigidbody.drag = linearDrag;
+            } else {
+                playerRigidbody.drag = 0f;
+            }
+            playerRigidbody.gravityScale = 0;
+        }else{
+            playerRigidbody.gravityScale = gravity;
+            playerRigidbody.drag = linearDrag * 0.15f;
+            if(playerRigidbody.velocity.y < 0){
+                playerRigidbody.gravityScale = gravity * fallMultiplier;
+            }else if(playerRigidbody.velocity.y > 0 && !tap){
+                playerRigidbody.gravityScale = gravity * (fallMultiplier / 2);
+            }
+        }
+    }
 
 		private void OnJump(InputAction.CallbackContext callbackContext)
 		{
@@ -48,7 +71,8 @@ namespace Polar
 		{
             if(tap && groundCheck.isGrounded){
                 // hyppäämisen koodi tänne
-                playerRigidbody.AddForce(new Vector2(0.0f,jumpforce),ForceMode2D.Impulse);
+                // playerRigidbody.AddForce(new Vector2(0.0f,jumpforce),ForceMode2D.Impulse);
+				playerRigidbody.AddForce(Vector2.up*jumpforce,ForceMode2D.Impulse);
             }
             
 		}
