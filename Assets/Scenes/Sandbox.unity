@@ -408,7 +408,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 517457925923112124, guid: d23bb215ac35aba40a6c91370866b676, type: 3}
       propertyPath: gravity
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 517457925923112124, guid: d23bb215ac35aba40a6c91370866b676, type: 3}
       propertyPath: jumpforce
