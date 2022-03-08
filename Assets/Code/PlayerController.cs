@@ -16,6 +16,7 @@ namespace Polar
         [SerializeField]    
         private float jumpforce = 30f;
 		public float linearDrag = 20f;
+		// public float linearDrag = 20f;
 		public float fallMultiplier = 9f;
 
         private GroundCheck groundCheck;
