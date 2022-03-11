@@ -16,10 +16,18 @@ namespace Polar
         [SerializeField]    
         private float jumpforce = 30f;
 		public float linearDrag = 20f;
-        
+
+        public float gravityInAir= 1.0f;
 		public float fallMultiplier = 9f;
 
+        [SerializeField]
+        private float minUpX= -1.0f;
+
+        [SerializeField]
+        private float maxUpX= 1.0f;
+
         private GroundCheck groundCheck;
+        private bool isJumping;
 
 		// private Vector2 touchPosition;
         public void Awake(){
@@ -55,24 +63,30 @@ namespace Polar
         }else{
             playerRigidbody.gravityScale = gravity;
             playerRigidbody.drag = linearDrag * 0.15f;
+            
             if(playerRigidbody.velocity.y < 0){
                 playerRigidbody.gravityScale = gravity * fallMultiplier;
-            }else if(playerRigidbody.velocity.y > 0 && !tap){
+            }else if(playerRigidbody.velocity.y > 0 && playerRigidbody.velocity.y < maxUpX){
+                playerRigidbody.gravityScale = gravity * gravityInAir;
+            }else if(playerRigidbody.velocity.y > 0){
                 playerRigidbody.gravityScale = gravity * (fallMultiplier / 2);
+                
             }
         }
     }
 
 		private void OnJump(InputAction.CallbackContext callbackContext)
 		{
+            // InputActionPhase inputPhase = callbackContext.phase;
+            // isJumping = inputPhase == InputActionPhase.Performed;
             tap = callbackContext.ReadValueAsButton();
             PlayerJump();
+            Debug.Log("Moi");
 		}
         private void PlayerJump()
 		{
             if(tap && groundCheck.isGrounded){
                 // hyppäämisen koodi tänne
-                // playerRigidbody.AddForce(new Vector2(0.0f,jumpforce),ForceMode2D.Impulse);
 				playerRigidbody.AddForce(Vector2.up*jumpforce,ForceMode2D.Impulse);
             }
             

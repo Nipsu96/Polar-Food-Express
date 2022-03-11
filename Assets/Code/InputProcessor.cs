@@ -34,6 +34,7 @@ namespace Polar
 			foreach (var action in inputActions)
 			{
 				action.Enable();
+				action.started += ProcessInput;
 				action.performed += ProcessInput;
 				action.canceled += ProcessInput;
 			}
@@ -45,6 +46,7 @@ namespace Polar
 			foreach (var action in inputActions)
 			{
 				action.Disable();
+				action.started -= ProcessInput;
 				action.performed -= ProcessInput;
 				action.canceled -= ProcessInput;
 			}
