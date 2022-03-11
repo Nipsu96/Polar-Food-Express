@@ -64,7 +64,7 @@ namespace Polar
     }
 
 		private void OnJump(InputAction.CallbackContext callbackContext)
-		{
+        {
             tap = callbackContext.ReadValueAsButton();
             PlayerJump();
 		}
