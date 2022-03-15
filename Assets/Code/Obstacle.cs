@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -15,7 +13,7 @@ namespace Polar
             // TODO: GameManager gameSpeed
             // TODO: Obstacle call SetGameSpeed 0 OnCollision
             // TODO: End game
-            //GameManager.Instance.EndGame();
+            GameManager.Instance.EndGame();
         }
 
         // TODO: Get rid off SameSpeed SO

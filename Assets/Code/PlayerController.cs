@@ -81,7 +81,6 @@ namespace Polar
             // isJumping = inputPhase == InputActionPhase.Performed;
             tap = callbackContext.ReadValueAsButton();
             PlayerJump();
-            Debug.Log("Moi");
 		}
         private void PlayerJump()
 		{
