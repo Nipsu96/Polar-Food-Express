@@ -2,14 +2,13 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 
 namespace Polar
 {
     public class GameManager : MonoBehaviour
     {
         internal static GameManager Instance { get; private set; }
-        [SerializeField, Range(0.0f, 1000.0f)] internal float gameSpeed = 1.0f;
+        [SerializeField, Range(0.0f, 1000.0f), Tooltip("This controls the speed of all moving foods, obstacles and backgrounds")] internal float gameSpeed = 1.0f;
 
         private void Awake()
         {
@@ -30,7 +29,7 @@ namespace Polar
 
         internal void EndGame()
         {
-            print("End game");
+            Debug.Log("End game");
         }
     }
 }

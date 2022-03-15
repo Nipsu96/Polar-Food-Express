@@ -9,6 +9,7 @@ namespace Polar
             if(other.TryGetComponent(out ICollidable hit))
             {
                 hit.OnCollision();
+                //Debug.Log(this.name + " collided with a " + other.name);
             }
         }
     }

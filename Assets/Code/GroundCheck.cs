@@ -6,7 +6,7 @@ namespace Polar
 {
     public class GroundCheck : MonoBehaviour
     {
-        internal bool isGrounded;
+        [SerializeField] internal bool isGrounded;
         
         [SerializeField]
         private LayerMask ground;
@@ -15,6 +15,7 @@ namespace Polar
 
         }
         private void OnTriggerExit2D(Collider2D other) {
+            //isGrounded = other != null && (((1 << other.gameObject.layer) & ground) == 1);
             isGrounded = false;
         }
     }
