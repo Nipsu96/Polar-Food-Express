@@ -54,11 +54,11 @@ namespace Polar
         bool changingDirections = (direction.x > 0 && playerRigidbody.velocity.x < 0) || (direction.x < 0 && playerRigidbody.velocity.x > 0);
 
         if(groundCheck.isGrounded){
-            if (Mathf.Abs(direction.x) < 0.4f || changingDirections) {
-                playerRigidbody.drag = linearDrag;
-            } else {
-                playerRigidbody.drag = 0f;
-            }
+            //if (Mathf.Abs(direction.x) < 0.4f || changingDirections) {
+            //    playerRigidbody.drag = linearDrag;
+            //} else {
+            //    playerRigidbody.drag = 0f;
+            //}
             playerRigidbody.gravityScale = 0;
         }else{
             playerRigidbody.gravityScale = gravity;
