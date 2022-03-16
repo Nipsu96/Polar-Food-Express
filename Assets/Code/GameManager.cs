@@ -1,15 +1,14 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 
 namespace Polar
 {
     public class GameManager : MonoBehaviour
     {
         internal static GameManager Instance { get; private set; }
-        [SerializeField] private SOGameSpeed gameSpeed;
-        [SerializeField, Range(0.0f, 1000.0f)] private float speed = 1.0f;
+        [SerializeField, Range(0.0f, 1000.0f), Tooltip("This controls the speed of all moving foods, obstacles and backgrounds")] internal float gameSpeed = 1.0f;
 
         private void Awake()
         {
@@ -26,6 +25,11 @@ namespace Polar
             {
                 Destroy(gameObject);
             }
+        }
+
+        internal void EndGame()
+        {
+            Debug.Log("End game");
         }
     }
 }
