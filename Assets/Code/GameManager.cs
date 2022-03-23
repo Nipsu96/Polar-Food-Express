@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Polar
 {
@@ -30,6 +31,10 @@ namespace Polar
         internal void EndGame()
         {
             Debug.Log("End game");
+            Scene scene = SceneManager.GetActiveScene();
+            String sceneName = scene.name;
+            //DontDestroyOnLoad(this.gameObject);
+            SceneManager.LoadScene("LoseScreen");
         }
     }
 }
