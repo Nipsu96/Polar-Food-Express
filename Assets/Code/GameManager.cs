@@ -30,7 +30,6 @@ namespace Polar
 
         internal void EndGame()
         {
-            Debug.Log("End game");
             Scene scene = SceneManager.GetActiveScene();
             String sceneName = scene.name;
             //DontDestroyOnLoad(this.gameObject);
