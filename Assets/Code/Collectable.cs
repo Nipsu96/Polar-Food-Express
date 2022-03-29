@@ -7,13 +7,13 @@ namespace Polar
     public class Collectable : MonoBehaviour, ICollidable
     {
         [SerializeField] private SOCollectableValues values;
-		enum FoodType
+		internal enum FoodType
 		{
 			None,
 			GoodFood,
 			BadFood
 		}
-		[SerializeField] private FoodType foodType;
+		[SerializeField] internal FoodType foodType;
 
 		private void Start()
 		{

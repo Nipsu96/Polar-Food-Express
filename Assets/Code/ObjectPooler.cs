@@ -6,8 +6,8 @@ namespace Polar
 {
     public class ObjectPooler : MonoBehaviour
     {
-        private List<GameObject> pooledObjects;
-        [SerializeField] private List<GameObject> objectsToPool;
+        internal List<GameObject> pooledObjects;
+        [SerializeField] internal List<GameObject> objectsToPool;
 		[SerializeField] private int amountToPool = 5;
 
         private void Start()

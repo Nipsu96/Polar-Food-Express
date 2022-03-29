@@ -13,6 +13,8 @@ namespace Polar
 		[SerializeField] private ObjectPooler goodFoodPool;
 		[SerializeField] private ObjectPooler badFoodPool;
 		[SerializeField] private ObjectPooler obstaclePool;
+		[SerializeField] private List<ObjectPooler> objectPools;
+		private int index;
 
 		private void Start()
         {
@@ -29,8 +31,12 @@ namespace Polar
             spawnTimer -= Time.deltaTime;
             if (spawnTimer <= 0.0f)
 			{
-				SpawnObject(spawnPointA, goodFoodPool);
-				SpawnObject(spawnPointB, obstaclePool);
+				index = Random.Range(0, 3);
+				Debug.Log("Random 1: " + index);
+				SpawnObject(spawnPointA, objectPools[index]);
+				index = Random.Range(0, 2);
+				Debug.Log("Random 2: " + index);
+				SpawnObject(spawnPointB, objectPools[index]);
 				ResetCountdown();
             }
         }
