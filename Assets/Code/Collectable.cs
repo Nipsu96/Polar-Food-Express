@@ -12,12 +12,16 @@ namespace Polar
         {
             SetScore();
             SetCarbon();
+			OnDespawn();
+		}
 
-            // TODO: Change Destroy() to pooling
-            Destroy(gameObject);
-        }
+		public void OnDespawn()
+		{
+			// Set this collectable inactive if it collides with the bear or a despawner.
+			gameObject.SetActive(false);
+		}
 
-        private void SetScore()
+		private void SetScore()
         {
             ScoreManager.Instance.AddScore(values.score);
         }
@@ -26,5 +30,5 @@ namespace Polar
         {
             CarbonManager.Instance.AddCarbon(values.carbonImpact);
         }
-    }
+	}
 }
