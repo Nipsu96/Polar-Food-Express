@@ -78,7 +78,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pooledObjects: []
-  prefabToPool: {fileID: 1084919135038349881, guid: 171a792f88c8409428d48a9f7d367276, type: 3}
+  prefabToPool: {fileID: 7259109118429399621, guid: 409992c9f5a730c40bbd3d0d5a81d720, type: 3}
   amountToPool: 10
 --- !u!114 &499114935
 MonoBehaviour:
@@ -94,7 +94,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPointA: {fileID: 589090632705213230}
   spawnPointB: {fileID: 589090633288987185}
-  timer: 5
+  timer: 1
 --- !u!1 &589090633288987184
 GameObject:
   m_ObjectHideFlags: 0
@@ -135,6 +135,8 @@ GameObject:
   m_Component:
   - component: {fileID: 589090633638036288}
   - component: {fileID: 589090633638036289}
+  - component: {fileID: 2080644373}
+  - component: {fileID: 2080644372}
   m_Layer: 0
   m_Name: Despawner
   m_TagString: Untagged
@@ -182,3 +184,36 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 20, y: 12}
   m_EdgeRadius: 0
+--- !u!50 &2080644373
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 589090633638036291}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
+--- !u!114 &2080644372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 589090633638036291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 571ce83c9c0a7d946b8c28dac8d910d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
