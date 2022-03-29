@@ -1,37 +1,38 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using NaughtyAttributes;
 
 namespace Polar
 {
     public class ObjectPooler : MonoBehaviour
     {
-        internal static ObjectPooler Instance;
-        [SerializeField] private List<GameObject> pooledObjects;
-        [SerializeField] private GameObject prefabToPool;
-        [SerializeField] private int amountToPool;
-
-        private void Awake()
-        {
-            Instance = this;
-        }
+        private List<GameObject> pooledObjects;
+        [SerializeField] private List<GameObject> objectsToPool;
+		[SerializeField] private int amountToPool = 5;
 
         private void Start()
-        {
-            pooledObjects = new List<GameObject>();
-            GameObject temp;
-            for(int i = 0; i < amountToPool; i++)
-            {
-                temp = Instantiate(prefabToPool);
-                temp.SetActive(false);
-                pooledObjects.Add(temp);
-            }
-        }
+		{
+			PoolObjects();
+		}
 
-        internal GameObject GetPooledObjects()
+		private void PoolObjects()
+		{
+			pooledObjects = new List<GameObject>();
+
+			for (int j = 0; j < objectsToPool.Count; j++)
+			{
+				for (int i = 0; i < amountToPool; i++)
+				{
+					GameObject temp = Instantiate(objectsToPool[j]);
+					temp.SetActive(false);
+					pooledObjects.Add(temp);
+				} 
+			}
+		}
+
+		internal GameObject GetPooledObjects()
         {
-            for (int i = 0; i < amountToPool; i++)
+            for (int i = 0; i < pooledObjects.Count; i++)
 			{
                 if (!pooledObjects[i].activeInHierarchy)
                 {

@@ -10,8 +10,11 @@ namespace Polar
         [SerializeField] private Transform spawnPointB;
         [SerializeField] private float timer = 5.0f;
         private float spawnTimer;
+		[SerializeField] private ObjectPooler goodFoodPool;
+		[SerializeField] private ObjectPooler badFoodPool;
+		[SerializeField] private ObjectPooler obstaclePool;
 
-        private void Start()
+		private void Start()
         {
             ResetCountdown();
         }
@@ -38,7 +41,7 @@ namespace Polar
 
         private void SpawnObjects()
         {
-            GameObject incomingObject = ObjectPooler.Instance.GetPooledObjects();
+			GameObject incomingObject = goodFoodPool.GetPooledObjects();
             if(incomingObject != null)
             {
                 incomingObject.transform.position = spawnPointA.transform.position;

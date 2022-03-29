@@ -244,10 +244,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 499114934, guid: 98a386258da76004bbb7139a8f66a5d9, type: 3}
-      propertyPath: prefabToPool
-      value: 
-      objectReference: {fileID: 863030158750316082, guid: 8faeded9630c3bd48bf56f5469d253e3, type: 3}
     - target: {fileID: 589090632898741826, guid: 98a386258da76004bbb7139a8f66a5d9, type: 3}
       propertyPath: m_Name
       value: ObjectSpawner
@@ -365,10 +361,6 @@ PrefabInstance:
     - target: {fileID: 2877758804753668268, guid: 6ef6d3cd218f6044aaf36634bd2bfe24, type: 3}
       propertyPath: m_Name
       value: TestLevel
-      objectReference: {fileID: 0}
-    - target: {fileID: 2877758804753668268, guid: 6ef6d3cd218f6044aaf36634bd2bfe24, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2877758804753668269, guid: 6ef6d3cd218f6044aaf36634bd2bfe24, type: 3}
       propertyPath: m_RootOrder
@@ -528,10 +520,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
-    - target: {fileID: 8808140020253406165, guid: 80bfb2ec92223fa4ea8a1bcf0c5a4678, type: 3}
-      propertyPath: gameSpeed
-      value: 7
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 80bfb2ec92223fa4ea8a1bcf0c5a4678, type: 3}
 --- !u!1001 &7545681890376155233
@@ -598,10 +586,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 698888819, guid: eebc9240da345944d9db6f685148a857, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -31.930176
-      objectReference: {fileID: 0}
     - target: {fileID: 1334986021, guid: eebc9240da345944d9db6f685148a857, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -709,10 +693,6 @@ PrefabInstance:
     - target: {fileID: 1868292311895824704, guid: eebc9240da345944d9db6f685148a857, type: 3}
       propertyPath: m_Name
       value: UI
-      objectReference: {fileID: 0}
-    - target: {fileID: 7622061231450692299, guid: eebc9240da345944d9db6f685148a857, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -31.930176
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eebc9240da345944d9db6f685148a857, type: 3}
