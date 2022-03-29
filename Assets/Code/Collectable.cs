@@ -7,8 +7,23 @@ namespace Polar
     public class Collectable : MonoBehaviour, ICollidable
     {
         [SerializeField] private SOCollectableValues values;
+		enum FoodType
+		{
+			None,
+			GoodFood,
+			BadFood
+		}
+		[SerializeField] private FoodType foodType;
 
-        public void OnCollision()
+		private void Start()
+		{
+			if(foodType == FoodType.None)
+			{
+				Debug.LogError(gameObject.name + "'s food quality is none and it can't be!");
+			}
+		}
+
+		public void OnCollision()
         {
             SetScore();
             SetCarbon();

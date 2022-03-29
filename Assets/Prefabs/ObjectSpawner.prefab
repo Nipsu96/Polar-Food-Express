@@ -112,7 +112,7 @@ MonoBehaviour:
   objectsToPool:
   - {fileID: 7259109118429399621, guid: 409992c9f5a730c40bbd3d0d5a81d720, type: 3}
   - {fileID: 8949155975020409502, guid: 0b83756105bfd0c4fa5fec0c268f0e7e, type: 3}
-  amountToPool: 2
+  amountToPool: 1
 --- !u!114 &499114935
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -125,9 +125,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 222d26dafc9e37d4e9d0d3e706e5fc57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timer: 3
   spawnPointA: {fileID: 589090632705213230}
   spawnPointB: {fileID: 589090633288987185}
-  timer: 1
   goodFoodPool: {fileID: 499114934}
   badFoodPool: {fileID: 797679113997141346}
   obstaclePool: {fileID: 495947283177412183}

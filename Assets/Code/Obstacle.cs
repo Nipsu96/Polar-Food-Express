@@ -3,8 +3,23 @@ using UnityEngine;
 namespace Polar
 {
     public class Obstacle : MonoBehaviour, ICollidable
-    {
-        public void OnCollision()
+	{
+		enum ObstacleType
+		{
+			None,
+			GroundObstacle,
+			AerialObstacle
+		}
+		[SerializeField] private ObstacleType obstacleType;
+
+		private void Start()
+		{
+			if (obstacleType == ObstacleType.None)
+			{
+				Debug.LogError(gameObject.name + "'s type is none and it can't be!");
+			}
+		}
+		public void OnCollision()
         {
             //Debug.LogWarning(this.name + " collided with a bear.");
 
