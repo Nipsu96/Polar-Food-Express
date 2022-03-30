@@ -28,12 +28,12 @@ namespace Polar
                 mainMenu.SetActive(true);
             }
 
-            if(optionsMenu.activeInHierarchy)
+            if (optionsMenu.activeInHierarchy)
             {
                 optionsMenu.SetActive(false);
             }
 
-            if(scoreboardMenu.activeInHierarchy)
+            if (scoreboardMenu.activeInHierarchy)
             {
                 scoreboardMenu.SetActive(false);
             }
@@ -52,6 +52,13 @@ namespace Polar
         {
             mainMenu.SetActive(false);
             scoreboardMenu.SetActive(true);
+        }
+        public void OnQuit()
+        {
+            Application.Quit();
+            #if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+            #endif
         }
 
         public void OnBackToMainMenu()

@@ -247,7 +247,7 @@ PrefabInstance:
     - target: {fileID: 499114934, guid: 98a386258da76004bbb7139a8f66a5d9, type: 3}
       propertyPath: prefabToPool
       value: 
-      objectReference: {fileID: 863030158750316082, guid: 8faeded9630c3bd48bf56f5469d253e3, type: 3}
+      objectReference: {fileID: 7259109118429399621, guid: 409992c9f5a730c40bbd3d0d5a81d720, type: 3}
     - target: {fileID: 589090632898741826, guid: 98a386258da76004bbb7139a8f66a5d9, type: 3}
       propertyPath: m_Name
       value: ObjectSpawner
@@ -600,7 +600,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 698888819, guid: eebc9240da345944d9db6f685148a857, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -31.930176
+      value: -31.930115
       objectReference: {fileID: 0}
     - target: {fileID: 1334986021, guid: eebc9240da345944d9db6f685148a857, type: 3}
       propertyPath: m_AnchorMax.x
@@ -712,7 +712,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7622061231450692299, guid: eebc9240da345944d9db6f685148a857, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -31.930176
+      value: -31.930115
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eebc9240da345944d9db6f685148a857, type: 3}
