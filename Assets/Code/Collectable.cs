@@ -7,20 +7,21 @@ namespace Polar
     public class Collectable : MonoBehaviour, ICollidable
     {
         [SerializeField] private SOCollectableValues values;
-		internal enum FoodType
-		{
-			None,
-			GoodFood,
-			BadFood
-		}
-		[SerializeField] internal FoodType foodType;
+		//internal enum FoodType
+		//{
+		//	None,
+		//	GoodFood,
+		//	BadFood
+		//}
+		//[SerializeField] internal FoodType foodType;
+		[SerializeField] private ICollidable.ObjectType objectType;
 
 		private void Start()
 		{
-			if(foodType == FoodType.None)
-			{
-				Debug.LogError(gameObject.name + "'s food quality is none and it can't be!");
-			}
+			//if(foodType == FoodType.None)
+			//{
+			//	Debug.LogError(gameObject.name + "'s food quality is none and it can't be!");
+			//}
 		}
 
 		public void OnCollision()
@@ -44,6 +45,12 @@ namespace Polar
         private void SetCarbon()
         {
             CarbonManager.Instance.AddCarbon(values.carbonImpact);
-        }
+		}
+
+		public ICollidable.ObjectType GetObjectType()
+		{
+			//print("GetType");
+			return objectType;
+		}
 	}
 }

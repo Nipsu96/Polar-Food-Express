@@ -16,6 +16,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1591539768, guid: e0b29a50a8ae8b4408d3d5e256c2d4de, type: 3}
+      propertyPath: objectType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1591539768, guid: e0b29a50a8ae8b4408d3d5e256c2d4de, type: 3}
       propertyPath: foodQuality
       value: 2
       objectReference: {fileID: 0}
