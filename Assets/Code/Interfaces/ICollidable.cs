@@ -4,7 +4,7 @@ namespace Polar
 	{
 		void OnCollision();
 		void OnDespawn();
-		enum ObjectType { None, GoodFood, BadFood, GroundObstacle, AerialObstacle };
+		enum ObjectType { None = 0, GoodFood, BadFood, GroundObstacle, AerialObstacle };
 		ObjectType GetObjectType();
 	}
 }

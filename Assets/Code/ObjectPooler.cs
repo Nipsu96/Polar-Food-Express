@@ -21,9 +21,16 @@ namespace Polar
 
 			for (int j = 0; j < objectsToPool.Count; j++)
 			{
+				// Create new folder for objects to be pooled
+				GameObject pool = new GameObject($"PoolOf{objectsToPool[j].name}");
+
 				for (int i = 0; i < amountToPool; i++)
 				{
 					GameObject temp = Instantiate(objectsToPool[j]);
+
+					// Add object to it's own pool
+					temp.transform.SetParent(pool.transform);
+
 					temp.SetActive(false);
 					pooledObjects.Add(temp);
 				} 
@@ -35,13 +42,13 @@ namespace Polar
 			//print("PoolObject: " + pooledObjects[0].name);
 
 			// TODO: Check spawn point (ground or air)
-			print("Spawn point: " + spawnPoint);
+			//print("Spawn point: " + spawnPoint);
 
 			// Get obstacle type
-			if (pooledObjects[0].GetComponent<ICollidable>().GetObjectType() == ICollidable.ObjectType.GroundObstacle)
-			{
-				print("Ground obstacle");
-			}
+			//if (pooledObjects[0].GetComponent<ICollidable>().GetObjectType() == ICollidable.ObjectType.GroundObstacle)
+			//{
+			//	print("Ground obstacle");
+			//}
 
 			// Get obstacle type type to corresponding spawn location
 			for (int i = 0; i < pooledObjects.Count; i++)

@@ -10,9 +10,6 @@ namespace Polar
         private float spawnTimer;
         [SerializeField] private Transform airSpawnPoint;
         [SerializeField] private Transform groundSpawnPoint;
-		//[SerializeField] private ObjectPooler goodFoodPool;
-		//[SerializeField] private ObjectPooler obstaclePool;
-		//[SerializeField] private ObjectPooler badFoodPool;
 		[SerializeField] private List<ObjectPooler> objectPools;
 		private int indexA;
 		private int indexB;
@@ -32,30 +29,41 @@ namespace Polar
             spawnTimer -= Time.deltaTime;
             if (spawnTimer <= 0.0f)
 			{
-				// Randomize which pool to use (Good, Bad, Obstacle)
-				indexA = Random.Range(0, 3);
-				//print("IndexA: " + indexA);
-				// Spawn object to spawn point A (on the ground)
-				SpawnObject(groundSpawnPoint, objectPools[indexA]);
-
-
-				// Randomize which pool to use (Good, Bad, Obstacle)
-				// Rerandomize if B pool is the same than the A pool
-				while (indexB == indexA)
-				{
-					indexB = Random.Range(0, 3);
-					//print("IndexB: " + indexB);
-				}
-				// Spawn object to spawn point B (in the air)
-				SpawnObject(airSpawnPoint, objectPools[indexB]);
-
+				RandomizeSpawnPool();
 				ResetCountdown();
-            }
+			}
+		}
+
+		private void RandomizeSpawnPool()
+		{
+			// Randomize which pool to use (Good, Bad, GroundObstacle).
+			indexA = Random.Range(0, 3);
+
+			// Spawn the object to ground spawn point.
+			SpawnObject(groundSpawnPoint, objectPools[indexA]);
+
+			// Set collidable
+			ICollidable collidable = objectPools[0].objectsToPool[0].GetComponent<ICollidable>();
+
+			// Randomize which pool to use (Good, Bad, AerialObstacle)
+			do
+			{
+				indexB = Random.Range(0, 4);
+				collidable = objectPools[indexB].objectsToPool[0].GetComponent<ICollidable>();
+			}
+			while ( // Spawnable objects can't be the same.
+					indexB == indexA ||
+					// The aerial object can't be a GroundObstacle.
+					collidable.GetObjectType() == ICollidable.ObjectType.GroundObstacle ||
+					// Both the ground and the aerial objects can't be obstacles.
+					(objectPools[indexA].objectsToPool[0].GetComponent<Obstacle>() && objectPools[indexB].objectsToPool[0].GetComponent<Obstacle>()));
+
+			// Spawn the object to the aerial spawn point.
+			SpawnObject(airSpawnPoint, objectPools[indexB]);
 		}
 
 		private void SpawnObject(Transform spawnPoint, ObjectPooler pool)
 		{
-			// TODO: Check which object to use (aerial vs. gound)
 			GameObject incomingObject = pool.GetPooledObjects(spawnPoint);
 			if (incomingObject != null)
 			{
