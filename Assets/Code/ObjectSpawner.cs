@@ -36,25 +36,33 @@ namespace Polar
 
 		private void RandomizeSpawnPool()
 		{
-			// Randomize which pool to use (Good, Bad, GroundObstacle).
-			indexA = Random.Range(0, 3);
+			// Set collidable
+			ICollidable tmpCollidable = objectPools[0].objectsToPool[0].GetComponent<ICollidable>();
+
+			// Randomize which pool to use(Good, Bad, GroundObstacle) for ground spawn point.
+			do
+			{
+				indexA = Random.Range(0, objectPools.Count);
+				tmpCollidable = objectPools[indexA].objectsToPool[0].GetComponent<ICollidable>();
+			}
+			// The ground object can't be an AerialObstacle.
+			while (tmpCollidable.GetObjectType() == ICollidable.ObjectType.AerialObstacle);
 
 			// Spawn the object to ground spawn point.
 			SpawnObject(groundSpawnPoint, objectPools[indexA]);
 
-			// Set collidable
-			ICollidable collidable = objectPools[0].objectsToPool[0].GetComponent<ICollidable>();
+			tmpCollidable = objectPools[0].objectsToPool[0].GetComponent<ICollidable>();
 
-			// Randomize which pool to use (Good, Bad, AerialObstacle)
+			// Randomize which pool to use (Good, Bad, AerialObstacle) for aerial spawn point.
 			do
 			{
-				indexB = Random.Range(0, 4);
-				collidable = objectPools[indexB].objectsToPool[0].GetComponent<ICollidable>();
+				indexB = Random.Range(0, objectPools.Count);
+				tmpCollidable = objectPools[indexB].objectsToPool[0].GetComponent<ICollidable>();
 			}
-			while ( // Spawnable objects can't be the same.
+			while ( // To be spawned objects can't be the same.
 					indexB == indexA ||
 					// The aerial object can't be a GroundObstacle.
-					collidable.GetObjectType() == ICollidable.ObjectType.GroundObstacle ||
+					tmpCollidable.GetObjectType() == ICollidable.ObjectType.GroundObstacle ||
 					// Both the ground and the aerial objects can't be obstacles.
 					(objectPools[indexA].objectsToPool[0].GetComponent<Obstacle>() && objectPools[indexB].objectsToPool[0].GetComponent<Obstacle>()));
 
