@@ -10,7 +10,7 @@ namespace Polar
 		{
 			if(other.TryGetComponent(out ICollidable hit))
 			{
-				print(other.gameObject.name + " collided with " + name);
+				//print(other.gameObject.name + " collided with " + name);
 				hit.OnDespawn();
 			}
 		}

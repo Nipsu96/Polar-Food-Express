@@ -1,37 +1,57 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using NaughtyAttributes;
 
 namespace Polar
 {
     public class ObjectPooler : MonoBehaviour
     {
-        internal static ObjectPooler Instance;
-        [SerializeField] private List<GameObject> pooledObjects;
-        [SerializeField] private GameObject prefabToPool;
-        [SerializeField] private int amountToPool;
-
-        private void Awake()
-        {
-            Instance = this;
-        }
+        internal List<GameObject> pooledObjects;
+        [SerializeField] internal List<GameObject> objectsToPool;
+		[SerializeField] private int amountToPool = 5;
 
         private void Start()
-        {
-            pooledObjects = new List<GameObject>();
-            GameObject temp;
-            for(int i = 0; i < amountToPool; i++)
-            {
-                temp = Instantiate(prefabToPool);
-                temp.SetActive(false);
-                pooledObjects.Add(temp);
-            }
-        }
+		{
+			PoolObjects();
+		}
 
-        internal GameObject GetPooledObjects()
+		private void PoolObjects()
+		{
+			pooledObjects = new List<GameObject>();
+
+			for (int j = 0; j < objectsToPool.Count; j++)
+			{
+				// Create new folder for objects to be pooled
+				GameObject pool = new GameObject($"PoolOf{objectsToPool[j].name}");
+
+				for (int i = 0; i < amountToPool; i++)
+				{
+					GameObject temp = Instantiate(objectsToPool[j]);
+
+					// Add object to it's own pool
+					temp.transform.SetParent(pool.transform);
+
+					temp.SetActive(false);
+					pooledObjects.Add(temp);
+				} 
+			}
+		}
+
+		internal GameObject GetPooledObjects(Transform spawnPoint)
         {
-            for (int i = 0; i < amountToPool; i++)
+			//print("PoolObject: " + pooledObjects[0].name);
+
+			// TODO: Check spawn point (ground or air)
+			//print("Spawn point: " + spawnPoint);
+
+			// Get obstacle type
+			//if (pooledObjects[0].GetComponent<ICollidable>().GetObjectType() == ICollidable.ObjectType.GroundObstacle)
+			//{
+			//	print("Ground obstacle");
+			//}
+
+			// Get obstacle type type to corresponding spawn location
+			for (int i = 0; i < pooledObjects.Count; i++)
 			{
                 if (!pooledObjects[i].activeInHierarchy)
                 {

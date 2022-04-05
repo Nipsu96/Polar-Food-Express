@@ -7,8 +7,22 @@ namespace Polar
     public class Collectable : MonoBehaviour, ICollidable
     {
         [SerializeField] private SOCollectableValues values;
+		public ICollidable.ObjectType objectType;
 
-        public void OnCollision()
+		private void Start()
+		{
+			CheckType();
+		}
+
+		private void CheckType()
+		{
+			if (objectType == ICollidable.ObjectType.None)
+			{
+				Debug.LogError(gameObject.name + "'s type is none and it can't be!");
+			}
+		}
+
+		public void OnCollision()
         {
             SetScore();
             SetCarbon();
@@ -29,6 +43,11 @@ namespace Polar
         private void SetCarbon()
         {
             CarbonManager.Instance.AddCarbon(values.carbonImpact);
-        }
+		}
+
+		ICollidable.ObjectType ICollidable.GetObjectType()
+		{
+			return objectType;
+		}
 	}
 }
