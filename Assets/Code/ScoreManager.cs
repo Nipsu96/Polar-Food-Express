@@ -4,6 +4,7 @@ using UnityEngine;
 using NaughtyAttributes;
 using TMPro;
 
+
 namespace Polar
 {
     public class ScoreManager : MonoBehaviour
@@ -15,6 +16,8 @@ namespace Polar
         private float currentScore;
         private TMP_Text scoreValueUI;
         private string textScoreValue = "Text_ScoreValue";
+
+
 
         private void Awake()
         {
