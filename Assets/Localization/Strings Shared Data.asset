@@ -55,6 +55,10 @@ MonoBehaviour:
     m_Key: GameOverHeadline
     m_Metadata:
       m_Items: []
+  - m_Id: 388624049373184
+    m_Key: New Entry
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
