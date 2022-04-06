@@ -23,6 +23,10 @@ PrefabInstance:
       propertyPath: foodQuality
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 330317387981231402, guid: e0b29a50a8ae8b4408d3d5e256c2d4de, type: 3}
+      propertyPath: offset
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2394362751324786400, guid: e0b29a50a8ae8b4408d3d5e256c2d4de, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
       value: 2.5433333

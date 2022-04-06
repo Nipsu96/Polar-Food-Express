@@ -17,16 +17,16 @@ namespace Polar
 
 		private void Awake()
 		{
-			Debug.LogWarning("Awake");
+			//Debug.LogWarning("Awake");
 		}
 
 		private void Start()
         {
-			Debug.LogWarning("Start");
+			//Debug.LogWarning("Start");
             FindMainMenu();
             FindOptionsMenu();
             FindScoreboardMenu();
-            //SetCorrectUIPanels();
+            SetCorrectUIPanels();
         }
 
         private void SetCorrectUIPanels()

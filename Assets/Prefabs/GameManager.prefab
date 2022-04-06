@@ -70,3 +70,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameSpeed: 7
+  gameSpeedThrottle: 10
