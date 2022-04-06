@@ -20,8 +20,8 @@ namespace Polar
         public float gravityInAir= 1.0f;
 		public float fallMultiplier = 9f;
 
-        [SerializeField]
-        private float minUpX= -1.0f;
+        //[SerializeField]
+        //private float minUpX= -1.0f;
 
         [SerializeField]
         private float maxUpX= 1.0f;
