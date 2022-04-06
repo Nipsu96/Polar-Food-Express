@@ -9,17 +9,25 @@ namespace Polar
     {
         private string mainMenuName = "MainMenu";
         private string kauppahalliName = "Kauppahalli";
-        private GameObject mainMenu;
+		private string optionsName = "OptionsMenu";
+		private string scoreboardName = "ScoreboardMenu";
+		private GameObject mainMenu;
         private GameObject optionsMenu;
         private GameObject scoreboardMenu;
 
-        private void Start()
+		private void Awake()
+		{
+			//Debug.LogWarning("Awake");
+		}
+
+		private void Start()
         {
+			//Debug.LogWarning("Start");
             FindMainMenu();
             FindOptionsMenu();
             FindScoreboardMenu();
-            SetCorrectUIPanels();
-        }
+			SetCorrectUIPanels();
+		}
 
         private void SetCorrectUIPanels()
         {
@@ -78,7 +86,7 @@ namespace Polar
         {
             if (mainMenu == null)
             {
-                mainMenu = transform.Find("MainMenu").gameObject;
+                mainMenu = transform.Find(mainMenuName).gameObject;
             }
         }
 
@@ -86,7 +94,7 @@ namespace Polar
         {
             if (optionsMenu == null)
             {
-                optionsMenu = transform.Find("OptionsMenu").gameObject;
+                optionsMenu = transform.Find(optionsName).gameObject;
             }
         }
 
@@ -94,7 +102,7 @@ namespace Polar
         {
             if (scoreboardMenu == null)
             {
-                scoreboardMenu = transform.Find("ScoreboardMenu").gameObject;
+                scoreboardMenu = transform.Find(scoreboardName).gameObject;
             }
         }
     }
