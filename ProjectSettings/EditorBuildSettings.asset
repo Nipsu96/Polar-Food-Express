@@ -5,13 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: ae9435ae5d43c864d82ebfd8b855a818
   - enabled: 1
     path: Assets/Scenes/Kauppahalli.unity
     guid: b0288ee2b8834ce46b03252eeccb7a72
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Sandbox.unity
     guid: df0fa74424708234895f9fcaa5f5c264
   - enabled: 1

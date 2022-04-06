@@ -15,10 +15,11 @@ namespace Polar
 
         private void Start()
         {
+			print("Game Started");
             FindMainMenu();
             FindOptionsMenu();
             FindScoreboardMenu();
-            SetCorrectUIPanels();
+            //SetCorrectUIPanels();
         }
 
         private void SetCorrectUIPanels()
