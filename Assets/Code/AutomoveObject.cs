@@ -6,11 +6,11 @@ namespace Polar
 {
     public class AutoMoveObject : MonoBehaviour
     {
-		[SerializeField] private float speedOffset;
+		[SerializeField, Tooltip("Lower than 0 = object moves slower than than basic objects, higher than 0 = object moves faster than basic objects.")] private float parallaxSpeedOffset;
 
         private void FixedUpdate()
         {
-            float moveSpeed = GameManager.Instance.gameSpeed + speedOffset;
+            float moveSpeed = GameManager.Instance.gameSpeed + parallaxSpeedOffset;
             transform.Translate(Vector3.left * moveSpeed * Time.deltaTime);
         }
     }

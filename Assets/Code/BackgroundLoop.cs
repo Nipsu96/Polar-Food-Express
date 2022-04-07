@@ -25,10 +25,12 @@ namespace Polar
 		{
 			float bgWidth = bg.GetComponent<SpriteRenderer>().bounds.size.x;
 			int childrenNeeded = (int)Mathf.Ceil(screenBounds.x * 3 / bgWidth);
-			GameObject clone = Instantiate(bg) as GameObject;
+			// TODO: take random from pool
+			GameObject clone = Instantiate(bg);
 			for (int i = 0; i < childrenNeeded; i++)
 			{
-				GameObject c = Instantiate(clone) as GameObject;
+				// TODO: take random from pool
+				GameObject c = Instantiate(clone);
 				c.transform.SetParent(bg.transform);
 				c.transform.position = new Vector3(bgWidth * i, bg.transform.position.y, bg.transform.position.z);
 				c.name = bg.name + i;
@@ -45,6 +47,7 @@ namespace Polar
 				GameObject firstChild = children[1].gameObject;
 				GameObject lastChild = children[children.Length - 1].gameObject;
 				float halfBackgroundWidth = lastChild.GetComponent<SpriteRenderer>().bounds.extents.x;
+				print("pos " + halfBackgroundWidth);
 				if(transform.position.x + screenBounds.x > lastChild.transform.position.x + halfBackgroundWidth)
 				{
 					firstChild.transform.SetAsLastSibling();
