@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Polar
 {
-    public class AutoMoveObject : MonoBehaviour
+    public class AutomoveObject : MonoBehaviour
     {
         private void FixedUpdate()
         {
