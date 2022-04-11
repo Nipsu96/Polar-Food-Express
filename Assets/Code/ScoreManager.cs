@@ -13,11 +13,10 @@ namespace Polar
         // We can pass this data to other places like UI or highscore panel
 
         internal static ScoreManager Instance { get; private set; }
+		[SerializeField] private bool multiplyScoreDuringRun = true;
         private float currentScore;
         private TMP_Text scoreValueUI;
         private string textScoreValue = "Text_ScoreValue";
-
-
 
         private void Awake()
         {
@@ -52,7 +51,14 @@ namespace Polar
 
         internal void AddScore(float score)
         {
-            this.currentScore += score;
+			if (multiplyScoreDuringRun)
+			{
+	            this.currentScore += (score * CarbonManager.Instance.currentCarbonFootprint);
+			}
+			else
+			{
+				this.currentScore += score;
+			}
             scoreValueUI.text = currentScore.ToString();
         }
     }
