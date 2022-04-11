@@ -70,3 +70,7 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+
+# Build Addressables fix when building the game and Localizations menus won't open.
+/[Aa]ssets/[Ee]ditor/BuildAddressablesProcessor.cs
+/[Aa]ssets/[Ee]ditor/BuildAddressablesProcessor.cs.meta
