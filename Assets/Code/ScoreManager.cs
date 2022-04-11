@@ -14,7 +14,7 @@ namespace Polar
 
         internal static ScoreManager Instance { get; private set; }
 		[SerializeField] private bool multiplyScoreDuringRun = true;
-        private float currentScore;
+        internal float currentScore;
         private TMP_Text scoreValueUI;
         private string textScoreValue = "Text_ScoreValue";
 
@@ -45,7 +45,7 @@ namespace Polar
             }
             else
             {
-                Destroy(gameObject);
+                Destroy(this);
             }
         }
 

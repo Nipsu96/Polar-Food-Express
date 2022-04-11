@@ -3,32 +3,138 @@ using System.Collections.Generic;
 using UnityEngine;
 using NaughtyAttributes;
 using DataManager;
+using System;
 
 namespace Polar
 {
     public class DataSaveManager : MonoBehaviour
     {
+		internal static DataSaveManager Instance { get; private set; }
 		public SaveDataObject saveDataObject;
-		[SerializeField] private float[] highscore = { 100.0f, 90.0f, 80.0f, 70.0f, 60.0f, 50.0f };
-		[ShowNonSerializedField] private float latestScore = 10.0f;
 		private string path;
 
-		private void Start()
+		private void Awake()
 		{
-			GameData.OnDataSave += OnSave;
-			path = Application.persistentDataPath + "/Save.dat";
-			saveDataObject = new SaveDataObject();
-			saveDataObject = GameData.LoadData(saveDataObject, path) as SaveDataObject;
+			CreateInstance();
+			InitializeScoreFile();
 		}
 
+		// Debug purpose only
+		private void OnEnable()
+		{
+			GameData.OnDataSave += OnSave;
+		}
+
+		// Debug purpose only
+		private void OnDisable()
+		{
+			GameData.OnDataSave -= OnSave;
+		}
+
+		private void CreateInstance()
+		{
+			if (Instance == null)
+			{
+				Instance = this;
+			}
+			else
+			{
+				Destroy(this);
+			}
+		}
+
+		private void InitializeScoreFile()
+		{
+			// Set path for the save data file.
+			path = Application.persistentDataPath + "/ScoreData.dat";
+
+			// Check does save file exist and create one if it doesn't
+			if (!System.IO.File.Exists(path))
+			{
+				Debug.Log("Save data doesn't exist. Creating a new one.");
+
+				// Create new empty SaveDataObject
+				CreateNewSaveDataObject(0, 0);
+
+				// Save data to a drive
+				SaveScore();
+			}
+		}
+
+		public float GetHighscoreScoreData()
+		{
+			// Load sava data
+			saveDataObject = GameData.LoadData(saveDataObject, path, false) as SaveDataObject;
+
+			return saveDataObject.highscore;
+		}
+
+		public void SaveScoreData()
+		{
+			// Load sava data
+			saveDataObject = GameData.LoadData(saveDataObject, path, false) as SaveDataObject;
+
+			float latestScore = ScoreManager.Instance.currentScore;
+			//Debug.Log("Latest score: " + latestScore);
+
+			float highscore = saveDataObject.highscore;
+			//Debug.Log("Current highscore: " + highscore);
+
+			// Check is score high enough for the highscore list
+			if (latestScore >= highscore)
+			{
+				highscore = latestScore;
+				//Debug.Log("New highscore: " + highscore);
+			}
+
+			// Create new SaveDataObject with score values
+			//saveDataObject = new SaveDataObject { latestScore = ScoreManager.Instance.currentScore, Highscore = highscore };
+			//saveDataObject = new SaveDataObject { latestScore = ScoreManager.Instance.currentScore, highscore = highscore, highscores = { 2, 2, 2, 2, 2 } };
+			CreateNewSaveDataObject(latestScore, highscore);
+
+			// Save data to a drive
+			SaveScore();
+		}
+
+		private void CreateNewSaveDataObject(float latestScore, float highscore)
+		{
+			saveDataObject = new SaveDataObject { latestScore = latestScore, highscore = highscore };
+		}
+
+		private void SaveScore()
+		{
+			GameData.SaveData(saveDataObject, path, false);
+		}
+
+		// Debug only
 		private void OnSave()
 		{
-			print("Saved successfully!");
+			Debug.Log("Saved successfully!");
 		}
 	}
 
 	public class SaveDataObject
 	{
-		public float score = 20.0f;
+		public float latestScore;
+		public float highscore;
+
+		// TODO: Highscore array for example, for the best 10 score values.
+
+		//public float[] highscores = new float[5];
+		//public float[] highscores = { 0, 0, 0, 0, 0 };
+
+		//private float highscore;
+
+		//public float Highscore
+		//{
+		//	get
+		//	{
+		//		return highscore;
+		//	}
+		//	set
+		//	{
+		//		highscore = value;
+		//	}
+		//}
 	}
 }

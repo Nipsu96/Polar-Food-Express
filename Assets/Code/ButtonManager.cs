@@ -15,14 +15,8 @@ namespace Polar
         private GameObject optionsMenu;
         private GameObject scoreboardMenu;
 
-		private void Awake()
-		{
-			//Debug.LogWarning("Awake");
-		}
-
 		private void Start()
         {
-			//Debug.LogWarning("Start");
             FindMainMenu();
             FindOptionsMenu();
             FindScoreboardMenu();
@@ -64,9 +58,9 @@ namespace Polar
         public void OnQuit()
         {
             Application.Quit();
-            #if UNITY_EDITOR
+#if UNITY_EDITOR
             UnityEditor.EditorApplication.isPlaying = false;
-            #endif
+#endif
         }
 
         public void OnBackToMainMenu()
