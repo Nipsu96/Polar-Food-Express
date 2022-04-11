@@ -11,7 +11,7 @@ namespace Polar
         private void FixedUpdate()
         {
             float moveSpeed = GameManager.Instance.gameSpeed + parallaxSpeedOffset;
-            transform.Translate(Vector3.left * moveSpeed * Time.deltaTime);
+            transform.Translate(Vector3.left * moveSpeed * Time.fixedDeltaTime);
         }
     }
 }

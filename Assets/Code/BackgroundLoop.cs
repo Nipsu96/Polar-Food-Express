@@ -47,7 +47,6 @@ namespace Polar
 				GameObject firstChild = children[1].gameObject;
 				GameObject lastChild = children[children.Length - 1].gameObject;
 				float halfBackgroundWidth = lastChild.GetComponent<SpriteRenderer>().bounds.extents.x;
-				print("pos " + halfBackgroundWidth);
 				if(transform.position.x + screenBounds.x > lastChild.transform.position.x + halfBackgroundWidth)
 				{
 					firstChild.transform.SetAsLastSibling();
