@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22effa2729374184396d74c799a7664c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  multiplyScoreDuringRun: 0
 --- !u!114 &-3416115218734607845
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57,6 +58,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dbbb43e6222d4d41820881d26bea152, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  carbonMinValue: -5
+  carbonMaxValue: 5
 --- !u!114 &8808140020253406165
 MonoBehaviour:
   m_ObjectHideFlags: 0

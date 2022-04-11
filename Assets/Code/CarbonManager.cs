@@ -4,6 +4,7 @@ using UnityEngine;
 using NaughtyAttributes;
 using TMPro;
 using UnityEngine.UI;
+using System;
 
 namespace Polar
 {
@@ -13,13 +14,15 @@ namespace Polar
         // We can pass this data to other places like UI or highscore panel
 
         internal static CarbonManager Instance { get; private set; }
-        private float currentCarbonFootprint;
+		[SerializeField] private float carbonMinValue = -5.0f;
+		[SerializeField] private float carbonMaxValue = 5.0f;
+        internal float currentCarbonFootprint;
         private string textCarbonMeter = "CarbonMeter";
         private string textScoreMultiplier = "Text_ScoreMultiplierValue";
         private Slider carbonMeter;
         private TMP_Text scoreMultiplierUI;
 
-        private void Awake()
+		private void Awake()
         {
             CreateInstance();
         }
@@ -28,9 +31,10 @@ namespace Polar
         {
             FindCarbonMeter();
             FindScoreMultiplier();
+			SetMeterMinMaxValues();
         }
 
-        private void FindCarbonMeter()
+		private void FindCarbonMeter()
         {
             if (carbonMeter == null)
             {
@@ -46,9 +50,15 @@ namespace Polar
                 scoreMultiplierUI = GameObject.Find(textScoreMultiplier).GetComponent<TMP_Text>();
             }
             scoreMultiplierUI.text = currentCarbonFootprint.ToString();
-        }
+		}
 
-        private void CreateInstance()
+		private void SetMeterMinMaxValues()
+		{
+			carbonMeter.minValue = carbonMinValue;
+			carbonMeter.maxValue = carbonMaxValue;
+		}
+
+		private void CreateInstance()
         {
             if (Instance == null)
             {
@@ -62,9 +72,22 @@ namespace Polar
 
         internal void AddCarbon(float carbonChange)
         {
-            this.currentCarbonFootprint += carbonChange;
-            // Update carbon footprint UI slider element
-            carbonMeter.value = currentCarbonFootprint;
+			// Change carbon footprint value by collected food's carbon footprint
+            this.currentCarbonFootprint -= carbonChange;
+
+			// Check and keep currentCarbonFootprint value in min-max range
+			if (currentCarbonFootprint >= carbonMaxValue)
+			{
+				currentCarbonFootprint = carbonMaxValue;
+			}
+			else if(currentCarbonFootprint <= carbonMinValue)
+			{
+				currentCarbonFootprint = carbonMinValue;
+			}
+
+			// Update carbon footprint UI slider element
+			carbonMeter.value = -currentCarbonFootprint;
+
             // Update score multiplier UI element
             scoreMultiplierUI.text = currentCarbonFootprint.ToString();
         }
