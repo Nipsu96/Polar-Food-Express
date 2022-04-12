@@ -95,4 +95,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4754c403b405d92428e1891ecb924faf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxSpeedOffset: -5
+  parallaxSpeedOffset: -2

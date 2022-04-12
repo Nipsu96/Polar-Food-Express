@@ -18,6 +18,9 @@ namespace Polar
 			foreach (GameObject background in backgrounds)
 			{
 				LoadBackgrounds(background);
+
+				// Kind-ah workaround to fix super fast backgrounds
+				Destroy(background.GetComponent<AutomoveObject>());				
 			}
 		}
 
@@ -25,7 +28,9 @@ namespace Polar
 		{
 			float bgWidth = bg.GetComponent<SpriteRenderer>().bounds.size.x;
 			int childrenNeeded = (int)Mathf.Ceil(screenBounds.x * 3 / bgWidth);
+
 			// TODO: take random from pool
+
 			GameObject clone = Instantiate(bg);
 			for (int i = 0; i < childrenNeeded; i++)
 			{
