@@ -9,11 +9,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 172960305451983710, guid: 2d7baf09073b3f54097708ea834b5116, type: 3}
       propertyPath: m_Name
-      value: Background_Bread
+      value: BackgroundBread
       objectReference: {fileID: 0}
     - target: {fileID: 172960305451983710, guid: 2d7baf09073b3f54097708ea834b5116, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4442046287069543145, guid: 2d7baf09073b3f54097708ea834b5116, type: 3}
       propertyPath: m_Size.x

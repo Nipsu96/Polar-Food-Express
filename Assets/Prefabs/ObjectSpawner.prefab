@@ -113,6 +113,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectsToPool:
   - {fileID: 7259109118429399621, guid: 409992c9f5a730c40bbd3d0d5a81d720, type: 3}
+  - {fileID: 8949155975020409502, guid: 0b83756105bfd0c4fa5fec0c268f0e7e, type: 3}
   amountToPool: 5
 --- !u!114 &3598762204440144948
 MonoBehaviour:
@@ -127,7 +128,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectsToPool:
-  - {fileID: 8949155975020409502, guid: 0b83756105bfd0c4fa5fec0c268f0e7e, type: 3}
+  - {fileID: 9066087746899519885, guid: bbec24c278269a64882464b97bf88033, type: 3}
   amountToPool: 5
 --- !u!114 &499114935
 MonoBehaviour:
