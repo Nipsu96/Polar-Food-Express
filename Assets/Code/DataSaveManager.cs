@@ -89,8 +89,8 @@ namespace Polar
 
 			// Create new SaveDataObject with score values
 			//saveDataObject = new SaveDataObject { latestScore = ScoreManager.Instance.currentScore, Highscore = highscore };
-			//saveDataObject = new SaveDataObject { latestScore = ScoreManager.Instance.currentScore, highscore = highscore, highscores = { 2, 2, 2, 2, 2 } };
-			CreateNewSaveDataObject(latestScore, highscore);
+			saveDataObject = new SaveDataObject { latestScore = ScoreManager.Instance.currentScore, highscore = highscore, highscores = new float[] { 1, 2, 3 } };
+			//CreateNewSaveDataObject(latestScore, highscore);
 
 			// Save data to a drive
 			SaveScore();
@@ -117,6 +117,7 @@ namespace Polar
 	{
 		public float latestScore;
 		public float highscore;
+		public float[] highscores;
 
 		// TODO: Highscore array for example, for the best 10 score values.
 
