@@ -21,9 +21,6 @@ namespace Polar
 
 		public void OnCollision()
         {
-			// Save current score data to a file
-			DataSaveManager.Instance.SaveScoreData();
-
 			// Calls GameManager to end the game
             GameManager.Instance.EndGame();
         }

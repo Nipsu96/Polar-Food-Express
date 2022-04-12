@@ -16,7 +16,8 @@ namespace Polar
         internal static CarbonManager Instance { get; private set; }
 		[SerializeField] private float carbonMinValue = -5.0f;
 		[SerializeField] private float carbonMaxValue = 5.0f;
-        internal float currentCarbonFootprint;
+		[SerializeField] private float startingValue = 1.0f;
+        [SerializeField] internal float currentCarbonFootprint;
         private string textCarbonMeter = "CarbonMeter";
         private string textScoreMultiplier = "Text_ScoreMultiplierValue";
         private Slider carbonMeter;
@@ -31,8 +32,20 @@ namespace Polar
         {
             FindCarbonMeter();
             FindScoreMultiplier();
-			SetMeterMinMaxValues();
-        }
+			SetStartingValues();
+		}
+
+		private void CreateInstance()
+		{
+			if (Instance == null)
+			{
+				Instance = this;
+			}
+			else
+			{
+				Destroy(this);
+			}
+		}
 
 		private void FindCarbonMeter()
         {
@@ -40,7 +53,6 @@ namespace Polar
             {
                 carbonMeter = GameObject.Find(textCarbonMeter).GetComponent<Slider>();
             }
-            carbonMeter.value = currentCarbonFootprint;
         }
 
         private void FindScoreMultiplier()
@@ -49,26 +61,16 @@ namespace Polar
             {
                 scoreMultiplierUI = GameObject.Find(textScoreMultiplier).GetComponent<TMP_Text>();
             }
-            scoreMultiplierUI.text = currentCarbonFootprint.ToString();
 		}
 
-		private void SetMeterMinMaxValues()
+		private void SetStartingValues()
 		{
 			carbonMeter.minValue = carbonMinValue;
 			carbonMeter.maxValue = carbonMaxValue;
+			currentCarbonFootprint = startingValue;
+			carbonMeter.value = currentCarbonFootprint;
+			scoreMultiplierUI.text = currentCarbonFootprint.ToString();
 		}
-
-		private void CreateInstance()
-        {
-            if (Instance == null)
-            {
-                Instance = this;
-            }
-            else
-            {
-                Destroy(this);
-            }
-        }
 
         internal void AddCarbon(float carbonChange)
         {
@@ -83,10 +85,11 @@ namespace Polar
 			else if(currentCarbonFootprint <= carbonMinValue)
 			{
 				currentCarbonFootprint = carbonMinValue;
+				GameManager.Instance.EndGame();
 			}
 
 			// Update carbon footprint UI slider element
-			carbonMeter.value = -currentCarbonFootprint;
+			carbonMeter.value = currentCarbonFootprint;
 
             // Update score multiplier UI element
             scoreMultiplierUI.text = currentCarbonFootprint.ToString();

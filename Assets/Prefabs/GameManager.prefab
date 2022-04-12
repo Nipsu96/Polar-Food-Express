@@ -58,8 +58,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dbbb43e6222d4d41820881d26bea152, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  carbonMinValue: -5
+  carbonMinValue: 0.25
   carbonMaxValue: 5
+  startingValue: 1
+  currentCarbonFootprint: 0
 --- !u!114 &8808140020253406165
 MonoBehaviour:
   m_ObjectHideFlags: 0

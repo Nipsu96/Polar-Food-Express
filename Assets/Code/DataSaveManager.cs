@@ -12,6 +12,7 @@ namespace Polar
 		internal static DataSaveManager Instance { get; private set; }
 		public SaveDataObject saveDataObject;
 		private string path;
+		[SerializeField] internal int maxHighscores = 10;
 
 		private void Awake()
 		{
@@ -19,13 +20,13 @@ namespace Polar
 			InitializeScoreFile();
 		}
 
-		// Debug purpose only
+		// Debug purpose only.
 		private void OnEnable()
 		{
 			GameData.OnDataSave += OnSave;
 		}
 
-		// Debug purpose only
+		// Debug purpose only.
 		private void OnDisable()
 		{
 			GameData.OnDataSave -= OnSave;
@@ -48,30 +49,38 @@ namespace Polar
 			// Set path for the save data file.
 			path = Application.persistentDataPath + "/ScoreData.dat";
 
-			// Check does save file exist and create one if it doesn't
+			// Check does save file exist and create one if it doesn't.
 			if (!System.IO.File.Exists(path))
 			{
 				Debug.Log("Save data doesn't exist. Creating a new one.");
 
-				// Create new empty SaveDataObject
-				CreateNewSaveDataObject(0, 0);
+				// Create new empty SaveDataObject.
+				CreateNewSaveDataObject(0, 0, new float[maxHighscores]);
 
-				// Save data to a drive
+				// Save data to a drive.
 				SaveScore();
 			}
 		}
 
 		public float GetHighscoreScoreData()
 		{
-			// Load sava data
+			// Load sava data.
 			saveDataObject = GameData.LoadData(saveDataObject, path, false) as SaveDataObject;
 
 			return saveDataObject.highscore;
 		}
 
+		public float GetHighscoreData(int index)
+		{
+			// Load sava data.
+			saveDataObject = GameData.LoadData(saveDataObject, path, false) as SaveDataObject;
+
+			return saveDataObject.highscores[index];
+		}
+
 		public void SaveScoreData()
 		{
-			// Load sava data
+			// Load sava data.
 			saveDataObject = GameData.LoadData(saveDataObject, path, false) as SaveDataObject;
 
 			float latestScore = ScoreManager.Instance.currentScore;
@@ -79,6 +88,10 @@ namespace Polar
 
 			float highscore = saveDataObject.highscore;
 			//Debug.Log("Current highscore: " + highscore);
+
+			float[] highscores = saveDataObject.highscores;
+
+			highscores = UpdateHighscores(latestScore, highscores);
 
 			// Check is score high enough for the highscore list
 			if (latestScore >= highscore)
@@ -89,16 +102,47 @@ namespace Polar
 
 			// Create new SaveDataObject with score values
 			//saveDataObject = new SaveDataObject { latestScore = ScoreManager.Instance.currentScore, Highscore = highscore };
-			saveDataObject = new SaveDataObject { latestScore = ScoreManager.Instance.currentScore, highscore = highscore, highscores = new float[] { 1, 2, 3 } };
+			saveDataObject = new SaveDataObject { latestScore = ScoreManager.Instance.currentScore, highscore = highscore, highscores = highscores };
 			//CreateNewSaveDataObject(latestScore, highscore);
 
-			// Save data to a drive
+			// Save data to a drive.
 			SaveScore();
 		}
 
-		private void CreateNewSaveDataObject(float latestScore, float highscore)
+		private float[] UpdateHighscores(float latestScore, float[] highscores)
 		{
-			saveDataObject = new SaveDataObject { latestScore = latestScore, highscore = highscore };
+			//float[] highscores = new float[maxHighscores];
+			int index = 0;
+
+			// Check is the lastest bigger or equal than any of the highscores.
+			for (int i = 0; i < maxHighscores; i++)
+			{
+				if(latestScore >= highscores[i])
+				{
+					// If the lastest score is bigger or equal than any, break.
+					break;
+				}
+				index++;
+			}
+
+			// The latest score is bigger or equal -> update highscores.
+			if(index < maxHighscores)
+			{
+				for (int i = (maxHighscores - 1); i > index; i--)
+				{
+					highscores[i] = highscores[i - 1];
+				}
+				highscores[index] = latestScore;
+			}
+
+			//highscores = new float[] { 10, 9, 8, 7, 6, 5, 4, 3, 2, 1 };
+
+			return highscores;
+		}
+
+		private void CreateNewSaveDataObject(float latestScore, float highscore, float[] highscores)
+		{
+			saveDataObject = new SaveDataObject { latestScore = latestScore, highscore = highscore, highscores = new float[maxHighscores] };
 		}
 
 		private void SaveScore()
@@ -106,7 +150,7 @@ namespace Polar
 			GameData.SaveData(saveDataObject, path, false);
 		}
 
-		// Debug only
+		// Debug only.
 		private void OnSave()
 		{
 			Debug.Log("Saved successfully!");
