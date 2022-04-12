@@ -29,8 +29,11 @@ namespace Polar
         }
 
         internal void EndGame()
-        {
-            Scene scene = SceneManager.GetActiveScene();
+		{
+			// Save current score data to a file
+			DataSaveManager.Instance.SaveScoreData();
+
+			Scene scene = SceneManager.GetActiveScene();
             String sceneName = scene.name;
             //DontDestroyOnLoad(this.gameObject);
             SceneManager.LoadScene("LoseScreen");

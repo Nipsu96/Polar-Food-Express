@@ -21,7 +21,7 @@ namespace Polar
 
 		public void OnCollision()
         {
-            // Calls GameManager to end the game
+			// Calls GameManager to end the game
             GameManager.Instance.EndGame();
         }
 

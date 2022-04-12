@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: CollectableValues_TestFoodGood
   m_EditorClassIdentifier: 
   score: 1
-  carbonImpact: -1
+  carbonImpact: -0.25

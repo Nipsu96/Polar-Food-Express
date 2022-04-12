@@ -184,7 +184,6 @@ MonoBehaviour:
   linearDrag: 20
   gravityInAir: 0.05
   fallMultiplier: 12
-  minUpX: -1.13
   maxUpX: 1
 --- !u!50 &517457925923112126
 Rigidbody2D:

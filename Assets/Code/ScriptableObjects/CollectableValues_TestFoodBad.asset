@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8889933dbb9e5741bc887b89f1f2a8a, type: 3}
   m_Name: CollectableValues_TestFoodBad
   m_EditorClassIdentifier: 
-  score: 0.5
-  carbonImpact: 1
+  score: 0
+  carbonImpact: 0.5
