@@ -39,18 +39,6 @@ namespace Polar
 
 		internal GameObject GetPooledObjects(Transform spawnPoint)
         {
-			//print("PoolObject: " + pooledObjects[0].name);
-
-			// TODO: Check spawn point (ground or air)
-			//print("Spawn point: " + spawnPoint);
-
-			// Get obstacle type
-			//if (pooledObjects[0].GetComponent<ICollidable>().GetObjectType() == ICollidable.ObjectType.GroundObstacle)
-			//{
-			//	print("Ground obstacle");
-			//}
-
-			// Get obstacle type type to corresponding spawn location
 			for (int i = 0; i < pooledObjects.Count; i++)
 			{
                 if (!pooledObjects[i].activeInHierarchy)
