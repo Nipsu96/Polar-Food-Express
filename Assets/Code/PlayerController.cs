@@ -31,7 +31,6 @@ namespace Polar
 
 		private Animator animator;
 
-		// private Vector2 touchPosition;
 		public void Awake()
 		{
 			playerRigidbody = GetComponent<Rigidbody2D>();
@@ -45,7 +44,7 @@ namespace Polar
 
 		private void FixedUpdate()
 		{
-			modifyPhysics();
+			ModifyPhysics();
 		}
 
 		// private void MoveCharacter()
@@ -55,7 +54,7 @@ namespace Polar
 		// 			// in the game world.
 		// 			transform.Translate(movement);
 		// }
-		void modifyPhysics()
+		void ModifyPhysics()
 		{
 			bool changingDirections = (direction.x > 0 && playerRigidbody.velocity.x < 0) || (direction.x < 0 && playerRigidbody.velocity.x > 0);
 
@@ -128,6 +127,5 @@ namespace Polar
 			}
 
 		}
-
 	}
 }

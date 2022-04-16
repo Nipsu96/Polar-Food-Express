@@ -43,8 +43,9 @@ namespace Polar
 
         public void OnPlayGame()
         {
-            SceneManager.LoadScene(kauppahalliName);
-        }
+            //SceneManager.LoadScene(kauppahalliName);
+			SceneManager.LoadSceneAsync(kauppahalliName);
+		}
         public void OnOptions()
         {
             mainMenu.SetActive(false);
