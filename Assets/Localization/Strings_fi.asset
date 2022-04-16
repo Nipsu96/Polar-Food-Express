@@ -58,5 +58,9 @@ MonoBehaviour:
     m_Localized: "Peli p\xE4\xE4ttyi "
     m_Metadata:
       m_Items: []
+  - m_Id: 4059735816667136
+    m_Localized: "pistett\xE4"
+    m_Metadata:
+      m_Items: []
   references:
     version: 1

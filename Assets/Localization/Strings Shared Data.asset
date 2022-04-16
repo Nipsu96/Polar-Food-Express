@@ -55,6 +55,10 @@ MonoBehaviour:
     m_Key: GameOverHeadline
     m_Metadata:
       m_Items: []
+  - m_Id: 4059735816667136
+    m_Key: Highscore-Scoreboard
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

@@ -58,5 +58,9 @@ MonoBehaviour:
     m_Localized: Game Over
     m_Metadata:
       m_Items: []
+  - m_Id: 4059735816667136
+    m_Localized: points
+    m_Metadata:
+      m_Items: []
   references:
     version: 1
