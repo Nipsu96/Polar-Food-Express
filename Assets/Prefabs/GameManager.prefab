@@ -45,6 +45,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22effa2729374184396d74c799a7664c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  localizedVersion:
+    m_TableReference:
+      m_TableCollectionName: GUID:876ee904dbb5e334d9bb9f10b77bfd30
+    m_TableEntryReference:
+      m_KeyId: 1973126168576
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  references:
+    version: 1
   multiplyScoreDuringRun: 0
 --- !u!114 &-3416115218734607845
 MonoBehaviour:

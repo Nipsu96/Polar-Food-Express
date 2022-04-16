@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using NaughtyAttributes;
 using TMPro;
+using UnityEngine.Localization;
+using UnityEngine.Localization.Settings;
 
 
 namespace Polar
@@ -18,6 +20,11 @@ namespace Polar
         private TMP_Text scoreValueUI;
         private string textScoreValue = "Text_ScoreValue";
 
+        [SerializeField]
+        private LocalizedString localizedVersion;
+
+
+
         private void Awake()
         {
             CreateInstance();
@@ -27,14 +34,27 @@ namespace Polar
         {
             FindScoreValue();
         }
+        private void OnEnable()
+        {
+            LocalizationSettings.SelectedLocaleChanged += OnLocaleChanged;
+        }
 
+        private void OnDisable()
+        {
+            LocalizationSettings.SelectedLocaleChanged -= OnLocaleChanged;
+        }
+
+        private void OnLocaleChanged(Locale obj)
+        {
+            FindScoreValue();
+        }
         private void FindScoreValue()
         {
             if (scoreValueUI == null)
             {
                 scoreValueUI = GameObject.Find(textScoreValue).GetComponent<TMP_Text>();
             }
-            scoreValueUI.text = currentScore.ToString();
+            scoreValueUI.text = string.Format(localizedVersion.GetLocalizedString(), currentScore);
         }
 
         private void CreateInstance()
@@ -51,15 +71,8 @@ namespace Polar
 
         internal void AddScore(float score)
         {
-			if (multiplyScoreDuringRun)
-			{
-	            this.currentScore += (score * CarbonManager.Instance.currentCarbonFootprint);
-			}
-			else
-			{
-				this.currentScore += score;
-			}
-            scoreValueUI.text = currentScore.ToString();
+            this.currentScore += score;
+            scoreValueUI.text = string.Format(localizedVersion.GetLocalizedString(), currentScore);
         }
     }
 }

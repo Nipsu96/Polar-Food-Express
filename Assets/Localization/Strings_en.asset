@@ -19,7 +19,7 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 1973126168576
-    m_Localized: 'Score:'
+    m_Localized: 'Score: {0}'
     m_Metadata:
       m_Items: []
   - m_Id: 11979464638464

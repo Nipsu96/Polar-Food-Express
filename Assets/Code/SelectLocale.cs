@@ -12,6 +12,7 @@ namespace Polar
 
       public void SetLocale(){
           LocalizationSettings.SelectedLocale = locale;
+          // tallenna player prefeihin
       }
     }
 }
