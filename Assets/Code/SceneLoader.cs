@@ -9,7 +9,7 @@ namespace Polar
     {
         public void LoadGame(string sceneName)
         {
-            SceneManager.LoadScene(sceneName);
+            SceneManager.LoadSceneAsync(sceneName);
         }
     }
 }
