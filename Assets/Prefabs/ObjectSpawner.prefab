@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 495947283177412183}
   - component: {fileID: 3598762204440144948}
   - component: {fileID: 499114935}
+  - component: {fileID: 413053743}
   m_Layer: 0
   m_Name: ObjectSpawner
   m_TagString: Untagged
@@ -151,6 +152,18 @@ MonoBehaviour:
   - {fileID: 495947283177412183}
   - {fileID: 3598762204440144948}
   alwaysSpawnGoodFood: 1
+--- !u!114 &413053743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 589090632898741826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92fc8feac6054ac45a58fa74a8e66fa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &589090633288987184
 GameObject:
   m_ObjectHideFlags: 0

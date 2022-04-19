@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5821059017772732219}
   - component: {fileID: 1768859920943405594}
   - component: {fileID: 6050041055532824391}
+  - component: {fileID: -7200134860440898035}
   m_Layer: 0
   m_Name: Obstacle_ShoppingCart
   m_TagString: Untagged
@@ -150,3 +151,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.8485823, y: 2.4475095}
   m_EdgeRadius: 0
+--- !u!114 &-7200134860440898035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8949155975020409502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92fc8feac6054ac45a58fa74a8e66fa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
