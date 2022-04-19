@@ -62,5 +62,25 @@ MonoBehaviour:
     m_Localized: "pistett\xE4"
     m_Metadata:
       m_Items: []
+  - m_Id: 5042341475516416
+    m_Localized: "Jatka\npeli\xE4"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5047047216168960
+    m_Localized: Tauko
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5074152654110720
+    m_Localized: "\xC4\xE4ni"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5075425407270912
+    m_Localized: Musiikki
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5075554877046784
+    m_Localized: Efektit
+    m_Metadata:
+      m_Items: []
   references:
     version: 1

@@ -62,5 +62,25 @@ MonoBehaviour:
     m_Localized: points
     m_Metadata:
       m_Items: []
+  - m_Id: 5042341475516416
+    m_Localized: Resume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5047047216168960
+    m_Localized: Paused
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5074152654110720
+    m_Localized: Audio
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5075425407270912
+    m_Localized: Music
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5075554877046784
+    m_Localized: Effects
+    m_Metadata:
+      m_Items: []
   references:
     version: 1

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
 namespace Polar
 {
@@ -14,6 +15,12 @@ namespace Polar
 		private GameObject mainMenu;
         private GameObject optionsMenu;
         private GameObject scoreboardMenu;
+
+         [SerializeField]
+        private AudioControl musicControl;
+
+        [SerializeField]
+        private AudioControl sfxControl;
 
 		private void Start()
         {
@@ -73,6 +80,8 @@ namespace Polar
             if (optionsMenu.activeInHierarchy)
             {
                 optionsMenu.SetActive(false);
+                 musicControl.Save();
+                sfxControl.Save();
             }
             mainMenu.SetActive(true);
         }

@@ -59,6 +59,26 @@ MonoBehaviour:
     m_Key: Highscore-Scoreboard
     m_Metadata:
       m_Items: []
+  - m_Id: 5042341475516416
+    m_Key: ResumeButton
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5047047216168960
+    m_Key: GamePaused
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5074152654110720
+    m_Key: Audio
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5075425407270912
+    m_Key: Music
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5075554877046784
+    m_Key: SFX
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
