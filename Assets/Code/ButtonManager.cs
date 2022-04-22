@@ -80,7 +80,7 @@ namespace Polar
             if (optionsMenu.activeInHierarchy)
             {
                 optionsMenu.SetActive(false);
-                 musicControl.Save();
+                musicControl.Save();
                 sfxControl.Save();
             }
             mainMenu.SetActive(true);

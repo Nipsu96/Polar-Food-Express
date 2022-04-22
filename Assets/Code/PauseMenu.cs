@@ -24,18 +24,17 @@ namespace Polar
         }
         public void Resume()
         {
-            pauseMenu.SetActive(false);
-            Time.timeScale = 1.0f;
             musicControl.Save();
             sfxControl.Save();
+            pauseMenu.SetActive(false);
+            Time.timeScale = 1.0f;
+            
         }
 
         public void Home(string sceneName)
         {
             Time.timeScale = 1.0f;
             SceneManager.LoadSceneAsync(sceneName);
-            musicControl.Save();
-            sfxControl.Save();
         }
 
     }
