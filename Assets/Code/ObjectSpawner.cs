@@ -44,6 +44,7 @@ namespace Polar
 			do
 			{
 				indexA = Random.Range(0, objectPools.Count);
+				print("indexA: " + indexA);
 				tmpCollidable = objectPools[indexA].objectsToPool[0].GetComponent<ICollidable>();
 			}
 			// The ground object can't be an AerialObstacle.

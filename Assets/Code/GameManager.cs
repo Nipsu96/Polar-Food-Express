@@ -3,14 +3,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using NaughtyAttributes;
 
 namespace Polar
 {
     public class GameManager : MonoBehaviour
-    {
-        internal static GameManager Instance { get; private set; }
-        [SerializeField, Range(0.0f, 1000.0f), Tooltip("This controls the speed of all moving foods, obstacles and backgrounds")] internal float gameSpeed = 1.0f;
-		[SerializeField, Range(1.0f, 100.0f), Tooltip("Low number = game speeds up faster, high number = game speeds up slower")] private float gameSpeedThrottle = 10.0f;
+	{
+		[SerializeField] private bool fixedGameSpeed = false;
+		internal static GameManager Instance { get; private set; }
+        [SerializeField, Range(0.0f, 1000.0f), Tooltip("This controls the speed of all moving foods, obstacles and backgrounds")]
+		internal float gameSpeed = 1.0f;
+		[SerializeField, Range(1.0f, 100.0f), Tooltip("Low number = game speeds up faster, high number = game speeds up slower"), DisableIf("fixedGameSpeed")]
+		private float gameSpeedThrottle = 10.0f;
 		internal delegate void EndAction();
 		internal static event EndAction GameOver;
 
@@ -47,7 +51,14 @@ namespace Polar
 
 		private void FixedUpdate()
 		{
-			gameSpeed += Time.deltaTime / gameSpeedThrottle;
+			if (!fixedGameSpeed)
+			{
+				gameSpeed += Time.deltaTime / gameSpeedThrottle;
+			}
+			else
+			{
+
+			}
 		}
 	}
 }

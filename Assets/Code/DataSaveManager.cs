@@ -67,40 +67,31 @@ namespace Polar
 
 		public float GetHighscoreData(int index)
 		{
-			// Load sava data.
-			saveDataObject = GameData.LoadData(saveDataObject, path, false) as SaveDataObject;
-
+			LoadSaveData();
 			return saveDataObject.highscores[index];
 		}
 
 		public float GetLatestScoreData()
 		{
-			// Load sava data.
-			saveDataObject = GameData.LoadData(saveDataObject, path, false) as SaveDataObject;
-
+			LoadSaveData();
 			return saveDataObject.latestScore;
 		}
 
 		public float GetLatestMultiplierData()
 		{
-			// Load sava data.
-			saveDataObject = GameData.LoadData(saveDataObject, path, false) as SaveDataObject;
-
+			LoadSaveData();
 			return saveDataObject.latestScoreMultiplier;
 		}
 
 		public float GetLatestTotalScoreData()
 		{
-			// Load sava data.
-			saveDataObject = GameData.LoadData(saveDataObject, path, false) as SaveDataObject;
-
+			LoadSaveData();
 			return saveDataObject.latestTotalScore;
 		}
 
 		public void SaveScoreData()
 		{
-			// Load sava data.
-			saveDataObject = GameData.LoadData(saveDataObject, path, false) as SaveDataObject;
+			LoadSaveData();
 
 			float latestScore = ScoreManager.Instance.currentScore;
 
@@ -120,6 +111,11 @@ namespace Polar
 
 			// Save data to a drive.
 			SaveScore();
+		}
+
+		private void LoadSaveData()
+		{
+			saveDataObject = GameData.LoadData(saveDataObject, path, true) as SaveDataObject;
 		}
 
 		private float CalculateTotalScore(float latestScore, float latestScoreMultiplier)
@@ -170,7 +166,7 @@ namespace Polar
 
 		private void SaveScore()
 		{
-			GameData.SaveData(saveDataObject, path, false);
+			GameData.SaveData(saveDataObject, path, true);
 		}
 
 		// Debug only.
