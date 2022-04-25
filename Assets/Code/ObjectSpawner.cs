@@ -1,26 +1,34 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using NaughtyAttributes;
 
 namespace Polar
 {
     public class ObjectSpawner : MonoBehaviour
     {
+		[SerializeField] private bool enableMainMenuSettings = false;
         [SerializeField] private float timer = 5.0f;
-        private float spawnTimer;
-        [SerializeField] private Transform airSpawnPoint;
+		[SerializeField, ShowIf("enableMainMenuSettings")] private float maxTimer = 2.0f;
+		private float spawnTimer;
+        [SerializeField, HideIf("enableMainMenuSettings")] private Transform airSpawnPoint;
         [SerializeField] private Transform groundSpawnPoint;
 		[SerializeField] private List<ObjectPooler> objectPools;
 		private int objectPoolAIndex;
 		private int objectPoolBIndex;
-		[SerializeField] private bool alwaysSpawnGoodFood = true;
+		[SerializeField, HideIf("enableMainMenuSettings")] private bool alwaysSpawnGoodFood = true;
 
 		private void Start()
         {
             ResetCountdown();
         }
 
-        private void FixedUpdate()
+		private void OnValidate()
+		{
+			maxTimer = Mathf.Max(timer, maxTimer);
+		}
+
+		private void FixedUpdate()
         {
             Countdown();
         }
@@ -30,7 +38,16 @@ namespace Polar
             spawnTimer -= Time.deltaTime;
             if (spawnTimer <= 0.0f)
 			{
-				RandomizeSpawnPool();
+				if(!enableMainMenuSettings)
+				{
+					// In game
+					RandomizeSpawnPool();
+				}
+				else
+				{
+					// Main menu
+					SpawnObject(groundSpawnPoint, objectPools[0]);
+				}
 				ResetCountdown();
 			}
 		}
@@ -98,7 +115,16 @@ namespace Polar
 
 		private void ResetCountdown()
         {
-            spawnTimer = timer;
+			if (!enableMainMenuSettings)
+			{
+				// In game
+	            spawnTimer = timer;
+			}
+			else
+			{
+				// Main menu
+				spawnTimer = Random.Range(timer, maxTimer);
+			}
         }
     }
 }
