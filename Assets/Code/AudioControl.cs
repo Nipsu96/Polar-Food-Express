@@ -29,13 +29,7 @@ namespace Polar
 
             }
             mixer.SetFloat(volumeName, ToDB(slider.value));
-
-			// Debug
-            //slider.onValueChanged.AddListener(delegate {ValueChangeCheck(); });
-        }
-        public void ValueChangeCheck()
-        {
-            Debug.Log(slider.value);
+           
         }
         private float ToDB(float linear)
         {
