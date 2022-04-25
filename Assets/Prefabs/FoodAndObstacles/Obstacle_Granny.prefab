@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 1285946185}
   - component: {fileID: 1513005761}
   - component: {fileID: 1145989929}
+  - component: {fileID: 8052681299915542539}
   m_Layer: 0
   m_Name: Obstacle_Granny
   m_TagString: Untagged
@@ -126,7 +127,7 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.12, y: -0.2}
+  m_Offset: {x: 0, y: -0.2}
   m_Size: {x: 1.35, y: 3.45}
   m_Direction: 0
 --- !u!114 &1513005761
@@ -160,3 +161,15 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &8052681299915542539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7259109118429399621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92fc8feac6054ac45a58fa74a8e66fa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

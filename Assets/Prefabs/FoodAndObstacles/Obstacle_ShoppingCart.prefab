@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 6457651861221697879}
   - component: {fileID: 5821059017772732219}
   - component: {fileID: 1768859920943405594}
-  - component: {fileID: 6050041055532824391}
+  - component: {fileID: -7200134860440898035}
+  - component: {fileID: 6376046688558822327}
   m_Layer: 0
   m_Name: Obstacle_ShoppingCart
   m_TagString: Untagged
@@ -124,8 +125,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ac67f00978531d40a39bd439f471c11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!61 &6050041055532824391
-BoxCollider2D:
+--- !u!114 &-7200134860440898035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8949155975020409502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92fc8feac6054ac45a58fa74a8e66fa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!70 &6376046688558822327
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -134,19 +147,9 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.10170889, y: -0.17980993}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.052, y: 3.064}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 2.8485823, y: 2.4475095}
-  m_EdgeRadius: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 2.51, y: 1.45}
+  m_Direction: 1

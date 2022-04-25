@@ -42,6 +42,7 @@ namespace Polar
 
         public void Save()
         {
+			print("Mixer: " + mixer + ", volumeName: " + volumeName + "slider.value: " + slider.value);
             mixer.SetFloat(volumeName, ToDB(slider.value));
         }
     }

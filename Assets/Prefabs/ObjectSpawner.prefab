@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 589090632705213225}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11, y: -2.5, z: 0}
+  m_LocalPosition: {x: 11, y: -2.48, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 589090632898741827}
@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 495947283177412183}
   - component: {fileID: 3598762204440144948}
   - component: {fileID: 499114935}
+  - component: {fileID: 413053743}
   m_Layer: 0
   m_Name: ObjectSpawner
   m_TagString: Untagged
@@ -81,8 +82,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectsToPool:
-  - {fileID: 1084919135038349881, guid: 171a792f88c8409428d48a9f7d367276, type: 3}
-  - {fileID: 2723440105411713544, guid: fb49c5f6fcc548c46b88c356abf6230a, type: 3}
+  - {fileID: 4979516960588501545, guid: e30755ee5c81c2845b8b68b3332748cc, type: 3}
+  - {fileID: 9018487847291221471, guid: 7038683f27e9cb549b3a3a1a58eedccf, type: 3}
+  - {fileID: 5527580211535741733, guid: 3a0ef33eb57f59d429b63bf0703f1260, type: 3}
+  - {fileID: 3094889332823501388, guid: 7011278a03b080440a701c942f5cfc0a, type: 3}
+  - {fileID: 6065492883630869792, guid: 9fb08e85fb585284c938cbf0333d2709, type: 3}
   amountToPool: 5
 --- !u!114 &797679113997141346
 MonoBehaviour:
@@ -97,7 +101,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectsToPool:
-  - {fileID: 863030158750316082, guid: 8faeded9630c3bd48bf56f5469d253e3, type: 3}
+  - {fileID: 1589750361978601987, guid: c0818fe21be9cba408be8f88e4bcf97a, type: 3}
+  - {fileID: 8743618465005557520, guid: c8a6356f0a0dd7347bc72c58eb6ef088, type: 3}
+  - {fileID: 9157079863769237151, guid: aded7dd7add38e54c8d3b63e81e563ae, type: 3}
+  - {fileID: 283020338477864882, guid: cb176f2ac5e5d014e86668feda96f780, type: 3}
+  - {fileID: 8348302914036665488, guid: 301fcad110c6343438d379092b82f8a8, type: 3}
   amountToPool: 5
 --- !u!114 &495947283177412183
 MonoBehaviour:
@@ -151,6 +159,18 @@ MonoBehaviour:
   - {fileID: 495947283177412183}
   - {fileID: 3598762204440144948}
   alwaysSpawnGoodFood: 1
+--- !u!114 &413053743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 589090632898741826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92fc8feac6054ac45a58fa74a8e66fa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &589090633288987184
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,7 +12,10 @@ namespace Polar
 		internal static DataSaveManager Instance { get; private set; }
 		public SaveDataObject saveDataObject;
 		private string path;
-		[SerializeField] internal int maxHighscores = 10;
+		[SerializeField] internal int maxHighscores = 12;
+		private float emptyInitialScore = 0.0f;
+		private float emptyInitialMultiplier = 0.0f;
+		private float emptyInitialTotal = 0.0f;
 
 		private void Awake()
 		{
@@ -55,19 +58,11 @@ namespace Polar
 				Debug.Log("Save data doesn't exist. Creating a new one.");
 
 				// Create new empty SaveDataObject.
-				CreateNewSaveDataObject(0, 0, new float[maxHighscores]);
+				SaveDataObject(emptyInitialScore, emptyInitialTotal, emptyInitialMultiplier, new float[maxHighscores]);
 
 				// Save data to a drive.
 				SaveScore();
 			}
-		}
-
-		public float GetHighscoreScoreData()
-		{
-			// Load sava data.
-			saveDataObject = GameData.LoadData(saveDataObject, path, false) as SaveDataObject;
-
-			return saveDataObject.highscore;
 		}
 
 		public float GetHighscoreData(int index)
@@ -78,46 +73,70 @@ namespace Polar
 			return saveDataObject.highscores[index];
 		}
 
+		public float GetLatestScoreData()
+		{
+			// Load sava data.
+			saveDataObject = GameData.LoadData(saveDataObject, path, false) as SaveDataObject;
+
+			return saveDataObject.latestScore;
+		}
+
+		public float GetLatestMultiplierData()
+		{
+			// Load sava data.
+			saveDataObject = GameData.LoadData(saveDataObject, path, false) as SaveDataObject;
+
+			return saveDataObject.latestScoreMultiplier;
+		}
+
+		public float GetLatestTotalScoreData()
+		{
+			// Load sava data.
+			saveDataObject = GameData.LoadData(saveDataObject, path, false) as SaveDataObject;
+
+			return saveDataObject.latestTotalScore;
+		}
+
 		public void SaveScoreData()
 		{
 			// Load sava data.
 			saveDataObject = GameData.LoadData(saveDataObject, path, false) as SaveDataObject;
 
 			float latestScore = ScoreManager.Instance.currentScore;
-			//Debug.Log("Latest score: " + latestScore);
 
-			float highscore = saveDataObject.highscore;
-			//Debug.Log("Current highscore: " + highscore);
+			float latestScoreMultiplier = CarbonManager.Instance.currentCarbonFootprint;
+
+			float latestTotalScore = 0.0f;
+			latestTotalScore = CalculateTotalScore(latestScore, latestScoreMultiplier);
 
 			float[] highscores = saveDataObject.highscores;
 
-			highscores = UpdateHighscores(latestScore, highscores);
 
-			// Check is score high enough for the highscore list
-			if (latestScore >= highscore)
-			{
-				highscore = latestScore;
-				//Debug.Log("New highscore: " + highscore);
-			}
+			// Check is the latest score high enough for the highscore list.
+			highscores = UpdateHighscores(latestTotalScore, highscores);
 
-			// Create new SaveDataObject with score values
-			//saveDataObject = new SaveDataObject { latestScore = ScoreManager.Instance.currentScore, Highscore = highscore };
-			saveDataObject = new SaveDataObject { latestScore = ScoreManager.Instance.currentScore, highscore = highscore, highscores = highscores };
-			//CreateNewSaveDataObject(latestScore, highscore);
+			// Update SaveDataObject with score and multiplier values.
+			SaveDataObject(latestScore, latestScoreMultiplier, latestTotalScore, highscores);
 
 			// Save data to a drive.
 			SaveScore();
 		}
 
-		private float[] UpdateHighscores(float latestScore, float[] highscores)
+		private float CalculateTotalScore(float latestScore, float latestScoreMultiplier)
 		{
-			//float[] highscores = new float[maxHighscores];
+			float totalScore = 0.0f;
+			totalScore = Mathf.Round(latestScore * latestScoreMultiplier);
+			return totalScore;
+		}
+
+		private float[] UpdateHighscores(float latestTotalScore, float[] highscores)
+		{
 			int index = 0;
 
 			// Check is the lastest bigger or equal than any of the highscores.
 			for (int i = 0; i < maxHighscores; i++)
 			{
-				if(latestScore >= highscores[i])
+				if(latestTotalScore >= highscores[i])
 				{
 					// If the lastest score is bigger or equal than any, break.
 					break;
@@ -132,17 +151,21 @@ namespace Polar
 				{
 					highscores[i] = highscores[i - 1];
 				}
-				highscores[index] = latestScore;
+				highscores[index] = latestTotalScore;
 			}
-
-			//highscores = new float[] { 10, 9, 8, 7, 6, 5, 4, 3, 2, 1 };
 
 			return highscores;
 		}
 
-		private void CreateNewSaveDataObject(float latestScore, float highscore, float[] highscores)
+		private void SaveDataObject(float latestScore, float latestScoreMultiplier, float latestTotalScore, float[] highscores)
 		{
-			saveDataObject = new SaveDataObject { latestScore = latestScore, highscore = highscore, highscores = new float[maxHighscores] };
+			saveDataObject = new SaveDataObject
+			{
+				latestScore = latestScore,
+				latestScoreMultiplier = latestScoreMultiplier,
+				latestTotalScore = latestTotalScore,
+				highscores = highscores
+			};
 		}
 
 		private void SaveScore()
@@ -160,26 +183,8 @@ namespace Polar
 	public class SaveDataObject
 	{
 		public float latestScore;
-		public float highscore;
+		public float latestScoreMultiplier;
+		public float latestTotalScore;
 		public float[] highscores;
-
-		// TODO: Highscore array for example, for the best 10 score values.
-
-		//public float[] highscores = new float[5];
-		//public float[] highscores = { 0, 0, 0, 0, 0 };
-
-		//private float highscore;
-
-		//public float Highscore
-		//{
-		//	get
-		//	{
-		//		return highscore;
-		//	}
-		//	set
-		//	{
-		//		highscore = value;
-		//	}
-		//}
 	}
 }
