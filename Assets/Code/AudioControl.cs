@@ -28,7 +28,12 @@ namespace Polar
                 slider.value = ToLinear(volume);
 
             }
-             mixer.SetFloat(volumeName, ToDB(slider.value));
+            mixer.SetFloat(volumeName, ToDB(slider.value));
+            slider.onValueChanged.AddListener(delegate {ValueChangeCheck(); });
+        }
+        public void ValueChangeCheck()
+        {
+            Debug.Log(slider.value);
         }
         private float ToDB(float linear)
         {
