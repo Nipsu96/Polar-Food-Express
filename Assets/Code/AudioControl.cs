@@ -29,9 +29,9 @@ namespace Polar
 
             }
             mixer.SetFloat(volumeName, ToDB(slider.value));
-            slider.onValueChanged.AddListener(delegate {ValueChangeCheck(); });
 
-			print(volumeName + "'s value on setup: " + slider.value);
+			// Debug
+            //slider.onValueChanged.AddListener(delegate {ValueChangeCheck(); });
         }
         public void ValueChangeCheck()
         {
@@ -48,8 +48,6 @@ namespace Polar
 
         public void Save()
         {
-			print("Save: " + volumeName + "'s value: " + slider.value);
-
             mixer.SetFloat(volumeName, ToDB(slider.value));
         }
     }
