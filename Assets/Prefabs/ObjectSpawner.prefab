@@ -150,7 +150,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 222d26dafc9e37d4e9d0d3e706e5fc57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enableMainMenuSettings: 0
   timer: 2
+  maxTimer: 2
   airSpawnPoint: {fileID: 589090633288987185}
   groundSpawnPoint: {fileID: 589090632705213230}
   objectPools:

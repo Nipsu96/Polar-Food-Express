@@ -86,7 +86,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fixedGameSpeed: 0
-  gameSpeed: 10
+  gameSpeed: 9
   gameSpeedThrottle: 7
 --- !u!82 &51321992
 AudioSource:
