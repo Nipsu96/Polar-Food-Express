@@ -24,10 +24,10 @@ namespace Polar
         }
         public void Resume()
         {
-            musicControl.Save();
-            sfxControl.Save();
             pauseMenu.SetActive(false);
             Time.timeScale = 1.0f;
+            musicControl.Save();
+            sfxControl.Save();
             
         }
 
