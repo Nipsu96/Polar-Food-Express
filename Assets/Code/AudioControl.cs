@@ -8,10 +8,10 @@ namespace Polar
 {
     public class AudioControl : MonoBehaviour
     {
-        private AudioMixer mixer;
-        private Slider slider;
+        [SerializeField] private AudioMixer mixer;
+		[SerializeField] private Slider slider;
 
-        private string volumeName;
+		[SerializeField] private string volumeName;
 
         private void Awake()
         {
@@ -30,6 +30,8 @@ namespace Polar
             }
             mixer.SetFloat(volumeName, ToDB(slider.value));
             slider.onValueChanged.AddListener(delegate {ValueChangeCheck(); });
+
+			print(volumeName + "'s value on setup: " + slider.value);
         }
         public void ValueChangeCheck()
         {
@@ -46,6 +48,8 @@ namespace Polar
 
         public void Save()
         {
+			print("Save: " + volumeName + "'s value: " + slider.value);
+
             mixer.SetFloat(volumeName, ToDB(slider.value));
         }
     }

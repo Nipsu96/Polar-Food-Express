@@ -34,7 +34,7 @@ namespace Polar
         public void Home(string sceneName)
         {
             Time.timeScale = 1.0f;
-            SceneManager.LoadSceneAsync(sceneName);
+            SceneManager.LoadScene(sceneName);
         }
 
     }
