@@ -4,13 +4,13 @@ using UnityEngine;
 
 namespace Polar
 {
-    public class ObjectPooler : MonoBehaviour
-    {
-        internal List<GameObject> pooledObjects;
-        [SerializeField] internal List<GameObject> objectsToPool;
+	public class ObjectPooler : MonoBehaviour
+	{
+		internal List<GameObject> pooledObjects;
+		[SerializeField] internal List<GameObject> objectsToPool;
 		[SerializeField] private int amountToPool = 5;
 
-        private void Start()
+		private void Start()
 		{
 			PoolObjects();
 		}
@@ -23,6 +23,7 @@ namespace Polar
 			{
 				// Create new folder for objects to be pooled
 				GameObject pool = new GameObject($"PoolOf{objectsToPool[j].name}");
+				pool.transform.SetParent(gameObject.transform);
 
 				for (int i = 0; i < amountToPool; i++)
 				{
@@ -33,20 +34,31 @@ namespace Polar
 
 					temp.SetActive(false);
 					pooledObjects.Add(temp);
-				} 
+				}
 			}
 		}
 
 		internal GameObject GetPooledObjects(Transform spawnPoint)
-        {
-			for (int i = 0; i < pooledObjects.Count; i++)
+		{
+			// Randomize which object to spawn from the pool
+			int randomIndex = 0;
+			do
 			{
-                if (!pooledObjects[i].activeInHierarchy)
-                {
-                    return pooledObjects[i];
-                }
+				randomIndex = Random.Range(0, pooledObjects.Count);
 			}
-            return null;
-        }
-    }
+			while (pooledObjects[randomIndex].activeInHierarchy);
+
+			return pooledObjects[randomIndex];
+
+			// Old way to take the first available object from the pool
+			//for (int i = 0; i < pooledObjects.Count; i++)
+			//{
+			//	if (!pooledObjects[i].activeInHierarchy)
+			//	{
+			//		return pooledObjects[i];
+			//	}
+			//}
+			//return null;
+		}
+	}
 }

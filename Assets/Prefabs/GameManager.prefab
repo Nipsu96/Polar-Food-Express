@@ -85,7 +85,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8646ca60f946af64aab19d54bf1e2a91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameSpeed: 7
+  fixedGameSpeed: 0
+  gameSpeed: 10
   gameSpeedThrottle: 7
 --- !u!82 &51321992
 AudioSource:

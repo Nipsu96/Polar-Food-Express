@@ -11,8 +11,8 @@ namespace Polar
         [SerializeField] private Transform airSpawnPoint;
         [SerializeField] private Transform groundSpawnPoint;
 		[SerializeField] private List<ObjectPooler> objectPools;
-		private int indexA;
-		private int indexB;
+		private int objectPoolAIndex;
+		private int objectPoolBIndex;
 		[SerializeField] private bool alwaysSpawnGoodFood = true;
 
 		private void Start()
@@ -37,26 +37,25 @@ namespace Polar
 
 		private void RandomizeSpawnPool()
 		{
-			// Set collidable
+			// Set temp collidable
 			ICollidable tmpCollidable = objectPools[0].objectsToPool[0].GetComponent<ICollidable>();
 
 			// Randomize which pool to use(Good, Bad, GroundObstacle) for ground spawn point.
 			do
 			{
-				indexA = Random.Range(0, objectPools.Count);
-				print("indexA: " + indexA);
-				tmpCollidable = objectPools[indexA].objectsToPool[0].GetComponent<ICollidable>();
+				objectPoolAIndex = Random.Range(0, objectPools.Count);
+				tmpCollidable = objectPools[objectPoolAIndex].objectsToPool[0].GetComponent<ICollidable>();
 			}
 			// The ground object can't be an AerialObstacle.
 			while (tmpCollidable.GetObjectType() == ICollidable.ObjectType.AerialObstacle);
 
 			// Spawn the object to ground spawn point.
-			SpawnObject(groundSpawnPoint, objectPools[indexA]);
+			SpawnObject(groundSpawnPoint, objectPools[objectPoolAIndex]);
 
 			// Set the second spawned object to good food if the first one is not.
 			if (tmpCollidable.GetObjectType() != ICollidable.ObjectType.GoodFood && alwaysSpawnGoodFood)
 			{
-				indexB = (int)ICollidable.ObjectType.GoodFood - 1;
+				objectPoolBIndex = (int)ICollidable.ObjectType.GoodFood - 1;
 			}
 			else
 			{
@@ -64,7 +63,7 @@ namespace Polar
 			}
 
 			// Spawn the object to the aerial spawn point.
-			SpawnObject(airSpawnPoint, objectPools[indexB]);
+			SpawnObject(airSpawnPoint, objectPools[objectPoolBIndex]);
 		}
 
 		private ICollidable RandomizeAerialSpawn()
@@ -73,16 +72,16 @@ namespace Polar
 			do
 			{
 				// Randomize which pool to use (Good, Bad, AerialObstacle) for aerial spawn point.
-				indexB = Random.Range(0, objectPools.Count);
-				tmpCollidable = objectPools[indexB].objectsToPool[0].GetComponent<ICollidable>();
+				objectPoolBIndex = Random.Range(0, objectPools.Count);
+				tmpCollidable = objectPools[objectPoolBIndex].objectsToPool[0].GetComponent<ICollidable>();
 			}
 			// Rerandomize if
 			while ( // To be spawned objects are the same.
-					indexB == indexA ||
+					objectPoolBIndex == objectPoolAIndex ||
 					// The aerial object is trying to be a GroundObstacle.
 					tmpCollidable.GetObjectType() == ICollidable.ObjectType.GroundObstacle ||
 					// Both the ground and the aerial objects are trying to be obstacles.
-					(objectPools[indexA].objectsToPool[0].GetComponent<Obstacle>() && objectPools[indexB].objectsToPool[0].GetComponent<Obstacle>()));
+					(objectPools[objectPoolAIndex].objectsToPool[0].GetComponent<Obstacle>() && objectPools[objectPoolBIndex].objectsToPool[0].GetComponent<Obstacle>()));
 			return tmpCollidable;
 		}
 
