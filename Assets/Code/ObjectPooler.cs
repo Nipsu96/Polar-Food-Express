@@ -38,27 +38,27 @@ namespace Polar
 			}
 		}
 
-		internal GameObject GetPooledObjects(Transform spawnPoint)
+		internal GameObject GetPooledObjects()
 		{
 			// Randomize which object to spawn from the pool
-			int randomIndex = 0;
-			do
-			{
-				randomIndex = Random.Range(0, pooledObjects.Count);
-			}
-			while (pooledObjects[randomIndex].activeInHierarchy);
+			//int randomIndex = 0;
+			//do
+			//{
+			//	randomIndex = Random.Range(0, pooledObjects.Count);
+			//}
+			//while (pooledObjects[randomIndex].activeInHierarchy);
 
-			return pooledObjects[randomIndex];
+			//return pooledObjects[randomIndex];
 
 			// Old way to take the first available object from the pool
-			//for (int i = 0; i < pooledObjects.Count; i++)
-			//{
-			//	if (!pooledObjects[i].activeInHierarchy)
-			//	{
-			//		return pooledObjects[i];
-			//	}
-			//}
-			//return null;
+			for (int i = 0; i < pooledObjects.Count; i++)
+			{
+				if (!pooledObjects[i].activeInHierarchy)
+				{
+					return pooledObjects[i];
+				}
+			}
+			return null;
 		}
 	}
 }

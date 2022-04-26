@@ -42,7 +42,7 @@ namespace Polar
 		private void SpawnObject()
 		{
 			print("Spawn");
-			GameObject incomingObject = objectPool.GetPooledObjects(spawnPoint);
+			GameObject incomingObject = objectPool.GetPooledObjects();
 			if (incomingObject != null)
 			{
 				incomingObject.transform.position = spawnPoint.transform.position;

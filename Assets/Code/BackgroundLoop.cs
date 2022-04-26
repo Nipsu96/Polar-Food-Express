@@ -4,8 +4,12 @@ using UnityEngine;
 
 namespace Polar
 {
-    public class BackgroundLoop : MonoBehaviour
+	[RequireComponent(typeof(ObjectPooler))]
+	public class BackgroundLoop : MonoBehaviour
     {
+		[SerializeField] private ObjectPooler objectPools;
+
+		[SerializeField] private bool useLegacy;
 		[SerializeField] private GameObject[] backgrounds;
 		private Camera cam;
 		private Vector2 screenBounds;
@@ -15,13 +19,34 @@ namespace Polar
 			cam = Camera.main;
 			screenBounds = cam.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, cam.transform.position.z));
 
-			foreach (GameObject background in backgrounds)
+			if (useLegacy)
 			{
-				LoadBackgrounds(background);
+				foreach (GameObject background in backgrounds)
+				{
+					LoadBackgrounds(background);
 
-				// Kind-ah workaround to fix super fast backgrounds
-				Destroy(background.GetComponent<AutomoveObject>());				
+					// Kind-ah workaround to fix super fast backgrounds
+					Destroy(background.GetComponent<AutomoveObject>());				
+				}
 			}
+			else
+			{
+				foreach (GameObject background in objectPools.pooledObjects)
+				{
+					LoadPoolBackgrounds(background);
+
+					// Kind-ah workaround to fix super fast backgrounds
+					Destroy(background.GetComponent<AutomoveObject>());
+				}
+			}
+		}
+
+		private void LoadPoolBackgrounds(GameObject bg)
+		{
+			float bgWidth = bg.GetComponent<SpriteRenderer>().bounds.size.x;
+			int childrenNeeded = (int)Mathf.Ceil(screenBounds.x * 3 / bgWidth);
+
+			
 		}
 
 		private void LoadBackgrounds(GameObject bg)
@@ -67,9 +92,12 @@ namespace Polar
 
 		private void LateUpdate()
 		{
-			foreach (GameObject background in backgrounds)
+			if (useLegacy)
 			{
-				RepositionChildren(background);
+				foreach (GameObject background in backgrounds)
+				{
+					RepositionChildren(background);
+				}
 			}
 		}
 	}

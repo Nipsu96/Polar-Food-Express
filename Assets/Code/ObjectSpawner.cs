@@ -104,7 +104,7 @@ namespace Polar
 
 		private void SpawnObject(Transform spawnPoint, ObjectPooler pool)
 		{
-			GameObject incomingObject = pool.GetPooledObjects(spawnPoint);
+			GameObject incomingObject = pool.GetPooledObjects();
 			if (incomingObject != null)
 			{
 				incomingObject.transform.position = spawnPoint.transform.position;
