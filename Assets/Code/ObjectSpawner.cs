@@ -17,6 +17,7 @@ namespace Polar
 		private int objectPoolAIndex;
 		private int objectPoolBIndex;
 		[SerializeField, HideIf("enableMainMenuSettings")] private bool alwaysSpawnGoodFood = true;
+		[SerializeField] internal bool enableSpawning = true;
 
 		private void Start()
         {
@@ -30,7 +31,10 @@ namespace Polar
 
 		private void FixedUpdate()
         {
-            Countdown();
+			if(enableSpawning)
+			{
+	            Countdown();
+			}
         }
 
         private void Countdown()

@@ -161,6 +161,7 @@ MonoBehaviour:
   - {fileID: 495947283177412183}
   - {fileID: 3598762204440144948}
   alwaysSpawnGoodFood: 1
+  enableSpawning: 1
 --- !u!114 &413053743
 MonoBehaviour:
   m_ObjectHideFlags: 0

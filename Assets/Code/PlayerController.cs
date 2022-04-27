@@ -9,6 +9,7 @@ namespace Polar
 	[RequireComponent(typeof(InputProcessor))]
 	public class PlayerController : MonoBehaviour
 	{
+		internal bool enableControls = true;
 		private bool tap;
 		private Vector2 direction;
 		private Rigidbody2D playerRigidbody;
@@ -120,7 +121,7 @@ namespace Polar
 		}
 		private void PlayerJump()
 		{
-			if (tap && groundCheck.isGrounded)
+			if (tap && groundCheck.isGrounded && enableControls)
 			{
 				// hyppäämisen koodi tänne
 				playerRigidbody.AddForce(Vector2.up * jumpforce, ForceMode2D.Impulse);
