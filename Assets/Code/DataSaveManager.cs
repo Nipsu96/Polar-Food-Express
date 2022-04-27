@@ -17,6 +17,9 @@ namespace Polar
 		private float emptyInitialMultiplier = 0.0f;
 		private float emptyInitialTotal = 0.0f;
 
+		// For debug
+		private bool encryptSaveFile = true;
+
 		private void Awake()
 		{
 			CreateInstance();
@@ -115,7 +118,7 @@ namespace Polar
 
 		private void LoadSaveData()
 		{
-			saveDataObject = GameData.LoadData(saveDataObject, path, true) as SaveDataObject;
+			saveDataObject = GameData.LoadData(saveDataObject, path, encryptSaveFile) as SaveDataObject;
 		}
 
 		private float CalculateTotalScore(float latestScore, float latestScoreMultiplier)
@@ -166,7 +169,7 @@ namespace Polar
 
 		private void SaveScore()
 		{
-			GameData.SaveData(saveDataObject, path, true);
+			GameData.SaveData(saveDataObject, path, encryptSaveFile);
 		}
 
 		// Debug only.
