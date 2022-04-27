@@ -29,13 +29,13 @@ namespace Polar
 		// Debug purpose only.
 		private void OnEnable()
 		{
-			GameData.OnDataSave += OnSave;
+			//GameData.OnDataSave += OnSave;
 		}
 
 		// Debug purpose only.
 		private void OnDisable()
 		{
-			GameData.OnDataSave -= OnSave;
+			//GameData.OnDataSave -= OnSave;
 		}
 
 		private void CreateInstance()
