@@ -17,6 +17,8 @@ namespace Polar
         [SerializeField]
         private AudioControl sfxControl;
 
+		[SerializeField] private GameObject areYouSurePopup;
+
 		public void Pause()
         {
 			if(playerController != null)
@@ -42,11 +44,20 @@ namespace Polar
             
         }
 
+		public void TryingToQuitMenu()
+		{
+			areYouSurePopup.SetActive(true);
+		}
+
+		public void BackToPauseMenu()
+		{
+			areYouSurePopup.SetActive(false);
+		}
+
         public void Home(string sceneName)
         {
             Time.timeScale = 1.0f;
             SceneManager.LoadScene(sceneName);
         }
-
     }
 }
