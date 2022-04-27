@@ -82,5 +82,21 @@ MonoBehaviour:
     m_Localized: Effects
     m_Metadata:
       m_Items: []
+  - m_Id: 7571280223797248
+    m_Localized: 'Collected Score:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7573673283944448
+    m_Localized: 'Score Multiplier:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7573975743594496
+    m_Localized: 'Total Score:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7574089321152512
+    m_Localized: 'The Best Score: '
+    m_Metadata:
+      m_Items: []
   references:
     version: 1

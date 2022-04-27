@@ -79,6 +79,22 @@ MonoBehaviour:
     m_Key: SFX
     m_Metadata:
       m_Items: []
+  - m_Id: 7571280223797248
+    m_Key: END_CollectedScore
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7573673283944448
+    m_Key: END_ScoreMultiply
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7573975743594496
+    m_Key: END_totalScore
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7574089321152512
+    m_Key: END_BestScore
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

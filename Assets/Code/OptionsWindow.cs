@@ -26,7 +26,6 @@ namespace Polar
         {
             musicControl.Setup(mixer, musicVolumeName);
             sfxControl.Setup(mixer, sfxVolumeName);
-           
         }
     }
 }

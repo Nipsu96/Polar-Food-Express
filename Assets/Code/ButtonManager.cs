@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
+using System;
 
 namespace Polar
 {
@@ -10,25 +11,32 @@ namespace Polar
     {
         private string mainMenuName = "MainMenu";
         private string kauppahalliName = "Kauppahalli";
-		private string optionsName = "OptionsMenu";
-		private string scoreboardName = "ScoreboardMenu";
-		private GameObject mainMenu;
+        private string optionsName = "OptionsMenu";
+        private string scoreboardName = "ScoreboardMenu";
+
+        private string creditsName = "CreditsMenu";
+
+        private GameObject creditsMenu;
+        private GameObject mainMenu;
         private GameObject optionsMenu;
         private GameObject scoreboardMenu;
 
-         [SerializeField]
+        [SerializeField]
         private AudioControl musicControl;
 
         [SerializeField]
         private AudioControl sfxControl;
 
-		private void Start()
+        private void Start()
         {
             FindMainMenu();
             FindOptionsMenu();
+            FindCreditsMenu();
             FindScoreboardMenu();
-			SetCorrectUIPanels();
-		}
+            SetCorrectUIPanels();
+        }
+
+
 
         private void SetCorrectUIPanels()
         {
@@ -41,6 +49,10 @@ namespace Polar
             {
                 optionsMenu.SetActive(false);
             }
+            if (creditsMenu.activeInHierarchy)
+            {
+                creditsMenu.SetActive(false);
+            }
 
             if (scoreboardMenu.activeInHierarchy)
             {
@@ -51,8 +63,8 @@ namespace Polar
         public void OnPlayGame()
         {
             //SceneManager.LoadScene(kauppahalliName);
-			SceneManager.LoadSceneAsync(kauppahalliName);
-		}
+            SceneManager.LoadSceneAsync(kauppahalliName);
+        }
         public void OnOptions()
         {
             mainMenu.SetActive(false);
@@ -63,13 +75,18 @@ namespace Polar
             mainMenu.SetActive(false);
             scoreboardMenu.SetActive(true);
         }
-        public void OnQuit()
+        public void OnCreditsMenu()
         {
-            Application.Quit();
-#if UNITY_EDITOR
-            UnityEditor.EditorApplication.isPlaying = false;
-#endif
+            mainMenu.SetActive(false);
+            creditsMenu.SetActive(true);
         }
+//         public void OnQuit()
+//         {
+//             Application.Quit();
+// #if UNITY_EDITOR
+//             UnityEditor.EditorApplication.isPlaying = false;
+// #endif
+//         }
 
         public void OnBackToMainMenu()
         {
@@ -77,6 +94,11 @@ namespace Polar
             {
                 scoreboardMenu.SetActive(false);
             }
+            if (creditsMenu.activeInHierarchy)
+            {
+                creditsMenu.SetActive(false);
+            }
+
             if (optionsMenu.activeInHierarchy)
             {
                 optionsMenu.SetActive(false);
@@ -107,6 +129,13 @@ namespace Polar
             if (scoreboardMenu == null)
             {
                 scoreboardMenu = transform.Find(scoreboardName).gameObject;
+            }
+        }
+        private void FindCreditsMenu()
+        {
+            if (creditsMenu == null)
+            {
+                creditsMenu = transform.Find(creditsName).gameObject;
             }
         }
     }

@@ -82,5 +82,21 @@ MonoBehaviour:
     m_Localized: Efektit
     m_Metadata:
       m_Items: []
+  - m_Id: 7571280223797248
+    m_Localized: "Ker\xE4tyt pisteet: "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7573673283944448
+    m_Localized: 'Pistekerroin: '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7573975743594496
+    m_Localized: 'Kokonaispisteet: '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7574089321152512
+    m_Localized: 'Paras Tulos: '
+    m_Metadata:
+      m_Items: []
   references:
     version: 1
