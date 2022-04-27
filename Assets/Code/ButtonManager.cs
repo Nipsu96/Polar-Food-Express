@@ -20,6 +20,7 @@ namespace Polar
         private GameObject optionsMenu;
         private GameObject scoreboardMenu;
 		private bool tutorialPlayed;
+		[SerializeField] private GameObject tutorialButton;
 
         [SerializeField]
         private AudioControl musicControl;
@@ -37,6 +38,15 @@ namespace Polar
 
 			// Load from PlayerPrefs is tutorial already played.
 			tutorialPlayed = (PlayerPrefs.GetInt("tutorialPlayed") != 0);
+
+			if (tutorialPlayed)
+			{
+				tutorialButton.SetActive(true);
+			}
+			else
+			{
+				tutorialButton.SetActive(false);
+			}
 		}
 
 
@@ -98,6 +108,11 @@ namespace Polar
 //             UnityEditor.EditorApplication.isPlaying = false;
 // #endif
 //         }
+
+		public void OnReplayTutorial()
+		{
+			SceneManager.LoadSceneAsync(tutorialName);
+		}
 
         public void OnBackToMainMenu()
         {
