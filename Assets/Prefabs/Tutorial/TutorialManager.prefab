@@ -1,0 +1,83 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &950130871415176191
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7815192436169764940}
+  - component: {fileID: 4665435567902123397}
+  m_Layer: 0
+  m_Name: TutorialManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7815192436169764940
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 950130871415176191}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.7873907, y: -0.9055004, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4665435567902123397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 950130871415176191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59f0b8d6cc978584b962f980557adf4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectSpawner: {fileID: 0}
+  playerCharacter: {fileID: 0}
+  waitTimeAtStart: 1
+  bearPosition: {fileID: 0}
+  multiplier: 200
+  thoughtsPanel: {fileID: 0}
+  okButton: {fileID: 0}
+  textField: {fileID: 0}
+  firstText: Ah, finally Tampere Old Market Hall!
+  secondText: 'Time to collect some <color=#247B24>planetary healthy foods</color>!
+
+
+    (By
+    tapping screen polar bear can jump)'
+  thirdText: 'A food with <color=#247B24>green background</color>.
+
+
+    That seems
+    to be <color=#247B24>friendly for the planet</color>.'
+  fourthText: 'Huh, rush time I guess...
+
+
+    I must <b>avoid</b> run over a granny
+    or <color=red>food that is not local</color> (foods with <color=red>a red background</color>).'
+  fifthText: 'By collecting <color=#247B24>the planet healthy foods</color> I can
+    lower carbon footprint.
+
+
+    Sadly, the <color=red>foods from other side of
+    the globe</color> are raising the carbon footprint.'
+  sixthText: 'My food choices will impact carbon footprint and I can see current
+    level at the top of the screen.
+
+
+    If it gets too high it is game over for
+    the globe.
+
+    I <b>MUST</b> avoid those <color=red>red foods</color>!'

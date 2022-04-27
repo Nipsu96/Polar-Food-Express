@@ -13,13 +13,13 @@ namespace Polar
         private string kauppahalliName = "Kauppahalli";
         private string optionsName = "OptionsMenu";
         private string scoreboardName = "ScoreboardMenu";
-
         private string creditsName = "CreditsMenu";
-
+		private string tutorialName = "Tutorial";
         private GameObject creditsMenu;
-        private GameObject mainMenu;
+		private GameObject mainMenu;
         private GameObject optionsMenu;
         private GameObject scoreboardMenu;
+		private bool tutorialPlayed;
 
         [SerializeField]
         private AudioControl musicControl;
@@ -33,8 +33,11 @@ namespace Polar
             FindOptionsMenu();
             FindCreditsMenu();
             FindScoreboardMenu();
-            SetCorrectUIPanels();
-        }
+			SetCorrectUIPanels();
+
+			// Load from PlayerPrefs is tutorial already played.
+			tutorialPlayed = (PlayerPrefs.GetInt("tutorialPlayed") != 0);
+		}
 
 
 
@@ -62,9 +65,17 @@ namespace Polar
 
         public void OnPlayGame()
         {
-            //SceneManager.LoadScene(kauppahalliName);
-            SceneManager.LoadSceneAsync(kauppahalliName);
-        }
+			if (tutorialPlayed)
+			{
+				SceneManager.LoadSceneAsync(kauppahalliName);
+			}
+			else
+			{
+				tutorialPlayed = true;
+				PlayerPrefs.SetInt("tutorialPlayed", (tutorialPlayed ? 1 : 0));
+				SceneManager.LoadSceneAsync(tutorialName);
+			}
+		}
         public void OnOptions()
         {
             mainMenu.SetActive(false);

@@ -871,6 +871,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e59bb79c0e1f0df48b04a95c5e262bf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerController: {fileID: 0}
   pauseMenu: {fileID: 58165347}
   musicControl: {fileID: 899002557}
   sfxControl: {fileID: 692348580}

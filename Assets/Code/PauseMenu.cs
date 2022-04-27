@@ -8,6 +8,7 @@ namespace Polar
 {
     public class PauseMenu : MonoBehaviour
     {
+		[SerializeField] private PlayerController playerController;
         [SerializeField]
         GameObject pauseMenu;
         [SerializeField]
@@ -16,15 +17,25 @@ namespace Polar
         [SerializeField]
         private AudioControl sfxControl;
 
-        public void Pause()
+		public void Pause()
         {
-            pauseMenu.SetActive(true);
+			if(playerController != null)
+			{
+				playerController.DisableControls();
+			}
+
             Time.timeScale = 0f;
+            pauseMenu.SetActive(true);
 
         }
         public void Resume()
-        {
-            pauseMenu.SetActive(false);
+		{
+			if (playerController != null)
+			{
+				playerController.EnableControls();
+			}
+
+			pauseMenu.SetActive(false);
             Time.timeScale = 1.0f;
             musicControl.Save();
             sfxControl.Save();
