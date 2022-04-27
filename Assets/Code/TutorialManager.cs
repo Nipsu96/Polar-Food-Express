@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using NaughtyAttributes;
+using UnityEngine.Localization;
+using UnityEngine.Localization.Settings;
 
 namespace Polar
 {
@@ -24,12 +26,12 @@ namespace Polar
 		private PlayerController playerController;
 
 		[Header("Texts")]
-		[SerializeField, ResizableTextArea] private string firstText;
-		[SerializeField, ResizableTextArea] private string secondText;
-		[SerializeField, ResizableTextArea] private string thirdText;
-		[SerializeField, ResizableTextArea] private string fourthText;
-		[SerializeField, ResizableTextArea] private string fifthText;
-		[SerializeField, ResizableTextArea] private string sixthText;
+		[SerializeField] private LocalizedString firstText;
+		[SerializeField] private LocalizedString secondText;
+		[SerializeField] private LocalizedString thirdText;
+		[SerializeField] private LocalizedString fourthText;
+		[SerializeField] private LocalizedString fifthText;
+		[SerializeField] private LocalizedString sixthText;
 
 		private void Start()
 		{
@@ -63,7 +65,7 @@ namespace Polar
 			{
 				playerController.DisableControls();
 				thoughtsPanel.SetActive(true);
-				textField.text = firstText;
+				textField.text = firstText.GetLocalizedString();
 			}
 		}
 
@@ -91,7 +93,7 @@ namespace Polar
 		private void SecondThough()
 		{
 			phase = Phase.Third;
-			textField.text = secondText;
+			textField.text = secondText.GetLocalizedString();
 			playerController.DisableControls();
 			thoughtsPanel.SetActive(true);
 		}
@@ -117,7 +119,7 @@ namespace Polar
 		private void GoodFoodInfo()
 		{
 			phase = Phase.Five;
-			textField.text = thirdText;
+			textField.text = thirdText.GetLocalizedString();
 			Time.timeScale = 0.0f;
 			playerController.DisableControls();
 			thoughtsPanel.SetActive(true);
@@ -127,7 +129,7 @@ namespace Polar
 		{
 			yield return new WaitForSeconds(2.0f);
 			phase = Phase.Six;
-			textField.text = fourthText;
+			textField.text = fourthText.GetLocalizedString();
 			Time.timeScale = 0.0f;
 			playerController.DisableControls();
 			thoughtsPanel.SetActive(true);
@@ -137,7 +139,7 @@ namespace Polar
 		{
 			yield return new WaitForSeconds(2.0f);
 			phase = Phase.Seven;
-			textField.text = fifthText;
+			textField.text = fifthText.GetLocalizedString();
 			Time.timeScale = 0.0f;
 			playerController.DisableControls();
 			thoughtsPanel.SetActive(true);
@@ -147,7 +149,7 @@ namespace Polar
 		{
 			yield return new WaitForSeconds(2.0f);
 			phase = Phase.Eight;
-			textField.text = sixthText;
+			textField.text = sixthText.GetLocalizedString();
 			Time.timeScale = 0.0f;
 			playerController.DisableControls();
 			thoughtsPanel.SetActive(true);
