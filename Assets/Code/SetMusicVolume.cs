@@ -13,7 +13,7 @@ namespace Polar
         public void SetLevel(float sliderValue)
         {
             mixer.SetFloat("MusicVolume", Mathf.Log10(sliderValue) * 20);
-
-        }
+			PlayerPrefs.SetFloat("MusicVolume", sliderValue);
+		}
     }
 }

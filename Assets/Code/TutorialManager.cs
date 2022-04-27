@@ -24,6 +24,7 @@ namespace Polar
 		[SerializeField] private Button okButton;
 		[SerializeField] private TMP_Text textField;
 		private PlayerController playerController;
+		[SerializeField] private Button pauseButton;
 
 		[Header("Texts")]
 		[SerializeField] private LocalizedString firstText;
@@ -64,6 +65,7 @@ namespace Polar
 			if (phase == Phase.Second)
 			{
 				playerController.DisableControls();
+				pauseButton.enabled = false;
 				thoughtsPanel.SetActive(true);
 				textField.text = firstText.GetLocalizedString();
 			}
@@ -80,6 +82,7 @@ namespace Polar
 			rbPolarBear = playerCharacter.GetComponent<Rigidbody2D>();
 			animator = playerCharacter.GetComponent<Animator>();
 			animator.enabled = false;
+			pauseButton.enabled = true;
 			thoughtsPanel.SetActive(false);
 		}
 
@@ -95,6 +98,7 @@ namespace Polar
 			phase = Phase.Third;
 			textField.text = secondText.GetLocalizedString();
 			playerController.DisableControls();
+			pauseButton.enabled = false;
 			thoughtsPanel.SetActive(true);
 		}
 
@@ -122,6 +126,7 @@ namespace Polar
 			textField.text = thirdText.GetLocalizedString();
 			Time.timeScale = 0.0f;
 			playerController.DisableControls();
+			pauseButton.enabled = false;
 			thoughtsPanel.SetActive(true);
 		}
 
@@ -132,6 +137,7 @@ namespace Polar
 			textField.text = fourthText.GetLocalizedString();
 			Time.timeScale = 0.0f;
 			playerController.DisableControls();
+			pauseButton.enabled = false;
 			thoughtsPanel.SetActive(true);
 		}
 
@@ -142,6 +148,7 @@ namespace Polar
 			textField.text = fifthText.GetLocalizedString();
 			Time.timeScale = 0.0f;
 			playerController.DisableControls();
+			pauseButton.enabled = false;
 			thoughtsPanel.SetActive(true);
 		}
 
@@ -152,6 +159,7 @@ namespace Polar
 			textField.text = sixthText.GetLocalizedString();
 			Time.timeScale = 0.0f;
 			playerController.DisableControls();
+			pauseButton.enabled = false;
 			thoughtsPanel.SetActive(true);
 		}
 
@@ -159,6 +167,7 @@ namespace Polar
 		{
 			thoughtsPanel.SetActive(false);
 			playerController.EnableControls();
+			pauseButton.enabled = true;
 
 			switch (phase)
 			{

@@ -45,3 +45,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   backgrounds:
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}

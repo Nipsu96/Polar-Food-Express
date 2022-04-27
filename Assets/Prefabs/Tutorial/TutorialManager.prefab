@@ -51,33 +51,60 @@ MonoBehaviour:
   thoughtsPanel: {fileID: 0}
   okButton: {fileID: 0}
   textField: {fileID: 0}
-  firstText: Ah, finally Tampere Old Market Hall!
-  secondText: 'Time to collect some <color=#247B24>planetary healthy foods</color>!
-
-
-    (By
-    tapping screen polar bear can jump)'
-  thirdText: 'A food with <color=#247B24>green background</color>.
-
-
-    That seems
-    to be <color=#247B24>friendly for the planet</color>.'
-  fourthText: 'Huh, rush time I guess...
-
-
-    I must <b>avoid</b> run over a granny
-    or <color=red>food that is not local</color> (foods with <color=red>a red background</color>).'
-  fifthText: 'By collecting <color=#247B24>the planet healthy foods</color> I can
-    lower carbon footprint.
-
-
-    Sadly, the <color=red>foods from other side of
-    the globe</color> are raising the carbon footprint.'
-  sixthText: 'My food choices will impact carbon footprint and I can see current
-    level at the top of the screen.
-
-
-    If it gets too high it is game over for
-    the globe.
-
-    I <b>MUST</b> avoid those <color=red>red foods</color>!'
+  pauseButton: {fileID: 0}
+  firstText:
+    m_TableReference:
+      m_TableCollectionName: GUID:876ee904dbb5e334d9bb9f10b77bfd30
+    m_TableEntryReference:
+      m_KeyId: 7964966451412992
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  secondText:
+    m_TableReference:
+      m_TableCollectionName: GUID:876ee904dbb5e334d9bb9f10b77bfd30
+    m_TableEntryReference:
+      m_KeyId: 7965001515794432
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  thirdText:
+    m_TableReference:
+      m_TableCollectionName: GUID:876ee904dbb5e334d9bb9f10b77bfd30
+    m_TableEntryReference:
+      m_KeyId: 7965043047792640
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  fourthText:
+    m_TableReference:
+      m_TableCollectionName: GUID:876ee904dbb5e334d9bb9f10b77bfd30
+    m_TableEntryReference:
+      m_KeyId: 7965087717130240
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  fifthText:
+    m_TableReference:
+      m_TableCollectionName: GUID:876ee904dbb5e334d9bb9f10b77bfd30
+    m_TableEntryReference:
+      m_KeyId: 7965135897100288
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  sixthText:
+    m_TableReference:
+      m_TableCollectionName: GUID:876ee904dbb5e334d9bb9f10b77bfd30
+    m_TableEntryReference:
+      m_KeyId: 7965165332725760
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  references:
+    version: 1

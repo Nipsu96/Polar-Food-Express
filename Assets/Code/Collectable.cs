@@ -43,12 +43,14 @@ namespace Polar
 			{
 				hitAudio.Play();
 				delay = hitAudio.clip.length;
+				SetVisualsAndCollider(false);
+				StartCoroutine(Delay(delay));
 			}
-
-			SetVisualsAndCollider(false);
-
-			StartCoroutine(Delay(delay));
-
+			else
+			{
+				Debug.LogWarning(gameObject.name + " has no AudioSource");
+				OnDespawn();
+			}
 		}
 
 		private void SetVisualsAndCollider(bool turnVisibility)
@@ -86,5 +88,5 @@ namespace Polar
         {
             return objectType;
         }
-    }
+	}
 }
