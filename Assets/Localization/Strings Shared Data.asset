@@ -103,6 +103,30 @@ MonoBehaviour:
     m_Key: Credits
     m_Metadata:
       m_Items: []
+  - m_Id: 7964966451412992
+    m_Key: Tu_FirstText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7965001515794432
+    m_Key: Tu_secondText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7965043047792640
+    m_Key: Tu_ThirdText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7965087717130240
+    m_Key: Tu_FourthText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7965135897100288
+    m_Key: Tu_FifthText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7965165332725760
+    m_Key: Tu_SixthText
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

@@ -106,5 +106,38 @@ MonoBehaviour:
     m_Localized: "Tekij\xE4t"
     m_Metadata:
       m_Items: []
+  - m_Id: 7964966451412992
+    m_Localized: Tampereen Kauppahalli, viimeinkin!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7965001515794432
+    m_Localized: "Aika ker\xE4t\xE4 <color=#247B24>ymp\xE4rist\xF6yst\xE4v\xE4llisi\xE4
+      ruokia</color>!\r\n\r\n(N\xE4p\xE4ytt\xE4m\xE4ll\xE4 ruutua, j\xE4\xE4karhu
+      hypp\xE4\xE4)\r\n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7965043047792640
+    m_Localized: "Ruoka <color=#247B24>vihre\xE4ll\xE4 taustalla</color>.\r\n\r\nTuo
+      vaikuttaa olevan <color=#247B24>ymp\xE4rist\xF6yst\xE4v\xE4llinen ruoka</color>.\r\n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7965087717130240
+    m_Localized: "Huh, ruuhka-aika...\r\n\r\nMinun t\xE4ytyy <b>v\xE4ltell\xE4</b>
+      mummoja ja <color=red>ruokia,\njotka eiv\xE4t ole paikallisia</color> (ruuat
+      <color=red>punaisella taustalla</color>).\r\n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7965135897100288
+    m_Localized: "Ker\xE4\xE4m\xE4ll\xE4 <color=#247B24>ymp\xE4rist\xF6yst\xE4v\xE4llisi\xE4
+      ruokia</color> lasken hiilijalanj\xE4lke\xE4.\r\n\r\nValitettavasti<color=red>
+      kaukaa tuodut ruuat</color> nostavat sit\xE4."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7965165332725760
+    m_Localized: "Hiilijalanj\xE4lkimittari sijaitsee ruudun yl\xE4reunassa.\n\r\nJos
+      hiilijalanj\xE4lki nousee liian suureksi,\nse on maailmanloppu.\nMinun <b>T\xC4YTYY</b>
+      v\xE4ltt\xE4\xE4 <color=red>punaisia ruokia</color>!\r\n"
+    m_Metadata:
+      m_Items: []
   references:
     version: 1
