@@ -98,5 +98,9 @@ MonoBehaviour:
     m_Localized: 'The Best Score: '
     m_Metadata:
       m_Items: []
+  - m_Id: 7949724921102336
+    m_Localized: Tutorial
+    m_Metadata:
+      m_Items: []
   references:
     version: 1

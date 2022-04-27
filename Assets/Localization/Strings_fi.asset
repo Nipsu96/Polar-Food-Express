@@ -98,5 +98,9 @@ MonoBehaviour:
     m_Localized: 'Paras Tulos: '
     m_Metadata:
       m_Items: []
+  - m_Id: 7949724921102336
+    m_Localized: Tutoriaali
+    m_Metadata:
+      m_Items: []
   references:
     version: 1
