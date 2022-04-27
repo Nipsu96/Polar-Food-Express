@@ -360,6 +360,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98a386258da76004bbb7139a8f66a5d9, type: 3}
+--- !u!114 &983665032 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 517457925923112124, guid: d23bb215ac35aba40a6c91370866b676, type: 3}
+  m_PrefabInstance: {fileID: 1646026136}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bb5367974e2f0944af38b319e7c7007, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1168460944
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -375,18 +386,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1446673671}
-    - target: {fileID: 983906087, guid: eebc9240da345944d9db6f685148a857, type: 3}
-      propertyPath: m_Color.b
-      value: 0.0077323914
-      objectReference: {fileID: 0}
-    - target: {fileID: 983906087, guid: eebc9240da345944d9db6f685148a857, type: 3}
-      propertyPath: m_Color.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 983906087, guid: eebc9240da345944d9db6f685148a857, type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
+    - target: {fileID: 404402289, guid: eebc9240da345944d9db6f685148a857, type: 3}
+      propertyPath: playerController
+      value: 
+      objectReference: {fileID: 983665032}
     - target: {fileID: 1334986021, guid: eebc9240da345944d9db6f685148a857, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -398,27 +401,11 @@ PrefabInstance:
     - target: {fileID: 1334986021, guid: eebc9240da345944d9db6f685148a857, type: 3}
       propertyPath: m_AnchorMin.x
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1334986022, guid: eebc9240da345944d9db6f685148a857, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-    - target: {fileID: 1334986022, guid: eebc9240da345944d9db6f685148a857, type: 3}
-      propertyPath: m_Maskable
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1334986023, guid: eebc9240da345944d9db6f685148a857, type: 3}
-      propertyPath: m_CullTransparentMesh
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1516831007, guid: eebc9240da345944d9db6f685148a857, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1446673671}
-    - target: {fileID: 2059457194, guid: eebc9240da345944d9db6f685148a857, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2059457195, guid: eebc9240da345944d9db6f685148a857, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -429,22 +416,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2059457195, guid: eebc9240da345944d9db6f685148a857, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2059457196, guid: eebc9240da345944d9db6f685148a857, type: 3}
-      propertyPath: m_Color.b
-      value: 0.09604788
-      objectReference: {fileID: 0}
-    - target: {fileID: 2059457196, guid: eebc9240da345944d9db6f685148a857, type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2059457196, guid: eebc9240da345944d9db6f685148a857, type: 3}
-      propertyPath: m_Color.r
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1203692427026334798, guid: eebc9240da345944d9db6f685148a857, type: 3}
-      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1713317806877584228, guid: eebc9240da345944d9db6f685148a857, type: 3}
@@ -547,10 +518,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1446673671}
-    - target: {fileID: 8052800325963141987, guid: eebc9240da345944d9db6f685148a857, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eebc9240da345944d9db6f685148a857, type: 3}
 --- !u!1001 &1185197889

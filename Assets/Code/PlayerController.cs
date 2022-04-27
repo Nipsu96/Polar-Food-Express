@@ -128,5 +128,15 @@ namespace Polar
 			}
 
 		}
+
+		public void EnableControls()
+		{
+			enableControls = true;
+		}
+
+		public void DisableControls()
+		{
+			enableControls = false;
+		}
 	}
 }

@@ -180,11 +180,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e9ed8c2d92e7af4985448f929ac8dd6, type: 3}
---- !u!1 &271697140 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4520831534753263415, guid: f0ea61bfb488f974d9f50e1f549623a3, type: 3}
-  m_PrefabInstance: {fileID: 1798571293}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &287385418
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -242,11 +237,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a29fffb83502aaa48be0fef5e75ab4f8, type: 3}
---- !u!1 &339568294 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3631577539659317953, guid: f0ea61bfb488f974d9f50e1f549623a3, type: 3}
-  m_PrefabInstance: {fileID: 1798571293}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &383763182 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5762501825726400650, guid: a29fffb83502aaa48be0fef5e75ab4f8, type: 3}
@@ -798,11 +788,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f0ea61bfb488f974d9f50e1f549623a3, type: 3}
---- !u!1 &1958379115 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4520831535391667515, guid: f0ea61bfb488f974d9f50e1f549623a3, type: 3}
-  m_PrefabInstance: {fileID: 1798571293}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2020545436
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -990,58 +975,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1007874700}
     - target: {fileID: 4665435567902123397, guid: f7a3a1dbbc5a73b4b888e806ee58a7a2, type: 3}
-      propertyPath: fifthText
-      value: 'By collecting <color=#247B24>the planet healthy foods</color> I can
-        lower carbon footprint.
-
-
-        Sadly, the <color=red>foods from other
-        side of the globe</color> are raising the carbon footprint.'
-      objectReference: {fileID: 0}
-    - target: {fileID: 4665435567902123397, guid: f7a3a1dbbc5a73b4b888e806ee58a7a2, type: 3}
-      propertyPath: sixthText
-      value: 'My food choices will impact carbon footprint and I can see current
-        level at the top of the screen.
-
-
-        If it gets too high it is game
-        over for the globe.
-
-        I <b>MUST</b> avoid those <color=red>red foods</color>!'
-      objectReference: {fileID: 0}
-    - target: {fileID: 4665435567902123397, guid: f7a3a1dbbc5a73b4b888e806ee58a7a2, type: 3}
       propertyPath: textField
       value: 
       objectReference: {fileID: 1255431923}
-    - target: {fileID: 4665435567902123397, guid: f7a3a1dbbc5a73b4b888e806ee58a7a2, type: 3}
-      propertyPath: thirdText
-      value: 'A food with <color=#247B24>green background</color>.
-
-
-        That
-        seems to be <color=#247B24>friendly for the planet</color>.'
-      objectReference: {fileID: 0}
-    - target: {fileID: 4665435567902123397, guid: f7a3a1dbbc5a73b4b888e806ee58a7a2, type: 3}
-      propertyPath: fourthText
-      value: 'Huh, rush time I guess...
-
-
-        I must <b>avoid</b> run over a
-        granny or <color=red>food that is not local</color> (foods with <color=red>a
-        red background</color>).'
-      objectReference: {fileID: 0}
-    - target: {fileID: 4665435567902123397, guid: f7a3a1dbbc5a73b4b888e806ee58a7a2, type: 3}
-      propertyPath: secondText
-      value: 'Time to collect some <color=#247B24>planetary healthy foods</color>!
-
-
-        (By
-        tapping screen polar bear can jump)'
-      objectReference: {fileID: 0}
-    - target: {fileID: 4665435567902123397, guid: f7a3a1dbbc5a73b4b888e806ee58a7a2, type: 3}
-      propertyPath: carbonMeter
-      value: 
-      objectReference: {fileID: 1958379115}
     - target: {fileID: 4665435567902123397, guid: f7a3a1dbbc5a73b4b888e806ee58a7a2, type: 3}
       propertyPath: bearPosition
       value: 
@@ -1058,14 +994,6 @@ PrefabInstance:
       propertyPath: playerCharacter
       value: 
       objectReference: {fileID: 881686088}
-    - target: {fileID: 4665435567902123397, guid: f7a3a1dbbc5a73b4b888e806ee58a7a2, type: 3}
-      propertyPath: carbonMultiplierText
-      value: 
-      objectReference: {fileID: 271697140}
-    - target: {fileID: 4665435567902123397, guid: f7a3a1dbbc5a73b4b888e806ee58a7a2, type: 3}
-      propertyPath: carbonMultiplierValue
-      value: 
-      objectReference: {fileID: 339568294}
     - target: {fileID: 7815192436169764940, guid: f7a3a1dbbc5a73b4b888e806ee58a7a2, type: 3}
       propertyPath: m_RootOrder
       value: 11

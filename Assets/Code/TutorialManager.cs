@@ -21,9 +21,7 @@ namespace Polar
 		[SerializeField] private GameObject thoughtsPanel;
 		[SerializeField] private Button okButton;
 		[SerializeField] private TMP_Text textField;
-		[SerializeField] private GameObject carbonMeter;
-		[SerializeField] private GameObject carbonMultiplierText;
-		[SerializeField] private GameObject carbonMultiplierValue;
+		private PlayerController playerController;
 
 		[Header("Texts")]
 		[SerializeField, ResizableTextArea] private string firstText;
@@ -48,8 +46,7 @@ namespace Polar
 		{
 			if (phase == Phase.First)
 			{
-				//rbPolarBear.transform.position = Vector2.MoveTowards(rbPolarBear.transform.position, bearPosition.transform.position, speed * Time.deltaTime);
-				var dif = bearPosition.transform.position - rbPolarBear.transform.position;
+				Vector3 dif = bearPosition.transform.position - rbPolarBear.transform.position;
 				if (dif.magnitude > 1)
 				{
 					rbPolarBear.AddForce(dif * multiplier * Time.deltaTime);
@@ -57,15 +54,14 @@ namespace Polar
 				else
 				{
 					rbPolarBear.velocity = Vector2.zero;
-					//moveBear = false;
 					animator.SetBool("idle", true);
-					//firstThought = true;
 					phase = Phase.Second;
 				}
 			}
 
 			if (phase == Phase.Second)
 			{
+				playerController.DisableControls();
 				thoughtsPanel.SetActive(true);
 				textField.text = firstText;
 			}
@@ -73,24 +69,21 @@ namespace Polar
 
 		private void InitializeSettings()
 		{
+			playerController = playerCharacter.GetComponent<PlayerController>();
 			phase = Phase.Beginning;
 			GameManager.Instance.fixedGameSpeed = true;
 			GameManager.Instance.gameSpeed = 2;
 			objectSpawner.enableSpawning = false;
-			playerCharacter.GetComponent<PlayerController>().enableControls = false;
+			playerController.DisableControls();
 			rbPolarBear = playerCharacter.GetComponent<Rigidbody2D>();
 			animator = playerCharacter.GetComponent<Animator>();
 			animator.enabled = false;
 			thoughtsPanel.SetActive(false);
-			//carbonMeter.SetActive(false);
-			//carbonMultiplierText.SetActive(false);
-			//carbonMultiplierValue.SetActive(false);
 		}
 
 		IEnumerator WaitAtStart()
 		{
 			yield return new WaitForSeconds(waitTimeAtStart);
-			//moveBear = true;
 			phase = Phase.First;
 			animator.enabled = true;
 		}
@@ -99,6 +92,7 @@ namespace Polar
 		{
 			phase = Phase.Third;
 			textField.text = secondText;
+			playerController.DisableControls();
 			thoughtsPanel.SetActive(true);
 		}
 
@@ -125,6 +119,7 @@ namespace Polar
 			phase = Phase.Five;
 			textField.text = thirdText;
 			Time.timeScale = 0.0f;
+			playerController.DisableControls();
 			thoughtsPanel.SetActive(true);
 		}
 
@@ -134,6 +129,7 @@ namespace Polar
 			phase = Phase.Six;
 			textField.text = fourthText;
 			Time.timeScale = 0.0f;
+			playerController.DisableControls();
 			thoughtsPanel.SetActive(true);
 		}
 
@@ -143,6 +139,7 @@ namespace Polar
 			phase = Phase.Seven;
 			textField.text = fifthText;
 			Time.timeScale = 0.0f;
+			playerController.DisableControls();
 			thoughtsPanel.SetActive(true);
 		}
 
@@ -152,15 +149,14 @@ namespace Polar
 			phase = Phase.Eight;
 			textField.text = sixthText;
 			Time.timeScale = 0.0f;
-			carbonMeter.SetActive(true);
-			carbonMultiplierText.SetActive(true);
-			carbonMultiplierValue.SetActive(true);
+			playerController.DisableControls();
 			thoughtsPanel.SetActive(true);
 		}
 
 		public void OnOk()
 		{
 			thoughtsPanel.SetActive(false);
+			playerController.EnableControls();
 
 			switch (phase)
 			{

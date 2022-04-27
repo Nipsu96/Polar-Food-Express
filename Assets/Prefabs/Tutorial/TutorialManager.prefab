@@ -51,42 +51,33 @@ MonoBehaviour:
   thoughtsPanel: {fileID: 0}
   okButton: {fileID: 0}
   textField: {fileID: 0}
-  carbonMeter: {fileID: 0}
-  carbonMultiplierText: {fileID: 0}
-  carbonMultiplierValue: {fileID: 0}
   firstText: Ah, finally Tampere Old Market Hall!
   secondText: 'Time to collect some <color=#247B24>planetary healthy foods</color>!
 
-    
 
     (By
     tapping screen polar bear can jump)'
   thirdText: 'A food with <color=#247B24>green background</color>.
 
-    
 
-    That
-    seems to be <color=#247B24>friendly for the planet</color>.'
+    That seems
+    to be <color=#247B24>friendly for the planet</color>.'
   fourthText: 'Huh, rush time I guess...
 
-    
 
-    I must <b>avoid</b> run over
-    a granny or <color=red>food that is not local</color> (foods with <color=red>a
-    red background</color>).'
+    I must <b>avoid</b> run over a granny
+    or <color=red>food that is not local</color> (foods with <color=red>a red background</color>).'
   fifthText: 'By collecting <color=#247B24>the planet healthy foods</color> I can
     lower carbon footprint.
 
-    
 
-    Sadly, the <color=red>foods from other side
-    of the globe</color> are raising the carbon footprint.'
+    Sadly, the <color=red>foods from other side of
+    the globe</color> are raising the carbon footprint.'
   sixthText: 'My food choices will impact carbon footprint and I can see current
     level at the top of the screen.
 
-    
 
-    If it gets too high it is game over
-    for the globe.
+    If it gets too high it is game over for
+    the globe.
 
     I <b>MUST</b> avoid those <color=red>red foods</color>!'

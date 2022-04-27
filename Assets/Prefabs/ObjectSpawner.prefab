@@ -87,7 +87,7 @@ MonoBehaviour:
   - {fileID: 5527580211535741733, guid: 3a0ef33eb57f59d429b63bf0703f1260, type: 3}
   - {fileID: 3094889332823501388, guid: 7011278a03b080440a701c942f5cfc0a, type: 3}
   - {fileID: 6065492883630869792, guid: 9fb08e85fb585284c938cbf0333d2709, type: 3}
-  amountToPool: 5
+  amountToPool: 2
 --- !u!114 &797679113997141346
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -106,7 +106,7 @@ MonoBehaviour:
   - {fileID: 9157079863769237151, guid: aded7dd7add38e54c8d3b63e81e563ae, type: 3}
   - {fileID: 283020338477864882, guid: cb176f2ac5e5d014e86668feda96f780, type: 3}
   - {fileID: 8348302914036665488, guid: 301fcad110c6343438d379092b82f8a8, type: 3}
-  amountToPool: 5
+  amountToPool: 2
 --- !u!114 &495947283177412183
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -122,7 +122,7 @@ MonoBehaviour:
   objectsToPool:
   - {fileID: 7259109118429399621, guid: 409992c9f5a730c40bbd3d0d5a81d720, type: 3}
   - {fileID: 8949155975020409502, guid: 0b83756105bfd0c4fa5fec0c268f0e7e, type: 3}
-  amountToPool: 5
+  amountToPool: 2
 --- !u!114 &3598762204440144948
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -137,7 +137,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectsToPool:
   - {fileID: 9066087746899519885, guid: bbec24c278269a64882464b97bf88033, type: 3}
-  amountToPool: 5
+  amountToPool: 2
 --- !u!114 &499114935
 MonoBehaviour:
   m_ObjectHideFlags: 0
