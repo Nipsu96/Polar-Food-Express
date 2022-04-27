@@ -21,7 +21,8 @@ namespace Polar
         private void Awake()
         {
             CreateInstance();
-        }
+			Time.timeScale = 1.0f;
+		}
 
         private void CreateInstance()
         {
@@ -56,10 +57,6 @@ namespace Polar
 			if (!fixedGameSpeed)
 			{
 				gameSpeed += Time.deltaTime / gameSpeedThrottle;
-			}
-			else
-			{
-
 			}
 		}
 	}

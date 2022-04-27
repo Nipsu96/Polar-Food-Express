@@ -668,6 +668,22 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1494530174}
+    - target: {fileID: 1255431923, guid: f0ea61bfb488f974d9f50e1f549623a3, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1255431923, guid: f0ea61bfb488f974d9f50e1f549623a3, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1255431923, guid: f0ea61bfb488f974d9f50e1f549623a3, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1255431923, guid: f0ea61bfb488f974d9f50e1f549623a3, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278190080
+      objectReference: {fileID: 0}
     - target: {fileID: 2832968269925106693, guid: f0ea61bfb488f974d9f50e1f549623a3, type: 3}
       propertyPath: m_Name
       value: UI Tutorial
@@ -974,9 +990,54 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1007874700}
     - target: {fileID: 4665435567902123397, guid: f7a3a1dbbc5a73b4b888e806ee58a7a2, type: 3}
+      propertyPath: fifthText
+      value: 'By collecting <color=#247B24>the planet healthy foods</color> I can
+        lower carbon footprint.
+
+
+        Sadly, the <color=red>foods from other
+        side of the globe</color> are raising the carbon footprint.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4665435567902123397, guid: f7a3a1dbbc5a73b4b888e806ee58a7a2, type: 3}
+      propertyPath: sixthText
+      value: 'My food choices will impact carbon footprint and I can see current
+        level at the top of the screen.
+
+
+        If it gets too high it is game
+        over for the globe.
+
+        I <b>MUST</b> avoid those <color=red>red foods</color>!'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4665435567902123397, guid: f7a3a1dbbc5a73b4b888e806ee58a7a2, type: 3}
       propertyPath: textField
       value: 
       objectReference: {fileID: 1255431923}
+    - target: {fileID: 4665435567902123397, guid: f7a3a1dbbc5a73b4b888e806ee58a7a2, type: 3}
+      propertyPath: thirdText
+      value: 'A food with <color=#247B24>green background</color>.
+
+
+        That
+        seems to be <color=#247B24>friendly for the planet</color>.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4665435567902123397, guid: f7a3a1dbbc5a73b4b888e806ee58a7a2, type: 3}
+      propertyPath: fourthText
+      value: 'Huh, rush time I guess...
+
+
+        I must <b>avoid</b> run over a
+        granny or <color=red>food that is not local</color> (foods with <color=red>a
+        red background</color>).'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4665435567902123397, guid: f7a3a1dbbc5a73b4b888e806ee58a7a2, type: 3}
+      propertyPath: secondText
+      value: 'Time to collect some <color=#247B24>planetary healthy foods</color>!
+
+
+        (By
+        tapping screen polar bear can jump)'
+      objectReference: {fileID: 0}
     - target: {fileID: 4665435567902123397, guid: f7a3a1dbbc5a73b4b888e806ee58a7a2, type: 3}
       propertyPath: carbonMeter
       value: 
@@ -997,10 +1058,6 @@ PrefabInstance:
       propertyPath: playerCharacter
       value: 
       objectReference: {fileID: 881686088}
-    - target: {fileID: 4665435567902123397, guid: f7a3a1dbbc5a73b4b888e806ee58a7a2, type: 3}
-      propertyPath: waitTimeAtStart
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4665435567902123397, guid: f7a3a1dbbc5a73b4b888e806ee58a7a2, type: 3}
       propertyPath: carbonMultiplierText
       value: 

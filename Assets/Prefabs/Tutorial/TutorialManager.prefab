@@ -45,7 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectSpawner: {fileID: 0}
   playerCharacter: {fileID: 0}
-  waitTimeAtStart: 0
+  waitTimeAtStart: 1
   bearPosition: {fileID: 0}
   multiplier: 200
   thoughtsPanel: {fileID: 0}
@@ -55,29 +55,38 @@ MonoBehaviour:
   carbonMultiplierText: {fileID: 0}
   carbonMultiplierValue: {fileID: 0}
   firstText: Ah, finally Tampere Old Market Hall!
-  secondText: 'Time to collect some planetary healthy foods!
+  secondText: 'Time to collect some <color=#247B24>planetary healthy foods</color>!
 
+    
 
-    (By tapping screen
-    polar bear can jump)'
-  thirdText: 'A food with green background.
+    (By
+    tapping screen polar bear can jump)'
+  thirdText: 'A food with <color=#247B24>green background</color>.
 
+    
 
-    That seems to be friendly for the
-    planet.'
+    That
+    seems to be <color=#247B24>friendly for the planet</color>.'
   fourthText: 'Huh, rush time I guess...
 
+    
 
-    I must avoid run over a granny or
-    food that is not local (foods with a red background).'
-  fifthText: 'By collecting the planet healthy foods are lowering the carbon footprint.
+    I must <b>avoid</b> run over
+    a granny or <color=red>food that is not local</color> (foods with <color=red>a
+    red background</color>).'
+  fifthText: 'By collecting <color=#247B24>the planet healthy foods</color> I can
+    lower carbon footprint.
 
+    
 
-    Sadly,
-    the foods from other side of the globe are raising the carbon footprint.'
+    Sadly, the <color=red>foods from other side
+    of the globe</color> are raising the carbon footprint.'
   sixthText: 'My food choices will impact carbon footprint and I can see current
     level at the top of the screen.
 
+    
 
-    If it gets too high it is game over for
-    the globe. I MUST avoid those red foods!'
+    If it gets too high it is game over
+    for the globe.
+
+    I <b>MUST</b> avoid those <color=red>red foods</color>!'
