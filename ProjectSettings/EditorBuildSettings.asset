@@ -20,9 +20,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LoseScreen.unity
     guid: b9451ac35f7bcc04abcfe3405dc2b730
-  - enabled: 1
-    path: Assets/Mobile Console/Assets/LogConsole.unity
-    guid: 6d2ee6336ff704f55b20f3b62801afd5
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 64853c3e46c1bea4794d855bb24523e4, type: 2}
     com.unity.localization.settings: {fileID: 11400000, guid: fb1c8bbcbd974f242b22e4896b8fd890, type: 2}

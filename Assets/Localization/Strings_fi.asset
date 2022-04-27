@@ -63,7 +63,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 5042341475516416
-    m_Localized: "Jatka\npeli\xE4"
+    m_Localized: "Jatka peli\xE4"
     m_Metadata:
       m_Items: []
   - m_Id: 5047047216168960
@@ -152,7 +152,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 7974398405115904
-    m_Localized: "T\xE4m\xE4nhetkist\xE4 pelitilannetta ei tallenneta!"
+    m_Localized: "T\xE4m\xE4nhetkist\xE4 pelitilannetta\nei tallenneta!"
     m_Metadata:
       m_Items: []
   references:

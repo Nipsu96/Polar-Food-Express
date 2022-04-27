@@ -9,6 +9,7 @@ namespace Polar
     {
 		[SerializeField] private GameObject textPrefab;
 		[SerializeField] private TMP_Text[] scores;
+		[SerializeField] private TMP_FontAsset font;
 		private int maxHighscores;
 
 		private void Start()
@@ -31,6 +32,7 @@ namespace Polar
 		private TMP_Text InstantiateScoreText(int index)
 		{
 			TMP_Text score = Instantiate(textPrefab.GetComponent<TMP_Text>(), transform.position, transform.rotation);
+			score.font = font;
 			score.transform.SetParent(gameObject.transform);
 			score.transform.localScale = new Vector3(1, 1, 1);
 			return score;
