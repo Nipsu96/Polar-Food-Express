@@ -127,6 +127,22 @@ MonoBehaviour:
     m_Key: Tu_SixthText
     m_Metadata:
       m_Items: []
+  - m_Id: 7973899874336768
+    m_Key: AreYouSure
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7974030854062080
+    m_Key: Yes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7974061543784448
+    m_Key: No
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7974398405115904
+    m_Key: disclaimer
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

@@ -139,5 +139,21 @@ MonoBehaviour:
       v\xE4ltt\xE4\xE4 <color=red>punaisia ruokia</color>!\r\n"
     m_Metadata:
       m_Items: []
+  - m_Id: 7973899874336768
+    m_Localized: 'Oletko varma? '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7974030854062080
+    m_Localized: "Kyll\xE4"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7974061543784448
+    m_Localized: En
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7974398405115904
+    m_Localized: "T\xE4m\xE4nhetkist\xE4 pelitilannetta ei tallenneta!"
+    m_Metadata:
+      m_Items: []
   references:
     version: 1

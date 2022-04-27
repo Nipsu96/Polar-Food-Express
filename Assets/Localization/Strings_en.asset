@@ -169,5 +169,21 @@ MonoBehaviour:
 '
     m_Metadata:
       m_Items: []
+  - m_Id: 7973899874336768
+    m_Localized: 'Are you sure? '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7974030854062080
+    m_Localized: Yes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7974061543784448
+    m_Localized: No
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7974398405115904
+    m_Localized: Current progress will be lost!
+    m_Metadata:
+      m_Items: []
   references:
     version: 1
