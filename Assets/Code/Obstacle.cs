@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Polar
 {
@@ -22,10 +23,17 @@ namespace Polar
 
         public void OnCollision()
         {
-            // // Calls GameManager to end the game
-            //  float delay = 0;
-            SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
-            spriteRenderer.enabled = false;
+			// // Calls GameManager to end the game
+			//  float delay = 0;
+
+			// Disable visuals if scene is not tutorial
+			Scene currentScene = SceneManager.GetActiveScene();
+			if (currentScene.name != "Tutorial")
+			{
+				SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
+				spriteRenderer.enabled = false;
+			}
+
             AudioSource hitAudio = gameObject.GetComponent<AudioSource>();
             if (hitAudio != null)
             {

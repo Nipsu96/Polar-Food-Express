@@ -18,8 +18,10 @@ namespace Polar
 		internal delegate void EndAction();
 		internal static event EndAction GameOver;
 		internal bool isTutorialOver = true;
+		private Scene currentScene;
 
-        private void Awake()
+
+		private void Awake()
         {
             CreateInstance();
 			Time.timeScale = 1.0f;
@@ -39,7 +41,11 @@ namespace Polar
 
 		private void Start()
 		{
-			isTutorialOver = TutorialManager.Instance.tutorialCompleted;
+			currentScene = SceneManager.GetActiveScene();
+			if (currentScene.name == "Tutorial")
+			{
+				isTutorialOver = TutorialManager.Instance.tutorialCompleted;
+			}
 		}
 
 		internal void EndGame()
@@ -53,7 +59,6 @@ namespace Polar
 			// Start GameOver event. Other objects will listen this and disable themselves.
 			GameOver();
 
-			Scene currentScene = SceneManager.GetActiveScene();
 			if (currentScene.name == "Tutorial")
 			{
 				isTutorialOver = TutorialManager.Instance.tutorialCompleted;
@@ -61,8 +66,6 @@ namespace Polar
 
 			if (isTutorialOver)
 			{
-				Scene scene = SceneManager.GetActiveScene();
-				String sceneName = scene.name;
 				SceneManager.LoadScene("LoseScreen", LoadSceneMode.Additive);
 			}
 			else
