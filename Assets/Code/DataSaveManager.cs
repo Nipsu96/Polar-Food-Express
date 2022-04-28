@@ -9,181 +9,181 @@ namespace Polar
 {
     public class DataSaveManager : MonoBehaviour
     {
-		internal static DataSaveManager Instance { get; private set; }
-		public SaveDataObject saveDataObject;
-		private string path;
-		[SerializeField] internal int maxHighscores = 12;
-		private float emptyInitialScore = 0.0f;
-		private float emptyInitialMultiplier = 0.0f;
-		private float emptyInitialTotal = 0.0f;
+        internal static DataSaveManager Instance { get; private set; }
+        public SaveDataObject saveDataObject;
+        private string path;
+        [SerializeField] internal int maxHighscores = 12;
+        private float emptyInitialScore = 0.0f;
+        private float emptyInitialMultiplier = 0.0f;
+        private float emptyInitialTotal = 0.0f;
 
-		// For debug
-		private bool encryptSaveFile = true;
+        // For debug
+        private bool encryptSaveFile = true;
 
-		private void Awake()
-		{
-			CreateInstance();
-			InitializeScoreFile();
-		}
+        private void Awake()
+        {
+            CreateInstance();
+            // InitializeScoreFile();
+        }
 
-		// Debug purpose only.
-		private void OnEnable()
-		{
-			//GameData.OnDataSave += OnSave;
-		}
+        // Debug purpose only.
+        private void OnEnable()
+        {
+            //GameData.OnDataSave += OnSave;
+        }
 
-		// Debug purpose only.
-		private void OnDisable()
-		{
-			//GameData.OnDataSave -= OnSave;
-		}
+        // Debug purpose only.
+        private void OnDisable()
+        {
+            //GameData.OnDataSave -= OnSave;
+        }
 
-		private void CreateInstance()
-		{
-			if (Instance == null)
-			{
-				Instance = this;
-			}
-			else
-			{
-				Destroy(this);
-			}
-		}
+        private void CreateInstance()
+        {
+            if (Instance == null)
+            {
+                Instance = this;
+            }
+            else
+            {
+                Destroy(this);
+            }
+        }
 
-		private void InitializeScoreFile()
-		{
-			// Set path for the save data file.
-			path = Application.persistentDataPath + "/ScoreData.dat";
+        private void InitializeScoreFile()
+        {
+            // Set path for the save data file.
+            path = Application.persistentDataPath + "/ScoreData.dat";
 
-			// Check does save file exist and create one if it doesn't.
-			if (!System.IO.File.Exists(path))
-			{
-				Debug.Log("Save data doesn't exist. Creating a new one.");
+            // Check does save file exist and create one if it doesn't.
+            if (!System.IO.File.Exists(path))
+            {
+                Debug.Log("Save data doesn't exist. Creating a new one.");
 
-				// Create new empty SaveDataObject.
-				SaveDataObject(emptyInitialScore, emptyInitialTotal, emptyInitialMultiplier, new float[maxHighscores]);
+                // Create new empty SaveDataObject.
+                SaveDataObject(emptyInitialScore, emptyInitialTotal, emptyInitialMultiplier, new float[maxHighscores]);
 
-				// Save data to a drive.
-				SaveScore();
-			}
-		}
+                // Save data to a drive.
+                SaveScore();
+            }
+        }
 
-		public float GetHighscoreData(int index)
-		{
-			LoadSaveData();
-			return saveDataObject.highscores[index];
-		}
+        public float GetHighscoreData(int index)
+        {
+            LoadSaveData();
+            return saveDataObject.highscores[index];
+        }
 
-		public float GetLatestScoreData()
-		{
-			LoadSaveData();
-			return saveDataObject.latestScore;
-		}
+        public float GetLatestScoreData()
+        {
+            LoadSaveData();
+            return saveDataObject.latestScore;
+        }
 
-		public float GetLatestMultiplierData()
-		{
-			LoadSaveData();
-			return saveDataObject.latestScoreMultiplier;
-		}
+        public float GetLatestMultiplierData()
+        {
+            LoadSaveData();
+            return saveDataObject.latestScoreMultiplier;
+        }
 
-		public float GetLatestTotalScoreData()
-		{
-			LoadSaveData();
-			return saveDataObject.latestTotalScore;
-		}
+        public float GetLatestTotalScoreData()
+        {
+            LoadSaveData();
+            return saveDataObject.latestTotalScore;
+        }
 
-		public void SaveScoreData()
-		{
-			LoadSaveData();
+        public void SaveScoreData()
+        {
+            LoadSaveData();
 
-			float latestScore = ScoreManager.Instance.currentScore;
+            float latestScore = ScoreManager.Instance.currentScore;
 
-			float latestScoreMultiplier = CarbonManager.Instance.currentCarbonFootprint;
+            float latestScoreMultiplier = CarbonManager.Instance.currentCarbonFootprint;
 
-			float latestTotalScore = 0.0f;
-			latestTotalScore = CalculateTotalScore(latestScore, latestScoreMultiplier);
+            float latestTotalScore = 0.0f;
+            latestTotalScore = CalculateTotalScore(latestScore, latestScoreMultiplier);
 
-			float[] highscores = saveDataObject.highscores;
+            float[] highscores = saveDataObject.highscores;
 
 
-			// Check is the latest score high enough for the highscore list.
-			highscores = UpdateHighscores(latestTotalScore, highscores);
+            // Check is the latest score high enough for the highscore list.
+            highscores = UpdateHighscores(latestTotalScore, highscores);
 
-			// Update SaveDataObject with score and multiplier values.
-			SaveDataObject(latestScore, latestScoreMultiplier, latestTotalScore, highscores);
+            // Update SaveDataObject with score and multiplier values.
+            SaveDataObject(latestScore, latestScoreMultiplier, latestTotalScore, highscores);
 
-			// Save data to a drive.
-			SaveScore();
-		}
+            // Save data to a drive.
+            SaveScore();
+        }
 
-		private void LoadSaveData()
-		{
-			saveDataObject = GameData.LoadData(saveDataObject, path, encryptSaveFile) as SaveDataObject;
-		}
+        private void LoadSaveData()
+        {
+            saveDataObject = GameData.LoadData(saveDataObject, path, encryptSaveFile) as SaveDataObject;
+        }
 
-		private float CalculateTotalScore(float latestScore, float latestScoreMultiplier)
-		{
-			float totalScore = 0.0f;
-			totalScore = Mathf.Round(latestScore * latestScoreMultiplier);
-			return totalScore;
-		}
+        private float CalculateTotalScore(float latestScore, float latestScoreMultiplier)
+        {
+            float totalScore = 0.0f;
+            totalScore = Mathf.Round(latestScore * latestScoreMultiplier);
+            return totalScore;
+        }
 
-		private float[] UpdateHighscores(float latestTotalScore, float[] highscores)
-		{
-			int index = 0;
+        private float[] UpdateHighscores(float latestTotalScore, float[] highscores)
+        {
+            int index = 0;
 
-			// Check is the lastest bigger or equal than any of the highscores.
-			for (int i = 0; i < maxHighscores; i++)
-			{
-				if(latestTotalScore >= highscores[i])
-				{
-					// If the lastest score is bigger or equal than any, break.
-					break;
-				}
-				index++;
-			}
+            // Check is the lastest bigger or equal than any of the highscores.
+            for (int i = 0; i < maxHighscores; i++)
+            {
+                if (latestTotalScore >= highscores[i])
+                {
+                    // If the lastest score is bigger or equal than any, break.
+                    break;
+                }
+                index++;
+            }
 
-			// The latest score is bigger or equal -> update highscores.
-			if(index < maxHighscores)
-			{
-				for (int i = (maxHighscores - 1); i > index; i--)
-				{
-					highscores[i] = highscores[i - 1];
-				}
-				highscores[index] = latestTotalScore;
-			}
+            // The latest score is bigger or equal -> update highscores.
+            if (index < maxHighscores)
+            {
+                for (int i = (maxHighscores - 1); i > index; i--)
+                {
+                    highscores[i] = highscores[i - 1];
+                }
+                highscores[index] = latestTotalScore;
+            }
 
-			return highscores;
-		}
+            return highscores;
+        }
 
-		private void SaveDataObject(float latestScore, float latestScoreMultiplier, float latestTotalScore, float[] highscores)
-		{
-			saveDataObject = new SaveDataObject
-			{
-				latestScore = latestScore,
-				latestScoreMultiplier = latestScoreMultiplier,
-				latestTotalScore = latestTotalScore,
-				highscores = highscores
-			};
-		}
+        private void SaveDataObject(float latestScore, float latestScoreMultiplier, float latestTotalScore, float[] highscores)
+        {
+            saveDataObject = new SaveDataObject
+            {
+                latestScore = latestScore,
+                latestScoreMultiplier = latestScoreMultiplier,
+                latestTotalScore = latestTotalScore,
+                highscores = highscores
+            };
+        }
 
-		private void SaveScore()
-		{
-			GameData.SaveData(saveDataObject, path, encryptSaveFile);
-		}
+        private void SaveScore()
+        {
+            GameData.SaveData(saveDataObject, path, encryptSaveFile);
+        }
 
-		// Debug only.
-		private void OnSave()
-		{
-			Debug.Log("Saved successfully!");
-		}
-	}
+        // Debug only.
+        private void OnSave()
+        {
+            Debug.Log("Saved successfully!");
+        }
+    }
 
-	public class SaveDataObject
-	{
-		public float latestScore;
-		public float latestScoreMultiplier;
-		public float latestTotalScore;
-		public float[] highscores;
-	}
+    public class SaveDataObject
+    {
+        public float latestScore;
+        public float latestScoreMultiplier;
+        public float latestTotalScore;
+        public float[] highscores;
+    }
 }
