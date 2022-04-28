@@ -23,17 +23,19 @@ namespace Polar
         public void OnCollision()
         {
             // // Calls GameManager to end the game
-			//  float delay = 0;
-            // AudioSource hitAudio = gameObject.GetComponent<AudioSource>();
-            // if (hitAudio != null)
-            // {
-            //     hitAudio.Play();
-            //     delay = hitAudio.clip.length;
-            // }
+            //  float delay = 0;
+            SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
+            spriteRenderer.enabled = false;
+            AudioSource hitAudio = gameObject.GetComponent<AudioSource>();
+            if (hitAudio != null)
+            {
+                hitAudio.Play();
+                // delay = hitAudio.clip.length;
+            }
             // StartCoroutine(Delay(delay));
-             GameManager.Instance.EndGame();
+            GameManager.Instance.EndGame();
 
-           
+
         }
 
         // IEnumerator Delay(float delay)

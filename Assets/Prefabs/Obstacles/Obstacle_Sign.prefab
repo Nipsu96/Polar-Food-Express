@@ -138,7 +138,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92fc8feac6054ac45a58fa74a8e66fa0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delay: 0.1
+  delay: 0.3
 --- !u!70 &8860952269278554138
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -165,7 +165,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 1278226485058568585, guid: 286479afc27d25b41ba16b070f8bb1dd, type: 2}
-  m_audioClip: {fileID: 8300000, guid: c61d7c4a06dbb974eb871c3527f48720, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 15238339ece1863468e2529f72dcddb9, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1

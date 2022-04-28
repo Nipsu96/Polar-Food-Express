@@ -849,6 +849,26 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1494530174}
+    - target: {fileID: 1255431923, guid: f0ea61bfb488f974d9f50e1f549623a3, type: 3}
+      propertyPath: m_fontSize
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 1255431923, guid: f0ea61bfb488f974d9f50e1f549623a3, type: 3}
+      propertyPath: m_lineSpacing
+      value: -25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1255431923, guid: f0ea61bfb488f974d9f50e1f549623a3, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 994398008414346574, guid: f0ea61bfb488f974d9f50e1f549623a3, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: fb30bb46792176b49a5e85609230399e, type: 2}
+    - target: {fileID: 994398008414346574, guid: f0ea61bfb488f974d9f50e1f549623a3, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -5013568797022346808, guid: fb30bb46792176b49a5e85609230399e, type: 2}
     - target: {fileID: 2832968269925106693, guid: f0ea61bfb488f974d9f50e1f549623a3, type: 3}
       propertyPath: m_Name
       value: UI Tutorial
@@ -937,6 +957,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4520831534473614338, guid: f0ea61bfb488f974d9f50e1f549623a3, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: fb30bb46792176b49a5e85609230399e, type: 2}
+    - target: {fileID: 4520831534473614338, guid: f0ea61bfb488f974d9f50e1f549623a3, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -5013568797022346808, guid: fb30bb46792176b49a5e85609230399e, type: 2}
+    - target: {fileID: 4520831534753263409, guid: f0ea61bfb488f974d9f50e1f549623a3, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: fb30bb46792176b49a5e85609230399e, type: 2}
+    - target: {fileID: 4520831534753263409, guid: f0ea61bfb488f974d9f50e1f549623a3, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -5013568797022346808, guid: fb30bb46792176b49a5e85609230399e, type: 2}
     - target: {fileID: 4520831535146771001, guid: f0ea61bfb488f974d9f50e1f549623a3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 

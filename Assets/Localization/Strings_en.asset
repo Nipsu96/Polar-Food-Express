@@ -111,34 +111,21 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 7965001515794432
-    m_Localized: 'Time to collect some <color=#247B24>planetary healthy foods</color>!
-
-
-      (By
-      tapping screen the polar bear can jump)
-
-'
+    m_Localized: (The polar bear jumps when you tap the screen)
     m_Metadata:
       m_Items: []
   - m_Id: 7965043047792640
-    m_Localized: 'A food with <color=#247B24>green background</color>.
+    m_Localized: 'Time to collect some <color=#247B24>planetary healthy foods</color>!
 
 
-      That
-      seems to be <color=#247B24>friendly for the planet</color>.
-
-'
+      (A
+      food with <color=#247B24>green background</color>.)'
     m_Metadata:
       m_Items: []
   - m_Id: 7965087717130240
-    m_Localized: 'Huh, rush time I guess...
-
-
-      I must <b>avoid</b> running over
-      a granny or <color=red>a food that is not local</color> (foods with <color=red>a
-      red background</color>).
-
-'
+    m_Localized: "Huh, rush time I guess...\n\nI must <b>avoid</b> running over a
+      granny or <color=red>a food \nthat has a high negative impact for the planet</color>
+      \n(foods with <color=red>a red background</color>).\n"
     m_Metadata:
       m_Items: []
   - m_Id: 7965135897100288
@@ -148,8 +135,8 @@ MonoBehaviour:
       can lower the carbon footprint.
 
 
-      Sadly, the <color=red>foods from the
-      other side of the globe</color>
+      Sadly, the <color=red>foods with red
+      background </color>
 
       are raising it.
 
@@ -157,7 +144,9 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 7965165332725760
-    m_Localized: 'I can see the carbon footprint meter at the top of the screen.
+    m_Localized: 'I can see the carbon footprint meter
+
+      at the top of the screen.
 
 
       If
