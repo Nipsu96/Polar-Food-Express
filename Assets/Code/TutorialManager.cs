@@ -10,7 +10,10 @@ using UnityEngine.Localization.Settings;
 namespace Polar
 {
     public class TutorialManager : MonoBehaviour
-    {
+	{
+		// NOTE: Don't look here. This was made in the middle of the night while crunching.
+
+		internal static TutorialManager Instance { get; private set; }
 		enum Phase { Beginning, First, Second, Third, Four, Five, Six, Seven, Eight };
 		private Phase phase;
 		[SerializeField] private ObjectSpawner objectSpawner;
@@ -25,6 +28,9 @@ namespace Polar
 		[SerializeField] private TMP_Text textField;
 		private PlayerController playerController;
 		[SerializeField] private Button pauseButton;
+		internal bool tutorialCompleted;
+		[SerializeField] internal GameObject retryTutorialMenu;
+		[SerializeField] private GameObject canvas;
 
 		[Header("Texts")]
 		[SerializeField] private LocalizedString firstText;
@@ -33,6 +39,23 @@ namespace Polar
 		[SerializeField] private LocalizedString fourthText;
 		[SerializeField] private LocalizedString fifthText;
 		[SerializeField] private LocalizedString sixthText;
+
+		private void Awake()
+		{
+			CreateInstance();
+		}
+
+		private void CreateInstance()
+		{
+			if (Instance == null)
+			{
+				Instance = this;
+			}
+			else
+			{
+				Destroy(gameObject);
+			}
+		}
 
 		private void Start()
 		{
@@ -84,6 +107,7 @@ namespace Polar
 			animator.enabled = false;
 			pauseButton.enabled = true;
 			thoughtsPanel.SetActive(false);
+			canvas.GetComponent<DisableObjectOnEvent>().enabled = false;
 		}
 
 		IEnumerator WaitAtStart()
@@ -192,6 +216,8 @@ namespace Polar
 				case Phase.Eight:
 					Time.timeScale = 1.0f;
 					GameManager.Instance.fixedGameSpeed = false;
+					canvas.GetComponent<DisableObjectOnEvent>().enabled = true;
+					tutorialCompleted = true;
 					break;
 			}
 		}
