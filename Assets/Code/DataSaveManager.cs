@@ -5,6 +5,7 @@ using NaughtyAttributes;
 using DataManager;
 using System;
 using UnityEditor;
+using System.IO;
 
 namespace Polar
 {
@@ -71,7 +72,8 @@ namespace Polar
 			if (!hasLaunchedBefore)
 			{
 				print("Launching game for the first time");
-				FileUtil.DeleteFileOrDirectory(path);
+				// FileUtil.DeleteFileOrDirectory(path);
+				File.Delete( path );
 				hasLaunchedBefore = true;
 				PlayerPrefs.SetInt("hasLaunchedBefore", (hasLaunchedBefore ? 1 : 0));
 				path = Application.persistentDataPath + "/ScoreData.dat";
