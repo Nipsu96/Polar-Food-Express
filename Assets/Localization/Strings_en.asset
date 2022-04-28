@@ -111,7 +111,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 7965001515794432
-    m_Localized: (The polar bear jumps when you tap the screen)
+    m_Localized: (The polar bear jumps when you tap the screen.)
     m_Metadata:
       m_Items: []
   - m_Id: 7965043047792640
@@ -184,6 +184,18 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 8458918044631040
     m_Localized: Graphics
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8462481172987904
+    m_Localized: 'You couldn''t quite make it.
+
+
+      Let''s play tutorial section
+      again.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8462900473364480
+    m_Localized: Oh no...!
     m_Metadata:
       m_Items: []
   references:

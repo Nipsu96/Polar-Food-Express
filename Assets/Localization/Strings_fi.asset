@@ -111,7 +111,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 7965001515794432
-    m_Localized: "(J\xE4\xE4karhu hypp\xE4\xE4 ruutua n\xE4p\xE4ytt\xE4m\xE4ll\xE4)\n"
+    m_Localized: "(J\xE4\xE4karhu hypp\xE4\xE4 ruutua n\xE4p\xE4ytt\xE4m\xE4ll\xE4.)\n"
     m_Metadata:
       m_Items: []
   - m_Id: 7965043047792640
@@ -163,6 +163,18 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 8458918044631040
     m_Localized: Graafikko
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8462481172987904
+    m_Localized: 'Nyt ei ihan onnistunut.
+
+
+      Kokeillaan pelata tutoriaaliosuus
+      uusiksi.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8462900473364480
+    m_Localized: Voi ei...!
     m_Metadata:
       m_Items: []
   references:
