@@ -4,6 +4,7 @@ using UnityEngine;
 using NaughtyAttributes;
 using DataManager;
 using System;
+using UnityEditor;
 
 namespace Polar
 {
@@ -16,13 +17,13 @@ namespace Polar
 		private float emptyInitialScore = 0.0f;
 		private float emptyInitialMultiplier = 0.0f;
 		private float emptyInitialTotal = 0.0f;
-
-		// For debug
 		private bool encryptSaveFile = true;
+		[SerializeField] private bool hasLaunchedBefore = false;
 
 		private void Awake()
 		{
 			CreateInstance();
+			SetFirstTimeLaunch();
 			InitializeScoreFile();
 		}
 
@@ -50,10 +51,31 @@ namespace Polar
 			}
 		}
 
+		private void SetFirstTimeLaunch()
+		{
+			// Get boolean using PlayerPrefs
+
+			print("hasLaunchedBefore 1 : " + hasLaunchedBefore);
+			hasLaunchedBefore = PlayerPrefs.GetInt("hasLaunchedBefore") == 1 ? true : false;
+			print("hasLaunchedBefore 2 : " + hasLaunchedBefore);
+			//PlayerPrefs.SetInt("firstTimeLaunch", (firstTimeLaunch ? 1 : 0));
+			//print("firstTimeLaunch 3 : " + firstTimeLaunch);
+			//firstTimeLaunch = (PlayerPrefs.GetInt("firstTimeLaunch") != 0);
+		}
+
 		private void InitializeScoreFile()
 		{
 			// Set path for the save data file.
 			path = Application.persistentDataPath + "/ScoreData.dat";
+
+			if (!hasLaunchedBefore)
+			{
+				print("Launching game for the first time");
+				FileUtil.DeleteFileOrDirectory(path);
+				hasLaunchedBefore = true;
+				PlayerPrefs.SetInt("hasLaunchedBefore", (hasLaunchedBefore ? 1 : 0));
+				path = Application.persistentDataPath + "/ScoreData.dat";
+			}
 
 			// Check does save file exist and create one if it doesn't.
 			if (!System.IO.File.Exists(path))
