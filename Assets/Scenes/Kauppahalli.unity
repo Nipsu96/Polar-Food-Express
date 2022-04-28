@@ -191,6 +191,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BackgroundFloor
       objectReference: {fileID: 0}
+    - target: {fileID: 3838719157900770343, guid: 96377d220e1d8d347a74448f7cb85be2, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6246586296061874435, guid: 96377d220e1d8d347a74448f7cb85be2, type: 3}
       propertyPath: m_RootOrder
       value: 12
@@ -297,6 +301,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BackgroundBread
       objectReference: {fileID: 0}
+    - target: {fileID: 8087250014262022461, guid: a29fffb83502aaa48be0fef5e75ab4f8, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: df19133858c113f43839ddabc0b3debd, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a29fffb83502aaa48be0fef5e75ab4f8, type: 3}
 --- !u!1 &383763182 stripped
@@ -363,6 +371,10 @@ PrefabInstance:
     - target: {fileID: 7917841682738327264, guid: 80bfb2ec92223fa4ea8a1bcf0c5a4678, type: 3}
       propertyPath: m_Name
       value: GameManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 8808140020253406165, guid: 80bfb2ec92223fa4ea8a1bcf0c5a4678, type: 3}
+      propertyPath: gameSpeedThrottle
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 80bfb2ec92223fa4ea8a1bcf0c5a4678, type: 3}
@@ -595,6 +607,14 @@ PrefabInstance:
       value: BackgroundCeiling
       objectReference: {fileID: 0}
     - target: {fileID: 4393285476016618019, guid: 9eea6bb15dee67149803d2aba24482cc, type: 3}
+      propertyPath: m_FlipY
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4393285476016618019, guid: 9eea6bb15dee67149803d2aba24482cc, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 2e7fd2d5635b364499f76d1af4f559ed, type: 3}
+    - target: {fileID: 4393285476016618019, guid: 9eea6bb15dee67149803d2aba24482cc, type: 3}
       propertyPath: m_SortingOrder
       value: 3
       objectReference: {fileID: 0}
@@ -603,12 +623,16 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6849304616860145415, guid: 9eea6bb15dee67149803d2aba24482cc, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6849304616860145415, guid: 9eea6bb15dee67149803d2aba24482cc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6849304616860145415, guid: 9eea6bb15dee67149803d2aba24482cc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.54
+      value: 4.31
       objectReference: {fileID: 0}
     - target: {fileID: 6849304616860145415, guid: 9eea6bb15dee67149803d2aba24482cc, type: 3}
       propertyPath: m_LocalPosition.z
