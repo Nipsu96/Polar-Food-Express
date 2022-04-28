@@ -17,6 +17,7 @@ namespace Polar
 		private float gameSpeedThrottle = 10.0f;
 		internal delegate void EndAction();
 		internal static event EndAction GameOver;
+		internal bool isTutorialOver = true;
 
         private void Awake()
         {
@@ -36,20 +37,39 @@ namespace Polar
             }
         }
 
-        internal void EndGame()
+		private void Start()
+		{
+			isTutorialOver = TutorialManager.Instance.tutorialCompleted;
+		}
+
+		internal void EndGame()
 		{
 			// Save current score data to a file
 			DataSaveManager.Instance.SaveScoreData();
-
-			Scene scene = SceneManager.GetActiveScene();
-            String sceneName = scene.name;
-			SceneManager.LoadScene("LoseScreen", LoadSceneMode.Additive);
 			gameSpeed = 0;
 
 			Time.timeScale = 1.0f;
 
 			// Start GameOver event. Other objects will listen this and disable themselves.
 			GameOver();
+
+			Scene currentScene = SceneManager.GetActiveScene();
+			if (currentScene.name == "Tutorial")
+			{
+				isTutorialOver = TutorialManager.Instance.tutorialCompleted;
+			}
+
+			if (isTutorialOver)
+			{
+				Scene scene = SceneManager.GetActiveScene();
+				String sceneName = scene.name;
+				SceneManager.LoadScene("LoseScreen", LoadSceneMode.Additive);
+			}
+			else
+			{
+				Time.timeScale = 0;
+				TutorialManager.Instance.retryTutorialMenu.SetActive(true);
+			}
 		}
 
 		private void FixedUpdate()
