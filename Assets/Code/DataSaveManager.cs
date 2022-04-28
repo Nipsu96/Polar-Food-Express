@@ -19,12 +19,10 @@ namespace Polar
 		private float emptyInitialMultiplier = 0.0f;
 		private float emptyInitialTotal = 0.0f;
 		private bool encryptSaveFile = true;
-		[SerializeField] private bool hasLaunchedBefore = false;
 
 		private void Awake()
 		{
 			CreateInstance();
-			SetFirstTimeLaunch();
 			InitializeScoreFile();
 		}
 
@@ -52,47 +50,30 @@ namespace Polar
             }
         }
 
-		private void SetFirstTimeLaunch()
-		{
-			// Get boolean using PlayerPrefs
-
-			print("hasLaunchedBefore 1 : " + hasLaunchedBefore);
-			hasLaunchedBefore = PlayerPrefs.GetInt("hasLaunchedBefore") == 1 ? true : false;
-			print("hasLaunchedBefore 2 : " + hasLaunchedBefore);
-			//PlayerPrefs.SetInt("firstTimeLaunch", (firstTimeLaunch ? 1 : 0));
-			//print("firstTimeLaunch 3 : " + firstTimeLaunch);
-			//firstTimeLaunch = (PlayerPrefs.GetInt("firstTimeLaunch") != 0);
-		}
-
 		private void InitializeScoreFile()
 		{
 			// Set path for the save data file.
 			path = Application.persistentDataPath + "/ScoreData.dat";
-
-			if (!hasLaunchedBefore)
-			{
-				print("Launching game for the first time");
-				// FileUtil.DeleteFileOrDirectory(path);
-				File.Delete( path );
-				hasLaunchedBefore = true;
-				PlayerPrefs.SetInt("hasLaunchedBefore", (hasLaunchedBefore ? 1 : 0));
-				path = Application.persistentDataPath + "/ScoreData.dat";
-			}
 
 			// Check does save file exist and create one if it doesn't.
 			if (!System.IO.File.Exists(path))
 			{
 				Debug.Log("Save data doesn't exist. Creating a new one.");
 
-                // Create new empty SaveDataObject.
-                SaveDataObject(emptyInitialScore, emptyInitialTotal, emptyInitialMultiplier, new float[maxHighscores]);
+				CreateEmptySaveData();
 
-                // Save data to a drive.
-                SaveScore();
-            }
-        }
+				// Save data to a drive.
+				SaveScore();
+			}
+		}
 
-        public float GetHighscoreData(int index)
+		private void CreateEmptySaveData()
+		{
+			// Create new empty SaveDataObject.
+			SaveDataObject(emptyInitialScore, emptyInitialTotal, emptyInitialMultiplier, new float[maxHighscores]);
+		}
+
+		public float GetHighscoreData(int index)
         {
             LoadSaveData();
             return saveDataObject.highscores[index];
@@ -118,34 +99,67 @@ namespace Polar
 
         public void SaveScoreData()
         {
-            LoadSaveData();
+			try
+			{
+				SetDataForSaving();
+			}
+			catch (Exception)
+			{
+				Debug.LogWarning("Error with a ScoreData. Deleting old one and creating a new one.");
 
-            float latestScore = ScoreManager.Instance.currentScore;
-
-            float latestScoreMultiplier = CarbonManager.Instance.currentCarbonFootprint;
-
-            float latestTotalScore = 0.0f;
-            latestTotalScore = CalculateTotalScore(latestScore, latestScoreMultiplier);
-
-            float[] highscores = saveDataObject.highscores;
-
-
-            // Check is the latest score high enough for the highscore list.
-            highscores = UpdateHighscores(latestTotalScore, highscores);
-
-            // Update SaveDataObject with score and multiplier values.
-            SaveDataObject(latestScore, latestScoreMultiplier, latestTotalScore, highscores);
-
-            // Save data to a drive.
-            SaveScore();
+				File.Delete(path);
+				path = Application.persistentDataPath + "/ScoreData.dat";
+				SetDataForSaving();
+			}
         }
 
-        private void LoadSaveData()
+		private void SetDataForSaving()
+		{
+			LoadSaveData();
+
+			float latestScore = ScoreManager.Instance.currentScore;
+
+			float latestScoreMultiplier = CarbonManager.Instance.currentCarbonFootprint;
+
+			float latestTotalScore = 0.0f;
+			latestTotalScore = CalculateTotalScore(latestScore, latestScoreMultiplier);
+
+			float[] highscores = saveDataObject.highscores;
+
+
+			// Check is the latest score high enough for the highscore list.
+			highscores = UpdateHighscores(latestTotalScore, highscores);
+
+			// Update SaveDataObject with score and multiplier values.
+			SaveDataObject(latestScore, latestScoreMultiplier, latestTotalScore, highscores);
+
+			// Save data to a drive.
+			SaveScore();
+		}
+
+		private void LoadSaveData()
         {
-            saveDataObject = GameData.LoadData(saveDataObject, path, encryptSaveFile) as SaveDataObject;
-        }
+			try
+			{
+				LoadSave();
+			}
+			catch (Exception)
+			{
+				Debug.LogWarning("Error with a ScoreData. Deleting old one and creating a new one.");
 
-        private float CalculateTotalScore(float latestScore, float latestScoreMultiplier)
+				File.Delete(path);
+				path = Application.persistentDataPath + "/ScoreData.dat";
+				CreateEmptySaveData();
+				LoadSave();
+			}
+		}
+
+		private void LoadSave()
+		{
+			saveDataObject = GameData.LoadData(saveDataObject, path, encryptSaveFile) as SaveDataObject;
+		}
+
+		private float CalculateTotalScore(float latestScore, float latestScoreMultiplier)
         {
             float totalScore = 0.0f;
             totalScore = Mathf.Round(latestScore * latestScoreMultiplier);
