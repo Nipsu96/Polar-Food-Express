@@ -79,7 +79,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 5075554877046784
-    m_Localized: Efektit
+    m_Localized: Effektit
     m_Metadata:
       m_Items: []
   - m_Id: 7571280223797248
@@ -151,6 +151,18 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 7974398405115904
     m_Localized: "T\xE4m\xE4nhetkist\xE4 pelitilannetta\nei tallenneta!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8452604400762880
+    m_Localized: "Tekij\xE4t"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8457980290531328
+    m_Localized: Koodari
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8458918044631040
+    m_Localized: Graafikko
     m_Metadata:
       m_Items: []
   references:
