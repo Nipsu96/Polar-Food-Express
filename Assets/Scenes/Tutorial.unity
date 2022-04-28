@@ -326,6 +326,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9eea6bb15dee67149803d2aba24482cc, type: 3}
+--- !u!1 &363772820 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2832968269925106693, guid: f0ea61bfb488f974d9f50e1f549623a3, type: 3}
+  m_PrefabInstance: {fileID: 1798571293}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &383763182 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5762501825726400650, guid: a29fffb83502aaa48be0fef5e75ab4f8, type: 3}
@@ -652,7 +657,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3973847556963881130, guid: fa124fd6d237afd47a381afd67c3e72c, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3973847556963881130, guid: fa124fd6d237afd47a381afd67c3e72c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -721,7 +726,7 @@ PrefabInstance:
       objectReference: {fileID: 2025769631}
     - target: {fileID: 5103544937017644005, guid: 8333744a0a9898f439058acdf4db0607, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 5103544937017644005, guid: 8333744a0a9898f439058acdf4db0607, type: 3}
       propertyPath: m_LocalPosition.x
@@ -849,26 +854,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1494530174}
-    - target: {fileID: 1255431923, guid: f0ea61bfb488f974d9f50e1f549623a3, type: 3}
-      propertyPath: m_fontSize
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 1255431923, guid: f0ea61bfb488f974d9f50e1f549623a3, type: 3}
-      propertyPath: m_lineSpacing
-      value: -25
-      objectReference: {fileID: 0}
-    - target: {fileID: 1255431923, guid: f0ea61bfb488f974d9f50e1f549623a3, type: 3}
-      propertyPath: m_fontSizeBase
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 994398008414346574, guid: f0ea61bfb488f974d9f50e1f549623a3, type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: fb30bb46792176b49a5e85609230399e, type: 2}
-    - target: {fileID: 994398008414346574, guid: f0ea61bfb488f974d9f50e1f549623a3, type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: -5013568797022346808, guid: fb30bb46792176b49a5e85609230399e, type: 2}
     - target: {fileID: 2832968269925106693, guid: f0ea61bfb488f974d9f50e1f549623a3, type: 3}
       propertyPath: m_Name
       value: UI Tutorial
@@ -957,22 +942,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4520831534473614338, guid: f0ea61bfb488f974d9f50e1f549623a3, type: 3}
-      propertyPath: m_fontAsset
+    - target: {fileID: 4520831535047814443, guid: f0ea61bfb488f974d9f50e1f549623a3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 11400000, guid: fb30bb46792176b49a5e85609230399e, type: 2}
-    - target: {fileID: 4520831534473614338, guid: f0ea61bfb488f974d9f50e1f549623a3, type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: -5013568797022346808, guid: fb30bb46792176b49a5e85609230399e, type: 2}
-    - target: {fileID: 4520831534753263409, guid: f0ea61bfb488f974d9f50e1f549623a3, type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: fb30bb46792176b49a5e85609230399e, type: 2}
-    - target: {fileID: 4520831534753263409, guid: f0ea61bfb488f974d9f50e1f549623a3, type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: -5013568797022346808, guid: fb30bb46792176b49a5e85609230399e, type: 2}
+      objectReference: {fileID: 698013896}
     - target: {fileID: 4520831535146771001, guid: f0ea61bfb488f974d9f50e1f549623a3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -1005,6 +978,10 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6665435730348184315, guid: f0ea61bfb488f974d9f50e1f549623a3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 698013896}
     - target: {fileID: 7211325556363952863, guid: f0ea61bfb488f974d9f50e1f549623a3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -1027,6 +1004,11 @@ PrefabInstance:
       objectReference: {fileID: 698013896}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f0ea61bfb488f974d9f50e1f549623a3, type: 3}
+--- !u!1 &1798571294 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6032211374792560776, guid: f0ea61bfb488f974d9f50e1f549623a3, type: 3}
+  m_PrefabInstance: {fileID: 1798571293}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2020545436
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1215,6 +1197,10 @@ PrefabInstance:
       value: TutorialManager
       objectReference: {fileID: 0}
     - target: {fileID: 4665435567902123397, guid: f7a3a1dbbc5a73b4b888e806ee58a7a2, type: 3}
+      propertyPath: canvas
+      value: 
+      objectReference: {fileID: 363772820}
+    - target: {fileID: 4665435567902123397, guid: f7a3a1dbbc5a73b4b888e806ee58a7a2, type: 3}
       propertyPath: okButton
       value: 
       objectReference: {fileID: 1007874700}
@@ -1242,6 +1228,10 @@ PrefabInstance:
       propertyPath: playerCharacter
       value: 
       objectReference: {fileID: 881686088}
+    - target: {fileID: 4665435567902123397, guid: f7a3a1dbbc5a73b4b888e806ee58a7a2, type: 3}
+      propertyPath: retryTutorialMenu
+      value: 
+      objectReference: {fileID: 1798571294}
     - target: {fileID: 7815192436169764940, guid: f7a3a1dbbc5a73b4b888e806ee58a7a2, type: 3}
       propertyPath: m_RootOrder
       value: 13

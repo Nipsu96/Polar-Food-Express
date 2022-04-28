@@ -59,5 +59,11 @@ namespace Polar
             Time.timeScale = 1.0f;
             SceneManager.LoadScene(sceneName);
         }
+
+		public void OnReloadScene()
+		{
+			Scene currentScene = SceneManager.GetActiveScene();
+			SceneManager.LoadScene(currentScene.name);
+		}
     }
 }
