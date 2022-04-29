@@ -39,7 +39,6 @@ namespace Polar
         private void Start()
         {
             locale = PlayerPrefs.GetString("Locale");
-            Debug.Log("Locale: "+ locale);
             if (locale.Equals("English (en)"))
             {
                 LocalizationSettings.SelectedLocale = localeEN;
@@ -48,6 +47,7 @@ namespace Polar
             {
                 LocalizationSettings.SelectedLocale = localeFin;
             }
+            
 
             FindMainMenu();
             FindOptionsMenu();
