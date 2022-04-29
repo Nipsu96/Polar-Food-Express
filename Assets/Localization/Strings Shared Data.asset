@@ -163,6 +163,10 @@ MonoBehaviour:
     m_Key: RetryTutHeadline
     m_Metadata:
       m_Items: []
+  - m_Id: 8788029099212800
+    m_Key: ArtText
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
