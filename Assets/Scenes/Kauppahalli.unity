@@ -191,6 +191,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BackgroundFloor
       objectReference: {fileID: 0}
+    - target: {fileID: 758563342360208784, guid: 96377d220e1d8d347a74448f7cb85be2, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3838719157900770343, guid: 96377d220e1d8d347a74448f7cb85be2, type: 3}
       propertyPath: m_SortingOrder
       value: 3
@@ -301,6 +305,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BackgroundBread
       objectReference: {fileID: 0}
+    - target: {fileID: 5762501825726400650, guid: a29fffb83502aaa48be0fef5e75ab4f8, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8087250014262022461, guid: a29fffb83502aaa48be0fef5e75ab4f8, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -389,6 +397,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ObjectSpawner
       objectReference: {fileID: 0}
+    - target: {fileID: 589090632898741826, guid: 98a386258da76004bbb7139a8f66a5d9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 589090632898741827, guid: 98a386258da76004bbb7139a8f66a5d9, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -465,34 +477,10 @@ PrefabInstance:
       propertyPath: playerController
       value: 
       objectReference: {fileID: 983665032}
-    - target: {fileID: 1334986021, guid: eebc9240da345944d9db6f685148a857, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1334986021, guid: eebc9240da345944d9db6f685148a857, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1334986021, guid: eebc9240da345944d9db6f685148a857, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1516831007, guid: eebc9240da345944d9db6f685148a857, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1446673671}
-    - target: {fileID: 2059457195, guid: eebc9240da345944d9db6f685148a857, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2059457195, guid: eebc9240da345944d9db6f685148a857, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2059457195, guid: eebc9240da345944d9db6f685148a857, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1713317806877584228, guid: eebc9240da345944d9db6f685148a857, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -605,6 +593,10 @@ PrefabInstance:
     - target: {fileID: 232848208277037972, guid: 9eea6bb15dee67149803d2aba24482cc, type: 3}
       propertyPath: m_Name
       value: BackgroundCeiling
+      objectReference: {fileID: 0}
+    - target: {fileID: 232848208277037972, guid: 9eea6bb15dee67149803d2aba24482cc, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4393285476016618019, guid: 9eea6bb15dee67149803d2aba24482cc, type: 3}
       propertyPath: m_FlipY
@@ -743,7 +735,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3973847556963881130, guid: fa124fd6d237afd47a381afd67c3e72c, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3973847556963881130, guid: fa124fd6d237afd47a381afd67c3e72c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -798,6 +790,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BackgroundLooper
       objectReference: {fileID: 0}
+    - target: {fileID: 5103544937017644003, guid: 8333744a0a9898f439058acdf4db0607, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5103544937017644004, guid: 8333744a0a9898f439058acdf4db0607, type: 3}
       propertyPath: backgrounds.Array.data[0]
       value: 
@@ -812,7 +808,7 @@ PrefabInstance:
       objectReference: {fileID: 235674718}
     - target: {fileID: 5103544937017644005, guid: 8333744a0a9898f439058acdf4db0607, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 5103544937017644005, guid: 8333744a0a9898f439058acdf4db0607, type: 3}
       propertyPath: m_LocalPosition.x

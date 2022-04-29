@@ -11,6 +11,9 @@ namespace Polar
 	{
 		internal bool enableControls = true;
 		private bool tap;
+		private Vector2 touchPosition;
+		private Vector3 touchPosOffsetted;
+		private float rayZOffset = -5.0f;
 		private Vector2 direction;
 		private Rigidbody2D playerRigidbody;
 		public float gravity = 1;
@@ -112,12 +115,43 @@ namespace Polar
 			}
 		}
 
+		private void OnTouchPosition(InputAction.CallbackContext ctx)
+		{
+			print("touch position");
+			touchPosition = ctx.ReadValue<Vector2>();
+		}
+
+		private void Update()
+		{
+			Debug.DrawRay(touchPosOffsetted, transform.TransformDirection(Vector3.forward) * 10.0f, Color.red);
+		}
+
 		private void OnJump(InputAction.CallbackContext callbackContext)
 		{
 			// InputActionPhase inputPhase = callbackContext.phase;
 			// isJumping = inputPhase == InputActionPhase.Performed;
 			tap = callbackContext.ReadValueAsButton();
-			PlayerJump();
+			//if(callbackContext.performed == true)
+			//{
+			//	print("tap: " + callbackContext.ReadValueAsButton());
+			//}
+
+			// RayCast
+			touchPosOffsetted = new Vector3(touchPosition.x, touchPosition.y, rayZOffset);
+
+			int layerMask = 5;
+
+			RaycastHit2D hit = Physics2D.Raycast(touchPosOffsetted, Vector3.forward, 10.0f);
+			//print("hit: " + hit.transform.position);
+			if (hit.collider != null)
+			{
+				print("RayCast hit: " + hit);
+			}
+			else
+			{
+				print("hit null");
+				PlayerJump();
+			}
 		}
 		private void PlayerJump()
 		{
