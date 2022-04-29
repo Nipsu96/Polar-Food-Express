@@ -117,8 +117,8 @@ namespace Polar
 
 		private void OnTouchPosition(InputAction.CallbackContext ctx)
 		{
-			print("touch position");
-			touchPosition = ctx.ReadValue<Vector2>();
+			//print("touch position");
+			//touchPosition = ctx.ReadValue<Vector2>();
 		}
 
 		private void Update()
@@ -130,8 +130,15 @@ namespace Polar
 		{
 			// InputActionPhase inputPhase = callbackContext.phase;
 			// isJumping = inputPhase == InputActionPhase.Performed;
-			tap = callbackContext.ReadValueAsButton();
-			//if(callbackContext.performed == true)
+
+			// Old jump's read value
+			//tap = callbackContext.ReadValueAsButton();
+
+			tap = callbackContext.performed;
+			print(callbackContext.phase);
+
+			//touchPosition = callbackContext.ReadValue<Vector2>();
+			//if (callbackContext.performed == true)
 			//{
 			//	print("tap: " + callbackContext.ReadValueAsButton());
 			//}
@@ -142,15 +149,14 @@ namespace Polar
 			int layerMask = 5;
 
 			RaycastHit2D hit = Physics2D.Raycast(touchPosOffsetted, Vector3.forward, 10.0f);
-			//print("hit: " + hit.transform.position);
-			if (hit.collider != null)
+			if (hit.collider == null)
 			{
-				print("RayCast hit: " + hit);
+				PlayerJump();
+				//print("RayCast hit: " + hit);
 			}
 			else
 			{
-				print("hit null");
-				PlayerJump();
+				//print("hit null");
 			}
 		}
 		private void PlayerJump()
