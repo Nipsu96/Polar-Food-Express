@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 172960305451983710, guid: 2d7baf09073b3f54097708ea834b5116, type: 3}
       propertyPath: m_Name
-      value: BackgroundBread
+      value: BackgroundStands
       objectReference: {fileID: 0}
     - target: {fileID: 172960305451983710, guid: 2d7baf09073b3f54097708ea834b5116, type: 3}
       propertyPath: m_IsActive
@@ -26,7 +26,7 @@ PrefabInstance:
     - target: {fileID: 4442046287069543145, guid: 2d7baf09073b3f54097708ea834b5116, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 589c334b4e3b6164c9cc39120b7c61fc, type: 3}
+      objectReference: {fileID: 21300000, guid: 68ca2fd3ac4a0aa4ea2071ef7b68b855, type: 3}
     - target: {fileID: 4442046287069543145, guid: 2d7baf09073b3f54097708ea834b5116, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1

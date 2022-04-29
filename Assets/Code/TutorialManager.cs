@@ -31,6 +31,8 @@ namespace Polar
 		internal bool tutorialCompleted;
 		[SerializeField] internal GameObject retryTutorialMenu;
 		[SerializeField] private GameObject canvas;
+		internal delegate void StartGameplay();
+		internal static event StartGameplay StartGameplayLoop;
 
 		[Header("Texts")]
 		[SerializeField] private LocalizedString firstText;
@@ -130,6 +132,7 @@ namespace Polar
 		{
 			phase = Phase.Four;
 
+			StartGameplayLoop();
 			GameManager.Instance.gameSpeed = 8.5f;
 			objectSpawner.enableSpawning = true;
 			playerCharacter.GetComponent<PlayerController>().enableControls = true;

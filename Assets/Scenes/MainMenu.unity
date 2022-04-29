@@ -968,14 +968,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: BackgroundCeiling
       objectReference: {fileID: 0}
-    - target: {fileID: 3337539439690199838, guid: 9eea6bb15dee67149803d2aba24482cc, type: 3}
-      propertyPath: parallaxSpeedOffset
-      value: -2.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 4393285476016618019, guid: 9eea6bb15dee67149803d2aba24482cc, type: 3}
-      propertyPath: m_SortingOrder
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 6849304616860145415, guid: 9eea6bb15dee67149803d2aba24482cc, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -986,7 +978,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6849304616860145415, guid: 9eea6bb15dee67149803d2aba24482cc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.54
+      value: 4.35
       objectReference: {fileID: 0}
     - target: {fileID: 6849304616860145415, guid: 9eea6bb15dee67149803d2aba24482cc, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1383,10 +1375,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: BackgroundFloor
       objectReference: {fileID: 0}
-    - target: {fileID: 3838719157900770343, guid: 96377d220e1d8d347a74448f7cb85be2, type: 3}
-      propertyPath: m_SortingOrder
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 6246586296061874435, guid: 96377d220e1d8d347a74448f7cb85be2, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -1397,7 +1385,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6246586296061874435, guid: 96377d220e1d8d347a74448f7cb85be2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.69
+      value: -4.7
       objectReference: {fileID: 0}
     - target: {fileID: 6246586296061874435, guid: 96377d220e1d8d347a74448f7cb85be2, type: 3}
       propertyPath: m_LocalPosition.z

@@ -27,7 +27,8 @@ namespace Polar
 		private void LoadBackgrounds(GameObject bg)
 		{
 			float bgWidth = bg.GetComponent<SpriteRenderer>().bounds.size.x;
-			int childrenNeeded = (int)Mathf.Ceil(screenBounds.x * 3 / bgWidth);
+			// Note: Crappy fix  for the background randomization fix
+			int childrenNeeded = (int)Mathf.Ceil(screenBounds.x/* * 3 / bgWidth*/);
 
 			// TODO: take random from pool
 
