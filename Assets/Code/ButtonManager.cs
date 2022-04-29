@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
 using System;
+using UnityEngine.Localization;
+using UnityEngine.Localization.Settings;
 
 namespace Polar
 {
@@ -14,13 +16,13 @@ namespace Polar
         private string optionsName = "OptionsMenu";
         private string scoreboardName = "ScoreboardMenu";
         private string creditsName = "CreditsMenu";
-		private string tutorialName = "Tutorial";
+        private string tutorialName = "Tutorial";
         private GameObject creditsMenu;
-		private GameObject mainMenu;
+        private GameObject mainMenu;
         private GameObject optionsMenu;
         private GameObject scoreboardMenu;
-		private bool tutorialPlayed = false;
-		[SerializeField] private GameObject tutorialButton;
+        private bool tutorialPlayed = false;
+        [SerializeField] private GameObject tutorialButton;
 
         [SerializeField]
         private AudioControl musicControl;
@@ -28,44 +30,60 @@ namespace Polar
         [SerializeField]
         private AudioControl sfxControl;
 
+        [SerializeField]
+        private Locale localeFin;
+        [SerializeField]
+        private Locale localeEN;
+        private string locale;
+
         private void Start()
-		{
-			FindMainMenu();
-			FindOptionsMenu();
-			FindCreditsMenu();
-			FindScoreboardMenu();
-			SetCorrectUIPanels();
-			TutorialInitialize();
-		}
+        {
+            locale = PlayerPrefs.GetString("Locale");
+            if (locale.Equals("English (en)"))
+            {
+                LocalizationSettings.SelectedLocale = localeEN;
+            }
+            else if (locale.Equals("Finnish (fi)"))
+            {
+                LocalizationSettings.SelectedLocale = localeFin;
+            }
+            
+            FindMainMenu();
+            FindOptionsMenu();
+            FindCreditsMenu();
+            FindScoreboardMenu();
+            SetCorrectUIPanels();
+            TutorialInitialize();
+        }
 
-		private void TutorialInitialize()
-		{
-			// Load from PlayerPrefs is tutorial already played.
-			//tutorialPlayed = (PlayerPrefs.GetInt("tutorialPlayed") != 0);
-			Debug.Log("Is tutorial done? (TutorialInitialize) " + tutorialPlayed);
-			if(PlayerPrefs.HasKey("tutorialPlayed"))
-			{
-				Debug.Log("Tutorial key exists.");
-			}
-			else
-			{
-				Debug.Log("Tutorial key doesn't exist.");
-			}
-			tutorialPlayed = PlayerPrefs.GetInt("tutorialPlayed") == 1 ? true : false;
-			Debug.Log("Is tutorial done? (after loading playerprefs) " + tutorialPlayed);
+        private void TutorialInitialize()
+        {
+            // Load from PlayerPrefs is tutorial already played.
+            //tutorialPlayed = (PlayerPrefs.GetInt("tutorialPlayed") != 0);
+            Debug.Log("Is tutorial done? (TutorialInitialize) " + tutorialPlayed);
+            if (PlayerPrefs.HasKey("tutorialPlayed"))
+            {
+                Debug.Log("Tutorial key exists.");
+            }
+            else
+            {
+                Debug.Log("Tutorial key doesn't exist.");
+            }
+            tutorialPlayed = PlayerPrefs.GetInt("tutorialPlayed") == 1 ? true : false;
+            Debug.Log("Is tutorial done? (after loading playerprefs) " + tutorialPlayed);
 
-			if (tutorialPlayed)
-			{
-				tutorialButton.SetActive(true);
-			}
-			else
-			{
-				tutorialButton.SetActive(false);
-			}
-		}
+            if (tutorialPlayed)
+            {
+                tutorialButton.SetActive(true);
+            }
+            else
+            {
+                tutorialButton.SetActive(false);
+            }
+        }
 
 
-		private void SetCorrectUIPanels()
+        private void SetCorrectUIPanels()
         {
             if (!mainMenu.activeInHierarchy)
             {
@@ -89,17 +107,17 @@ namespace Polar
 
         public void OnPlayGame()
         {
-			if (tutorialPlayed)
-			{
-				SceneManager.LoadSceneAsync(kauppahalliName);
-			}
-			else
-			{
-				tutorialPlayed = true;
-				PlayerPrefs.SetInt("tutorialPlayed", (tutorialPlayed ? 1 : 0));
-				SceneManager.LoadSceneAsync(tutorialName);
-			}
-		}
+            if (tutorialPlayed)
+            {
+                SceneManager.LoadSceneAsync(kauppahalliName);
+            }
+            else
+            {
+                tutorialPlayed = true;
+                PlayerPrefs.SetInt("tutorialPlayed", (tutorialPlayed ? 1 : 0));
+                SceneManager.LoadSceneAsync(tutorialName);
+            }
+        }
         public void OnOptions()
         {
             mainMenu.SetActive(false);
@@ -115,18 +133,18 @@ namespace Polar
             mainMenu.SetActive(false);
             creditsMenu.SetActive(true);
         }
-//         public void OnQuit()
-//         {
-//             Application.Quit();
-// #if UNITY_EDITOR
-//             UnityEditor.EditorApplication.isPlaying = false;
-// #endif
-//         }
+        //         public void OnQuit()
+        //         {
+        //             Application.Quit();
+        // #if UNITY_EDITOR
+        //             UnityEditor.EditorApplication.isPlaying = false;
+        // #endif
+        //         }
 
-		public void OnReplayTutorial()
-		{
-			SceneManager.LoadSceneAsync(tutorialName);
-		}
+        public void OnReplayTutorial()
+        {
+            SceneManager.LoadSceneAsync(tutorialName);
+        }
 
         public void OnBackToMainMenu()
         {
