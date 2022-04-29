@@ -19,6 +19,16 @@ namespace Polar
 		[SerializeField, HideIf("enableMainMenuSettings")] private bool alwaysSpawnGoodFood = true;
 		[SerializeField] internal bool enableSpawning = true;
 
+		private void OnEnable()
+		{
+			GameManager.GameOver += DisableSpawning;
+		}
+
+		private void OnDisable()
+		{
+			GameManager.GameOver -= DisableSpawning;
+		}
+
 		private void Start()
         {
             ResetCountdown();
@@ -36,6 +46,11 @@ namespace Polar
 	            Countdown();
 			}
         }
+
+		private void DisableSpawning()
+		{
+			enableSpawning = false;
+		}
 
         private void Countdown()
         {

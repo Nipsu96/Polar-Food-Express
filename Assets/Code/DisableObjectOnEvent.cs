@@ -24,6 +24,24 @@ namespace Polar
 		private void EnableGameOver()
 		{
 			gameOver = true;
+			DisableCollider();
+			DisableVisuals();
+		}
+
+		private void DisableCollider()
+		{
+			if (gameObject.GetComponent<Collider2D>() != null)
+			{
+				gameObject.GetComponent<Collider2D>().enabled = false;
+			}
+		}
+
+		private void DisableVisuals()
+		{
+			if (gameObject.GetComponent<SpriteRenderer>() != null)
+			{
+				gameObject.GetComponent<SpriteRenderer>().enabled = false;
+			}
 		}
 
 		private void DisableObject()
