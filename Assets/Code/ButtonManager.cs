@@ -19,7 +19,7 @@ namespace Polar
 		private GameObject mainMenu;
         private GameObject optionsMenu;
         private GameObject scoreboardMenu;
-		private bool tutorialPlayed;
+		private bool tutorialPlayed = false;
 		[SerializeField] private GameObject tutorialButton;
 
         [SerializeField]
@@ -29,15 +29,20 @@ namespace Polar
         private AudioControl sfxControl;
 
         private void Start()
-        {
-            FindMainMenu();
-            FindOptionsMenu();
-            FindCreditsMenu();
-            FindScoreboardMenu();
+		{
+			FindMainMenu();
+			FindOptionsMenu();
+			FindCreditsMenu();
+			FindScoreboardMenu();
 			SetCorrectUIPanels();
+			TutorialInitialize();
+		}
 
+		private void TutorialInitialize()
+		{
 			// Load from PlayerPrefs is tutorial already played.
-			tutorialPlayed = (PlayerPrefs.GetInt("tutorialPlayed") != 0);
+			//tutorialPlayed = (PlayerPrefs.GetInt("tutorialPlayed") != 0);
+			tutorialPlayed = PlayerPrefs.GetInt("tutorialPlayed") == 1 ? true : false;
 
 			if (tutorialPlayed)
 			{
@@ -50,8 +55,7 @@ namespace Polar
 		}
 
 
-
-        private void SetCorrectUIPanels()
+		private void SetCorrectUIPanels()
         {
             if (!mainMenu.activeInHierarchy)
             {
