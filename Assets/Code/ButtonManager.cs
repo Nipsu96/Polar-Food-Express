@@ -42,7 +42,17 @@ namespace Polar
 		{
 			// Load from PlayerPrefs is tutorial already played.
 			//tutorialPlayed = (PlayerPrefs.GetInt("tutorialPlayed") != 0);
+			Debug.Log("Is tutorial done? (TutorialInitialize) " + tutorialPlayed);
+			if(PlayerPrefs.HasKey("tutorialPlayed"))
+			{
+				Debug.Log("Tutorial key exists.");
+			}
+			else
+			{
+				Debug.Log("Tutorial key doesn't exist.");
+			}
 			tutorialPlayed = PlayerPrefs.GetInt("tutorialPlayed") == 1 ? true : false;
+			Debug.Log("Is tutorial done? (after loading playerprefs) " + tutorialPlayed);
 
 			if (tutorialPlayed)
 			{
