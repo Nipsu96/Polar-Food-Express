@@ -101,6 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parallaxSpeedOffset: 0
+  ceilingParalaxFixForTutorial: 0
 --- !u!114 &5848048779717891112
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -138,7 +139,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92fc8feac6054ac45a58fa74a8e66fa0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delay: 0.3
+  delay: 1
 --- !u!70 &8860952269278554138
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
