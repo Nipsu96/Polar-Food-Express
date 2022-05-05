@@ -23,6 +23,8 @@ namespace Polar
         private GameObject scoreboardMenu;
         private bool tutorialPlayed = false;
         [SerializeField] private GameObject tutorialButton;
+		[SerializeField, Tooltip("For UI panels debugging. True -> Always set correct menus on launch. False -> Can launch game with wrong panels on start.")]
+		private bool enableCorrectUiPanels = true;
 
         [SerializeField]
         private AudioControl musicControl;
@@ -53,7 +55,10 @@ namespace Polar
             FindOptionsMenu();
             FindCreditsMenu();
             FindScoreboardMenu();
-            SetCorrectUIPanels();
+			if (enableCorrectUiPanels)
+			{
+	            SetCorrectUIPanels();
+			}
             TutorialInitialize();
         }
 
